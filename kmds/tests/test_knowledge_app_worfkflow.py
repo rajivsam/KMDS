@@ -1,9 +1,8 @@
 import pytest
 from tagging.tag_types import *
 from ontology.kmds_ontology import *
-from meta_data_logger import *
 from typing import List
-from utils.path_utils import get_kb_file_path
+from utils.path_utils import *
 from knowledge_base_data_loader import KnowledgeBaseDataLoader
 from utils.observation_sequence_generator import ObservationSequence
 
@@ -73,48 +72,48 @@ def generate_experimental_observations() -> List[ExperimentalObservation]:
 def test_knowledge_application_workflow():
     """ Test the knowledge application workflow 
     """
-    kaw_logger = MetaDataLogger("test knowledge application workflow", PipelineType.KNOWLEDGE_APPLICATION_WORKFLOW)
-    assert kaw_logger is not None
+    kaw: KnowledgeApplicationWorkflow = KnowledgeApplicationWorkflow("test application workflow")
+    assert kaw is not None
 
     exp_obs = generate_exploratory_observations()
 
-    kaw_logger.log_exploratory_observations(exp_obs)
-    num_obs_exp = len(kaw_logger._aw.has_exploratory_observations)
+    kaw.has_exploratory_observations = exp_obs
+    num_obs_exp = len(kaw.has_exploratory_observations)
     
     assert num_obs_exp == 5
 
     data_rep_obs = generate_data_representation_observations()
-    kaw_logger.log_data_representation_observations(data_rep_obs)
+    kaw.has_data_representation_observations = data_rep_obs
 
-    num_obs_data_rep = len(kaw_logger._aw.has_data_representation_observations)
+    num_obs_data_rep = len(kaw.has_data_representation_observations)
 
     assert num_obs_data_rep == 5
-
-    kaw_logger.save_knowledge_base("test_kb_app_workflow")
+    onto = get_ontology(get_ontology_path()).load()
+    onto.save(file=get_kb_file_path(file_name="test_kb_app_workflow"), format="rdfxml")
 
     return
 
 def test_knowledge_extraction_experiment_workflow():
     """ Test the knowledge extraction experiment workflow.
     """
-    keew_logger = MetaDataLogger("test knowledge extraction experiment workflow", PipelineType.KNOWLEDGE_EXTRACTION_EXPERIMENT_WORKFLOW)
-    assert keew_logger is not None
+    keew: KnowledgeExtractionExperimentationWorkflow = KnowledgeExtractionExperimentationWorkflow("test experiment workflow")
+    assert keew is not None
 
     exp_obs = generate_exploratory_observations()
 
-    keew_logger.log_exploratory_observations(exp_obs)
-    num_obs_exp = len(keew_logger._aw.has_exploratory_observations)
+    keew.has_exploratory_observations = exp_obs
+    num_obs_exp = len(keew.has_exploratory_observations)
     
     assert num_obs_exp == 5
 
     data_rep_obs = generate_data_representation_observations()
-    keew_logger.log_data_representation_observations(data_rep_obs)
+    keew.has_data_representation_observations = data_rep_obs
 
-    num_obs_data_rep = len(keew_logger._aw.has_data_representation_observations)
+    num_obs_data_rep = len(keew.has_data_representation_observations)
 
     assert num_obs_data_rep == 5
-
-    keew_logger.save_knowledge_base("test_kb_exp_workflow")
+    onto = get_ontology(get_ontology_path()).load()
+    onto.save(file=get_kb_file_path(file_name="test_kb_exp_workflow"), format="rdfxml")
 
     return
 

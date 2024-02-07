@@ -259,170 +259,170 @@
   <rdfs:subClassOf rdf:resource="#KMObservation"/>
 </owl:Class>
 
-<owl:NamedIndividual rdf:about="#test knowledge application workflow">
+<owl:NamedIndividual rdf:about="#test application workflow">
   <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation1"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation5"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation2"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation5"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation2"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation3"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation5"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation4"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation3"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation1"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation2"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation1">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d3c0&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b9600&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation2">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d300&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b9540&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation3">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d300&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b9540&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation4">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d300&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b9540&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation5">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d300&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b9540&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#datarepresentationobservation1">
   <rdf:type rdf:resource="#DataRepresentationObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d300&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b9540&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
   <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feature Engineering Observation</data_representation_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#datarepresentationobservation2">
   <rdf:type rdf:resource="#DataRepresentationObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d300&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b9540&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
   <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Transformation Observation</data_representation_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#datarepresentationobservation3">
   <rdf:type rdf:resource="#DataRepresentationObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d300&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b9540&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</finding_sequence>
   <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feature Engineering Observation</data_representation_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#datarepresentationobservation4">
   <rdf:type rdf:resource="#DataRepresentationObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d300&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b9540&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</finding_sequence>
   <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Transformation Observation</data_representation_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#datarepresentationobservation5">
   <rdf:type rdf:resource="#DataRepresentationObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d300&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b9540&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</finding_sequence>
   <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feature Engineering Observation</data_representation_observation_type>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#test knowledge extraction experiment workflow">
+<owl:NamedIndividual rdf:about="#test experiment workflow">
   <rdf:type rdf:resource="#KnowledgeExtractionExperimentationWorkflow"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation10"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation6"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation7"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation8"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation6"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation9"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation10"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation8"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation6"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation9"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation10"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation6"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation7"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation6">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d3c0&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b9600&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation7">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d3c0&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b9600&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation8">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d3c0&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b9600&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation9">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d300&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b9540&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation10">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d480&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b96c0&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#datarepresentationobservation6">
   <rdf:type rdf:resource="#DataRepresentationObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d480&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b96c0&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
   <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feature Engineering Observation</data_representation_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#datarepresentationobservation7">
   <rdf:type rdf:resource="#DataRepresentationObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d480&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b96c0&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
   <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Transformation Observation</data_representation_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#datarepresentationobservation8">
   <rdf:type rdf:resource="#DataRepresentationObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d480&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b96c0&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</finding_sequence>
   <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feature Engineering Observation</data_representation_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#datarepresentationobservation9">
   <rdf:type rdf:resource="#DataRepresentationObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d540&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b9780&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</finding_sequence>
   <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Transformation Observation</data_representation_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#datarepresentationobservation10">
   <rdf:type rdf:resource="#DataRepresentationObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x135a4d600&gt;</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - &lt;generator object ObservationSequence.next_obs_number at 0x1311b9840&gt;</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</finding_sequence>
   <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feature Engineering Observation</data_representation_observation_type>
 </owl:NamedIndividual>
