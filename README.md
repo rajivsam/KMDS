@@ -4,7 +4,7 @@
 
 This tool is used for knowledge management in data science. In software design, conceptual domain models inform lower level models. In data science work, experiments yield knowledge that inform modelling choices. Data science models are almost always informed by a variety of analysis experiments. Experimentation and organization of knowledge artifacts supporting modeling decisions is a requirement for reproducible data science models and improving model quality and performance.
 
-Please see [knowledge application development context](../feature_documentation/knowledge_management_in_DS.md ) for a description of a typical knowledge application development setting.
+Please see [knowledge application development context](/feature_documentation/knowledge_management_in_DS.md ) for a description of a typical knowledge application development setting.
 
 ### Why do you need this tool?
 
@@ -17,7 +17,7 @@ This tool is for data scientists and data analysts.
 ### How do you use this tool?
 
 1. You install this library along with the other python dependecies you need for your analysis task.
-2. Decide on a workflow for your analytic or machine learning task. Please see the [the knowledge application pipeline](../feature_documentation/km_app_pipeline.md) document for details of the workflows available. Examples for each of these workflows are provided.
+2. Decide on a workflow for your analytic or machine learning task. Please see the [the knowledge application pipeline](/feature_documentation/km_app_pipeline.md) document for details of the workflows available. Examples for each of these workflows are provided.
 3. A work flow consists of exploratory, data representation and modelling phases. As the analyst works through each of this phases, they decide on the facts they want to document. They collect the facts, tag and order them as a list and then call the API to record them in the knowledge base.
 4. When an analyst needs to look up the details of a particular project task, they search the knowledge base. At present, the API supports logging and retrieval of information. Search interfaces, for example with LLM's can be added once the data is available.
 
