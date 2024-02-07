@@ -1,13 +1,13 @@
 
-class SequenceGenerator:
+class ObservationSequence:
 
-    def __init__(self, desc:str = "sequence generator") -> None:
-        self._desc = desc
-        self._observationNumber = 0
+    def __init__(self,) -> None:
+        self._observationNumber = 1
         return
     
     def next_obs_number(self) -> int:
-        self._observationNumber += 1
-        return self._observationNumber
+        yield self._observationNumber
+
+
     
     
