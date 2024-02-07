@@ -4,7 +4,7 @@
 
 This tool is used for knowledge management in data science. In software design, conceptual domain models inform lower level models. In data science work, experiments yield knowledge that inform modelling choices. Data science models are almost always informed by a variety of analysis experiments. Experimentation and organization of knowledge artifacts supporting modeling decisions is a requirement for reproducible data science models and improving model quality and performance.
 
-Please see [knowledge application development context](../feature_documentation/knowledge_management_in_DS.md) for a description of a typical knowledge application development setting.
+Please see [knowledge application development context](../feature_documentation/knowledge_management_in_DS.md ) for a description of a typical knowledge application development setting.
 
 ### Why do you need this tool?
 
