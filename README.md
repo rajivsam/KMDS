@@ -1,5 +1,4 @@
-Knowledge Management for Data Science
-
+## Knowledge Management for Data Science
 
 ### What is this tool used for?
 
@@ -13,7 +12,7 @@ The above narrative suggests that ability to retrieve knowledge about experiment
 
 ### Who would use this tool?
 
-This tool is for data scientists and data analysts. 
+This tool is for data scientists and data analysts.
 
 ### How do you use this tool?
 
