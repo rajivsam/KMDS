@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net" modified="2024-01-24T03:33:25.781Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="pvIXPa_FGYQEevwNXMgU" version="23.0.0" type="google">
+  <diagram name="Page-1" id="5GCted5j3rbzeZeTXfED">
+    <mxGraphModel dx="937" dy="684" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cQDcbFLSpN2fuzQOIdX7-35" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="60" y="80" width="740" height="680" as="geometry" />
+        </mxCell>
+        <mxCell id="cQDcbFLSpN2fuzQOIdX7-23" value="" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="cQDcbFLSpN2fuzQOIdX7-35">
+          <mxGeometry x="280" y="320" width="460" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="cQDcbFLSpN2fuzQOIdX7-1" value="Knowledge Worker" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="cQDcbFLSpN2fuzQOIdX7-35">
+          <mxGeometry x="130" y="130" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cQDcbFLSpN2fuzQOIdX7-3" value="Business&lt;br&gt;activities" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="cQDcbFLSpN2fuzQOIdX7-35">
+          <mxGeometry x="340" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cQDcbFLSpN2fuzQOIdX7-4" value="business&lt;br&gt;data" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="cQDcbFLSpN2fuzQOIdX7-35">
+          <mxGeometry x="370" y="190" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cQDcbFLSpN2fuzQOIdX7-5" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="cQDcbFLSpN2fuzQOIdX7-35">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="90" as="sourcePoint" />
+            <mxPoint x="400" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cQDcbFLSpN2fuzQOIdX7-6" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="cQDcbFLSpN2fuzQOIdX7-35">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="170" as="sourcePoint" />
+            <mxPoint x="320" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cQDcbFLSpN2fuzQOIdX7-7" value="Knowledge&lt;br&gt;Representations" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="cQDcbFLSpN2fuzQOIdX7-35">
+          <mxGeometry x="250" y="280" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cQDcbFLSpN2fuzQOIdX7-10" value="Develop&lt;br&gt;knowledge&lt;br&gt;representations using knowledge discovery or domain knowledge" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="cQDcbFLSpN2fuzQOIdX7-35">
+          <mxGeometry x="240" y="100" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cQDcbFLSpN2fuzQOIdX7-12" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="cQDcbFLSpN2fuzQOIdX7-35">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="220" as="sourcePoint" />
+            <mxPoint x="240" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cQDcbFLSpN2fuzQOIdX7-13" value="Store and&lt;br&gt;document&lt;br&gt;knowledge representations" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="cQDcbFLSpN2fuzQOIdX7-35">
+          <mxGeometry x="200" y="220" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cQDcbFLSpN2fuzQOIdX7-14" value="Inference and learning applications" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#E7157B;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.opsworks_apps;" vertex="1" parent="cQDcbFLSpN2fuzQOIdX7-35">
+          <mxGeometry x="470" y="380" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cQDcbFLSpN2fuzQOIdX7-15" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="cQDcbFLSpN2fuzQOIdX7-35">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="340" y="340" as="sourcePoint" />
+            <mxPoint x="410" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cQDcbFLSpN2fuzQOIdX7-16" value="Search based&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;applications" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#E7157B;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.opsworks_apps;" vertex="1" parent="cQDcbFLSpN2fuzQOIdX7-35">
+          <mxGeometry x="382" y="480" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cQDcbFLSpN2fuzQOIdX7-20" value="Analytics based applications" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#E7157B;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.opsworks_apps;" vertex="1" parent="cQDcbFLSpN2fuzQOIdX7-35">
+          <mxGeometry x="528" y="470" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cQDcbFLSpN2fuzQOIdX7-24" value="Derived&lt;br&gt;knowledge&lt;br&gt;representations" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="cQDcbFLSpN2fuzQOIdX7-35">
+          <mxGeometry x="140" y="418" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cQDcbFLSpN2fuzQOIdX7-25" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="cQDcbFLSpN2fuzQOIdX7-35">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="360" as="sourcePoint" />
+            <mxPoint x="200" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cQDcbFLSpN2fuzQOIdX7-34" value="Knowledge worker could be a business analyst, data analyst or a data scientist" style="shape=note;size=20;whiteSpace=wrap;html=1;" vertex="1" parent="cQDcbFLSpN2fuzQOIdX7-35">
+          <mxGeometry y="230" width="100" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

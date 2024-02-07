@@ -1,0 +1,10 @@
+notebook
+ipython
+prefect
+scikit-learn
+openml
+pyyaml
+owlready2
+rdflib
+flask
+pytest

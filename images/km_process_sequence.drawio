@@ -1,0 +1,22 @@
+<mxfile host="app.diagrams.net" modified="2024-01-31T10:21:17.943Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="tNOAuRrK4UYkCHb__cID" version="23.0.2" type="device">
+  <diagram name="Page-1" id="Zbb-t4kLZANxEtJMgPLe">
+    <mxGraphModel dx="937" dy="684" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="iImu0-DjufisWt-f5Ppx-1" value="Knowledge Application Sequence" style="swimlane;childLayout=stackLayout;horizontal=1;fillColor=none;horizontalStack=1;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;strokeColor=none;stackBorder=10;stackSpacing=-12;resizable=1;align=center;points=[];whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="160" width="296" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="iImu0-DjufisWt-f5Ppx-2" value="Exploration&lt;br&gt;(notebook)" style="shape=step;perimeter=stepPerimeter;fixedSize=1;points=[];whiteSpace=wrap;html=1;" vertex="1" parent="iImu0-DjufisWt-f5Ppx-1">
+          <mxGeometry x="10" y="33" width="100" height="57" as="geometry" />
+        </mxCell>
+        <mxCell id="iImu0-DjufisWt-f5Ppx-3" value="Data&lt;br&gt;Representation&lt;br&gt;Experiments" style="shape=step;perimeter=stepPerimeter;fixedSize=1;points=[];whiteSpace=wrap;html=1;" vertex="1" parent="iImu0-DjufisWt-f5Ppx-1">
+          <mxGeometry x="98" y="33" width="100" height="57" as="geometry" />
+        </mxCell>
+        <mxCell id="iImu0-DjufisWt-f5Ppx-4" value="Modelling&lt;br&gt;Experiments" style="shape=step;perimeter=stepPerimeter;fixedSize=1;points=[];whiteSpace=wrap;html=1;" vertex="1" parent="iImu0-DjufisWt-f5Ppx-1">
+          <mxGeometry x="186" y="33" width="100" height="57" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

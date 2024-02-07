@@ -1,0 +1,121 @@
+import pytest
+from tagging.tag_types import *
+from ontology.kmds_ontology import *
+from meta_data_logger import *
+from typing import List
+from utils.path_utils import get_kb_file_path
+from knowledge_base_data_loader import KnowledgeBaseDataLoader
+
+NUM_OBSERVATIONS = 5
+
+def generate_exploratory_observations() -> List[ExploratoryObservation]:
+    exp_obs : List[ExploratoryObservation] = []
+    obs_type = [ ExploratoryTags.RELEVANCE_OBSERVATION.value, ExploratoryTags.DATA_QUALITY_OBSERVATION.value]
+    for i in range(NUM_OBSERVATIONS):
+        tag_index = i % 2
+        seq = i+1
+        e = ExploratoryObservation()
+        e.finding = "Exploratory Observation - " + str(i+1)
+        e.finding_sequence = seq
+        e.exploratory_observation_type = obs_type[tag_index]
+
+        exp_obs.append(e)
+    return exp_obs
+
+def generate_data_representation_observations() -> List[DataRepresentationObservation]:
+    data_rep_obs : List[DataRepresentationObservation] = []
+    obs_type = [ DataRepresentationTags.FEATURE_ENGG_OBSERVATION.value, DataRepresentationTags.DATA_TRANSFORMATION_OBSERVATION.value]
+    for i in range(NUM_OBSERVATIONS):
+        tag_index = i % 2
+        seq = i+1
+        e = DataRepresentationObservation()
+        e.finding = "Data Representation Observation - " + str(i+1)
+        e.finding_sequence = seq
+        e.data_representation_observation_type = obs_type[tag_index]
+
+        data_rep_obs.append(e)
+    return data_rep_obs
+
+def generate_experimental_observations() -> List[ExperimentalObservation]:
+    exp_obs : List[ExperimentalObservation] = []
+    obs_type = [ ExperimentationTags.HYPOTHESIS_STATEMENT, ExperimentationTags.EXPERIMENTAL_OBSERVATION.value, ExperimentationTags.EXPERIMENTAL_CONJECTURE, ExperimentationTags.RESULT_SUMMARY]
+    for i in range(NUM_OBSERVATIONS):
+        tag_index = i % len(obs_type)
+        seq = i+1
+        e = ExperimentalObservation()
+        e.finding = "Experimental Observation - " + str(i+1)
+        e.finding_sequence = seq
+        e.experimental_observation_type = obs_type[tag_index]
+
+        exp_obs.append(e)
+    return exp_obs
+    
+
+def test_knowledge_application_workflow():
+    kaw_logger = MetaDataLogger("test knowledge application workflow", PipelineType.KNOWLEDGE_APPLICATION_WORKFLOW)
+    assert kaw_logger is not None
+
+    exp_obs = generate_exploratory_observations()
+
+    kaw_logger.log_exploratory_observations(exp_obs)
+    num_obs_exp = len(kaw_logger._aw.has_exploratory_observations)
+    
+    assert num_obs_exp == 5
+
+    data_rep_obs = generate_data_representation_observations()
+    kaw_logger.log_data_representation_observations(data_rep_obs)
+
+    num_obs_data_rep = len(kaw_logger._aw.has_data_representation_observations)
+
+    assert num_obs_data_rep == 5
+
+    kaw_logger.save_knowledge_base("test_kb_app_workflow")
+
+    return
+
+def test_knowledge_extraction_experiment_workflow():
+    keew_logger = MetaDataLogger("test knowledge extraction experiment workflow", PipelineType.KNOWLEDGE_EXTRACTION_EXPERIMENT_WORKFLOW)
+    assert keew_logger is not None
+
+    exp_obs = generate_exploratory_observations()
+
+    keew_logger.log_exploratory_observations(exp_obs)
+    num_obs_exp = len(keew_logger._aw.has_exploratory_observations)
+    
+    assert num_obs_exp == 5
+
+    data_rep_obs = generate_data_representation_observations()
+    keew_logger.log_data_representation_observations(data_rep_obs)
+
+    num_obs_data_rep = len(keew_logger._aw.has_data_representation_observations)
+
+    assert num_obs_data_rep == 5
+
+    keew_logger.save_knowledge_base("test_kb_exp_workflow")
+
+    return
+
+def test_load_knowledge_base_application_workflow():
+    kb_dl = KnowledgeBaseDataLoader("test_kb_app_workflow")
+    df = kb_dl.load_exploratory_obs()
+    assert df.shape[0] == 5
+
+    return
+
+def test_load_knowledge_base_exp_workflow():
+    kb_dl = KnowledgeBaseDataLoader("test_kb_exp_workflow")
+    df = kb_dl.load_exploratory_obs()
+    assert df.shape[0] == 5
+
+    return
+
+
+
+
+
+if __name__ == '__main__':
+    test_knowledge_application_workflow()
+    test_knowledge_extraction_experiment_workflow()
+    test_load_knowledge_base_application_workflow()
+    test_load_knowledge_base_exp_workflow()
+
