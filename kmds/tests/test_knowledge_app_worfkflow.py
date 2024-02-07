@@ -10,6 +10,11 @@ from utils.observation_sequence_generator import ObservationSequence
 NUM_OBSERVATIONS = 5
 
 def generate_exploratory_observations() -> List[ExploratoryObservation]:
+    """ Generates the exploratory observations for the test cas
+
+    Returns:
+        List[ExploratoryObservation]: list of exporatory observations created for testing
+    """
     exp_obs : List[ExploratoryObservation] = []
     obs_type = [ ExploratoryTags.RELEVANCE_OBSERVATION.value, ExploratoryTags.DATA_QUALITY_OBSERVATION.value]
     sg = ObservationSequence()
@@ -25,6 +30,11 @@ def generate_exploratory_observations() -> List[ExploratoryObservation]:
     return exp_obs
 
 def generate_data_representation_observations() -> List[DataRepresentationObservation]:
+    """ Generates the data representation observations for testing
+
+    Returns:
+        List[DataRepresentationObservation]: list of data representation observations for testing
+    """
     data_rep_obs : List[DataRepresentationObservation] = []
     obs_type = [ DataRepresentationTags.FEATURE_ENGG_OBSERVATION.value, DataRepresentationTags.DATA_TRANSFORMATION_OBSERVATION.value]
     sg = ObservationSequence()
@@ -40,6 +50,11 @@ def generate_data_representation_observations() -> List[DataRepresentationObserv
     return data_rep_obs
 
 def generate_experimental_observations() -> List[ExperimentalObservation]:
+    """ Generate experimental observations for testing
+
+    Returns:
+        List[ExperimentalObservation]: List of experimental observations
+    """
     exp_obs : List[ExperimentalObservation] = []
     obs_type = [ ExperimentationTags.HYPOTHESIS_STATEMENT, ExperimentationTags.EXPERIMENTAL_OBSERVATION.value, ExperimentationTags.EXPERIMENTAL_CONJECTURE, ExperimentationTags.RESULT_SUMMARY]
     sg = ObservationSequence()
@@ -56,6 +71,8 @@ def generate_experimental_observations() -> List[ExperimentalObservation]:
     
 
 def test_knowledge_application_workflow():
+    """ Test the knowledge application workflow 
+    """
     kaw_logger = MetaDataLogger("test knowledge application workflow", PipelineType.KNOWLEDGE_APPLICATION_WORKFLOW)
     assert kaw_logger is not None
 
@@ -78,6 +95,8 @@ def test_knowledge_application_workflow():
     return
 
 def test_knowledge_extraction_experiment_workflow():
+    """ Test the knowledge extraction experiment workflow.
+    """
     keew_logger = MetaDataLogger("test knowledge extraction experiment workflow", PipelineType.KNOWLEDGE_EXTRACTION_EXPERIMENT_WORKFLOW)
     assert keew_logger is not None
 
@@ -100,6 +119,8 @@ def test_knowledge_extraction_experiment_workflow():
     return
 
 def test_load_knowledge_base_application_workflow():
+    """ Test the load application knowledge base workflow.
+    """
     kb_dl = KnowledgeBaseDataLoader("test_kb_app_workflow")
     df = kb_dl.load_exploratory_obs()
     assert df.shape[0] == 5
@@ -107,6 +128,8 @@ def test_load_knowledge_base_application_workflow():
     return
 
 def test_load_knowledge_base_exp_workflow():
+    """ Test the load experimental knowledge base workflow
+    """
     kb_dl = KnowledgeBaseDataLoader("test_kb_exp_workflow")
     df = kb_dl.load_exploratory_obs()
     assert df.shape[0] == 5
