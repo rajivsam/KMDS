@@ -47,3 +47,5 @@ src/config/
 
 ## ignore docker for now
 docker/
+## don't add the retail file
+data/online_retail_II.csv

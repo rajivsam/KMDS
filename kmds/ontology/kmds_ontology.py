@@ -3,7 +3,8 @@ from typing import List
 from enum import Enum
 from tagging import *
 import os
-from utils.path_utils import get_ontology_path
+from utils.path_utils import get_ontology_path, get_kb_file_path
+from pathlib import Path 
 
 
 
@@ -18,9 +19,8 @@ class PipelineType(str, Enum):
     KNOWLEDGE_EXTRACTION_EXPERIMENT_WORKFLOW = "Knowledge Extraction Experiment Workflow"
 
 
-# Concept definitions
-onto = get_ontology(get_ontology_path()).load()
 
+onto = get_ontology(get_ontology_path())
 with onto:
     class Workflow(Thing):
         """ Ontology definition for workflow

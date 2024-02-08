@@ -1,7 +1,7 @@
 from enum import Enum
 
 class ExploratoryTags(str, Enum):
-    """ Tags to capture the exploratory observation type, the first tag must be applied (if applicable)prior to the second tag - so relevance must be determined (if you want to specify relevance observations) prior to data quality checks
+    """ Tags to capture the exploratory observation type
 
     Args:
         str (_type_): string type tag
@@ -11,8 +11,7 @@ class ExploratoryTags(str, Enum):
     DATA_QUALITY_OBSERVATION = "Data Quality Observation"
 
 class DataRepresentationTags(str, Enum):
-    """ Tags to capture the data representation observation type, the first tag must be applied if applicable prior to the second tag
-
+    """ Tags to capture the data representation observation type
     Args:
         str (_type_): string type tag
         Enum (_type_): string type tag
@@ -21,8 +20,7 @@ class DataRepresentationTags(str, Enum):
     DATA_TRANSFORMATION_OBSERVATION = "Data Transformation Observation"
 
 class ModellingChoiceTags(str, Enum):
-    """ Tags corresponding to Modelling choice observation type, the tag precedence is in the order of definition
-
+    """ Tags corresponding to Modelling choice observation type
     Args:
         str (_type_): string type tag
         Enum (_type_): string type tag
@@ -31,8 +29,7 @@ class ModellingChoiceTags(str, Enum):
     MODELLING_ASSUMPTION_OBSERVATION = "Modelling Assumption Observation"
 
 class ExperimentationTags(str, Enum):
-    """ Tags corresponding to experimentation observation type, the tag precedence is in the order of definition
-
+    """ Tags corresponding to experimentation observation type
     Args:
         str (_type_): string type tag
         Enum (_type_): string type tag
@@ -43,8 +40,7 @@ class ExperimentationTags(str, Enum):
     RESULT_SUMMARY = "Experimental Result Summary"
 
 class ModelSelection(str, Enum):
-    """ Tags corresponding to Model Selection observation type, the tag precedence is in the order of definition
-
+    """ Tags corresponding to Model Selection observation type
     Args:
         str (_type_): string type tag
         Enum (_type_): string type tag

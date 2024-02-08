@@ -4,7 +4,9 @@ from ontology.kmds_ontology import *
 from typing import List
 from utils.path_utils import *
 from knowledge_base_data_loader import KnowledgeBaseDataLoader
-from utils.observation_sequence_generator import ObservationSequence
+from owlready2 import *
+
+
 
 NUM_OBSERVATIONS = 5
 
@@ -16,12 +18,13 @@ def generate_exploratory_observations() -> List[ExploratoryObservation]:
     """
     exp_obs : List[ExploratoryObservation] = []
     obs_type = [ ExploratoryTags.RELEVANCE_OBSERVATION.value, ExploratoryTags.DATA_QUALITY_OBSERVATION.value]
-    sg = ObservationSequence()
+  
+
     for i in range(NUM_OBSERVATIONS):
         tag_index = i % 2
         seq = i+1
         e = ExploratoryObservation()
-        e.finding = "Exploratory Observation - " + str(sg.next_obs_number())
+        e.finding = "Exploratory Observation - " + str(seq)
         e.finding_sequence = seq
         e.exploratory_observation_type = obs_type[tag_index]
 
@@ -36,12 +39,12 @@ def generate_data_representation_observations() -> List[DataRepresentationObserv
     """
     data_rep_obs : List[DataRepresentationObservation] = []
     obs_type = [ DataRepresentationTags.FEATURE_ENGG_OBSERVATION.value, DataRepresentationTags.DATA_TRANSFORMATION_OBSERVATION.value]
-    sg = ObservationSequence()
+
     for i in range(NUM_OBSERVATIONS):
         tag_index = i % 2
         seq = i+1
         e = DataRepresentationObservation()
-        e.finding = "Data Representation Observation - " + str(sg.next_obs_number())
+        e.finding = "Data Representation Observation - " + str(seq)
         e.finding_sequence = seq
         e.data_representation_observation_type = obs_type[tag_index]
 
@@ -56,12 +59,12 @@ def generate_experimental_observations() -> List[ExperimentalObservation]:
     """
     exp_obs : List[ExperimentalObservation] = []
     obs_type = [ ExperimentationTags.HYPOTHESIS_STATEMENT, ExperimentationTags.EXPERIMENTAL_OBSERVATION.value, ExperimentationTags.EXPERIMENTAL_CONJECTURE, ExperimentationTags.RESULT_SUMMARY]
-    sg = ObservationSequence()
+
     for i in range(NUM_OBSERVATIONS):
         tag_index = i % len(obs_type)
         seq = i+1
         e = ExperimentalObservation()
-        e.finding = "Experimental Observation - " + str(sg.next_obs_number())
+        e.finding = "Experimental Observation - " + str(seq)
         e.finding_sequence = seq
         e.experimental_observation_type = obs_type[tag_index]
 
@@ -96,6 +99,7 @@ def test_knowledge_application_workflow():
 def test_knowledge_extraction_experiment_workflow():
     """ Test the knowledge extraction experiment workflow.
     """
+
     keew: KnowledgeExtractionExperimentationWorkflow = KnowledgeExtractionExperimentationWorkflow("test experiment workflow")
     assert keew is not None
 

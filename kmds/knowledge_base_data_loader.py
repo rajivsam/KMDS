@@ -15,7 +15,7 @@ class KnowledgeBaseDataLoader:
             kb_name (str): the knowledge base to load
         """
         self._onto :Ontology = self.load_kb(kb_name)
-        the_workflow_instance = self._onto.KnowledgeApplicationWorkflow.instances()[0]
+        the_workflow_instance = list(self._onto.individuals())[0]
         if isinstance(the_workflow_instance, KnowledgeApplicationWorkflow):
             self._aw : KnowledgeApplicationWorkflow = the_workflow_instance
         else:
@@ -23,22 +23,21 @@ class KnowledgeBaseDataLoader:
 
         return
     
-    def load_kb(self, kb_name) -> Ontology:
-        """ Retrieves the knowledge base from the data directory and creates an ontology for it
+    def load_kb(self, kb_name: str) ->Ontology:
+        """ Load knowledge base from data dir
 
         Args:
-            kb_name (_type_): the knowledge base to load
+            kb_name (str): the knowledge base to load
 
         Returns:
-            Ontology: the created ontology
+            Ontology: Returns a previously created knowledge base
         """
         try:
-            fp: Path = get_kb_file_path(kb_name)
-            onto: Ontology = get_ontology(fp).load()
-        except OSError as error:
-            print("eror loading knowledge base: " + error)
-            print("cannot load knowledge base - check file name and permissions")
+            onto : Ontology = get_ontology(get_kb_file_path(kb_name)).load()
+        except OSError as e:
+            print("Error opening KB, check if KB exists and permissions are right")
         
+
         return onto
     
     def load_exploratory_obs(self) -> DataFrame:
