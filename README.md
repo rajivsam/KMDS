@@ -21,6 +21,11 @@ This tool is for data scientists and data analysts.
 3. A work flow consists of exploratory, data representation and modelling phases. As the analyst works through each of this phases, they decide on the facts they want to document. They collect the facts, tag and order them as a list and then call the API to record them in the knowledge base.
 4. When an analyst needs to look up the details of a particular project task, they search the knowledge base. At present, the API supports logging and retrieval of information. Search interfaces, for example with LLM's can be added once the data is available.
 
-### Open Source
+### Licensing and Feature Questions
 
-This tool is open source. If you have a feature that you would like to submit, thank you, submit a PR and we can take from there.
+
+1. The tool is open source with an [apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.txt)
+2. If you have an analysis task that you would like consulting help with, please set up a [meeting](https://calendly.com/rajiv-sambasivan/help-with-data-analysis-kmds) with me.
+3. You can also set up a [meeting](https://calendly.com/rajiv-sambasivan/help-with-data-analysis-kmds) with me to discuss customizing this tool for your specific project or use case.
+4. If you have a suggestion, open an issue in the repo.
+5. If you would like to contribute, submit an issue and if the feature makes sense we can discuss the possiblity of submitting a PR for it. Of course, you can fork this repo and use it per the licensing information.
