@@ -12,5 +12,13 @@ The deployed model is used for sometime, for example, till the end of the second
 
 ## Data Processing Approach
 
-1. The raw data set covers the period 2010 and 2011. For the motivating example here, we put transport our time perspective to the first week in the second quarter of 2010. We only need the first quarter data for this analysis. So we subset the data corresponding to this period. This makes the dataset size reasonable. It is also sufficient to illustrate the conceptual building blocks of the components functionality of the tool. This [notebook](/examples_of_use/machine_learning/retail_scope_raw_dataset_to_2010_Q1_Q2.ipynb) has the code for doing this. The original dataset can be obtained from the [UCI machine learning repository](https://archive.ics.uci.edu/dataset/502/online+retail+ii)
+1. The raw data set covers the period 2010 and 2011. We only need the first quarter data for this analysis. So we subset the data corresponding to this period. This [notebook](/examples_of_use/machine_learning/retail_scope_raw_dataset_to_2010_Q1_Q2.ipynb) has the code for doing this. The original dataset can be obtained from the [UCI machine learning repository](https://archive.ics.uci.edu/dataset/502/online+retail+ii)
 2. The modelling approach is illustrated on the data for Q1 2010. The data for Q2 2010 is also provided and can be used to evaluate or replicate the approach.
+
+## Data Representation 
+
+
+## Modelling
+
+
+## Knowledge Capture
