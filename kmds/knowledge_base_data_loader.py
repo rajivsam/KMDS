@@ -16,13 +16,18 @@ class KnowledgeBaseDataLoader:
         """
         self._onto :Ontology = self.load_kb(kb_name)
         the_workflow_instance = list(self._onto.individuals())[0]
+        
         if isinstance(the_workflow_instance, KnowledgeApplicationWorkflow):
             self._aw : KnowledgeApplicationWorkflow = the_workflow_instance
         else:
             self._aw :KnowledgeExtractionExperimentationWorkflow = the_workflow_instance
 
         return
+
     
+    
+
+
     def load_kb(self, kb_name: str) ->Ontology:
         """ Load knowledge base from data dir
 
@@ -36,10 +41,12 @@ class KnowledgeBaseDataLoader:
             onto : Ontology = get_ontology(get_kb_file_path(kb_name)).load()
         except OSError as e:
             print("Error opening KB, check if KB exists and permissions are right")
-        
+
 
         return onto
     
+    
+
     def load_exploratory_obs(self) -> DataFrame:
         exp_obs : List[ExploratoryObservation] = self._aw.has_exploratory_observations
         records = []
@@ -50,5 +57,5 @@ class KnowledgeBaseDataLoader:
             a_row["finding"] = o.finding
             a_row["finding_seq"] = o.finding_sequence
             records.append(a_row)
-        
+
         return DataFrame(records)

@@ -20,3 +20,4 @@ def get_kb_file_path(file_name: str) ->Path:
     """
     kb_segment = "data/" + file_name + ".xml"
     return os.path.join(Path(__file__).absolute().parent.parent.parent, kb_segment) 
+

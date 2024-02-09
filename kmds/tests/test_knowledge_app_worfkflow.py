@@ -93,6 +93,7 @@ def test_knowledge_application_workflow():
     assert num_obs_data_rep == 5
     onto = get_ontology(get_ontology_path()).load()
     onto.save(file=get_kb_file_path(file_name="test_kb_app_workflow"), format="rdfxml")
+    #onto.destroy()
 
     return
 
@@ -100,6 +101,7 @@ def test_knowledge_extraction_experiment_workflow():
     """ Test the knowledge extraction experiment workflow.
     """
 
+    #onto = get_ontology(get_ontology_path()).load()
     keew: KnowledgeExtractionExperimentationWorkflow = KnowledgeExtractionExperimentationWorkflow("test experiment workflow")
     assert keew is not None
 
