@@ -10,6 +10,14 @@ The first phase will be modelled with the Knowledge Extraction Experiment Workfl
 
 The deployed model is used for sometime, for example, till the end of the second quarter of 2010. Then the data science team will use the Knowledge Extraction Experiment Workflow using the same approach as the one documented in the experimental workflow for the first quarter. Since the information about the modelling approach has been logged, they can easily look it up and see what needs to done. They repeat this process and observe the results. If it is satisfactory, they may use the exact sample modelling approach used in the first quarter, otherwise, they will conduct new modelling experiments to address the deficiencies observed. The optimal model is then developed using an Knowledge Application Workflow. Knowledge application workflows can be implemented as pipelines that can be used by MLOps teams for deployment.
 
+## Exploratory Data Analysis
+
+Exploratory data analysis performs the following tasks:
+
+1. It identifies the issues in the raw data set that prevent us from developing an understanding of the raw data, for example, we can have mixed types in raw data set. A price could have a string value. This prevents us from using basic statistical tools to analyze the data. Such issues are called _attribute noise_ in the notebooks.
+2. It removes _attribute noise_
+3. Given our task description, we evaluate transformations of the raw data that can help us achieve the task goal. Since our goal is to understand customer behavior in the first quarter. We could compute the sales of each of the store inventory items for each day of the first quarter (there are 75 business days in the first quarter). We could then analyze this sales per day representation from a similarity view point and evaluate if we can find patterns of daily purchases at the store during the first quarter.  In other words, we _explore_ ways to develop data representations that are amenable to
+
 ## Data Processing Approach
 
 1. The raw data set covers the period 2010 and 2011. We only need the first quarter data for this analysis. So we subset the data corresponding to this period. This [notebook](/examples_of_use/machine_learning/retail_scope_raw_dataset_to_2010_Q1_Q2.ipynb) has the code for doing this. The original dataset can be obtained from the [UCI machine learning repository](https://archive.ics.uci.edu/dataset/502/online+retail+ii)
