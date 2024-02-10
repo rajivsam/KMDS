@@ -15,7 +15,8 @@ class KnowledgeBaseDataLoader:
             kb_name (str): the knowledge base to load
         """
         self._onto :Ontology = self.load_kb(kb_name)
-        the_workflow_instance = list(self._onto.individuals())[0]
+        #the_workflow_instance = list(self._onto.individuals())[0]
+        the_workflow_instance = self.get_workflow_instance()
         
         if isinstance(the_workflow_instance, KnowledgeApplicationWorkflow):
             self._aw : KnowledgeApplicationWorkflow = the_workflow_instance
@@ -23,9 +24,24 @@ class KnowledgeBaseDataLoader:
             self._aw :KnowledgeExtractionExperimentationWorkflow = the_workflow_instance
 
         return
+    
+    def get_workflow_instance(self) -> Workflow:
+        """ Return the workflow instance from the loaded ontology
 
-    
-    
+        Returns:
+            Workflow: the workflow instance in the loaded ontology
+        """
+
+        ind_instances = self._onto.individuals()
+        the_workflow_instance = None
+
+        for inst in ind_instances:
+            is_workflow_instance = isinstance(inst, KnowledgeApplicationWorkflow) | isinstance(inst, KnowledgeExtractionExperimentationWorkflow)
+            if is_workflow_instance:
+                the_workflow_instance = inst
+                break
+
+        return the_workflow_instance
 
 
     def load_kb(self, kb_name: str) ->Ontology:
