@@ -61,10 +61,3 @@ Since the purpose of this exercise is to illustrate the steps in using the knowl
 ### Model Selection
 
 In this phase you explore the modelling approaches you want to evaluate towards accomplishing your task goal. This example has the goal of identifying customer taste. One approach to doing this is by computing similarities in the daily sales data. There are 75 business days in the first quarter of 2010. An daily sales similarity computation would yield a similarity matrix that yields a measure of similarity in the shopping activity for two given days in the first quarter of 2010. This matrix can then clustered to determine the patterns of shopping activity in the store in the first quarter of 2010. There are many approaches to clustering. In this work, we will consider only a single modelling approach to clustering. However, it is possible to evaluate multiple modelling approaches and then pick the best approach based on its ability to accomplish the task goal. The purpose of this example is not illustrate the best way to cluster this data. The purpose is to illustrate how decisions made during modelling can be captured by the tool. We will use a graph clustering algorithm with this example. This is because this approach is a good fit for clustering similarity data. The observations we make during modelling are noted and logged using the api.
-
-
-
-
-
-
-## Knowledge Capture
