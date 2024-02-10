@@ -23,14 +23,11 @@ The activities for each stage can be done in Jupyter notebooks on a compute clus
 2. Data Representation Experiments: The raw data that is relevant and of sufficient quality is not in a form that can be used to develop models. Additional processing to transform the raw data to a representation that is suitable for modelling is required. Developing these representations often requires experimentation. Several candidate representations may need to be evaiuated to determine a representation that is suitable.
 3. Modelling Experiments: When suitable data representations are determined, data scientists develop models on these representations. The basic difference between the application based pipeline and the experiment pipeline is in the extent of the data representation and the modelling experiment stages. Experimental pipelines are used to evaluate candidate representations and models for use in the final application pipeline.
 
-### Guidelines for capturing facts that must be logged
+## Guidelines for capturing facts that must be logged
 
-In genral, the following considerations provide guidelines on what must be captured as part of your workflow development.
-
-1. All decisions that change input data or data representations need to be logged with documentation that makes it possible to reproduce these changes. In other words, it is possible for data scientists to reproduce the intermediate data artifacts from the input data by following the logged documentation.
+1. In genral, all decisions that change input data or data representations need to be logged with documentation that makes it possible to reproduce these changes. In other words, it is possible for data scientists to reproduce the intermediate data artifacts from the input data by following the logged documentation.
 2. The rationale for making modelling choices and the experimental pipelines that informed the rationale should be clearly logged with documentation.
-3. All experimental pipelines should be reproducable by following the logged documentation - allowing for randomization features in these experimental pipelines.
-4. All application pipelines should be reproducible following the logged documentation, allowing for randomization features in the pipeline.
-5. Performance measures of both application and experimental pipelines should be explicitly logged and should inform use case design.
+3. Methodology to evaluate task performance must be logged.
+4. Assumptions for modelling must be logged.
 
 A knowledge management tool for data science should make the above possible. This package is a step in this direction.
