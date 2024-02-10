@@ -142,31 +142,18 @@
 
 <owl:NamedIndividual rdf:about="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#retail_customer_modelling">
   <rdf:type rdf:resource="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#KnowledgeExtractionExperimentationWorkflow"/>
-  <kmds:has_exploratory_observations rdf:resource="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#exploratoryobservation3"/>
   <kmds:has_exploratory_observations rdf:resource="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#exploratoryobservation1"/>
-  <kmds:has_exploratory_observations rdf:resource="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#exploratoryobservation2"/>
   <kmds:has_exploratory_observations rdf:resource="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#exploratoryobservation4"/>
-  <kmds:has_exploratory_observations rdf:resource="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#exploratoryobservation6"/>
+  <kmds:has_exploratory_observations rdf:resource="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#exploratoryobservation3"/>
+  <kmds:has_exploratory_observations rdf:resource="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#exploratoryobservation2"/>
   <kmds:has_exploratory_observations rdf:resource="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#exploratoryobservation5"/>
+  <kmds:has_exploratory_observations rdf:resource="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#exploratoryobservation6"/>
   <kmds:has_data_representation_observations rdf:resource="#datarepresentationobservation1"/>
-  <kmds:has_data_representation_observations rdf:resource="#datarepresentationobservation2"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#exploratoryobservation3">
-  <rdf:type rdf:resource="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#ExploratoryObservation"/>
-  <kmds:finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some Quantities are not numbers</kmds:finding>
-  <kmds:exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</kmds:exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#exploratoryobservation1">
   <rdf:type rdf:resource="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#ExploratoryObservation"/>
   <kmds:finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quantity, Price and Customer ID attributes have mixed types</kmds:finding>
-  <kmds:exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</kmds:exploratory_observation_type>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#exploratoryobservation2">
-  <rdf:type rdf:resource="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#ExploratoryObservation"/>
-  <kmds:finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Customer ID, Description and Stock Code have null values</kmds:finding>
   <kmds:exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</kmds:exploratory_observation_type>
 </owl:NamedIndividual>
 
@@ -176,10 +163,16 @@
   <kmds:exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</kmds:exploratory_observation_type>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#exploratoryobservation6">
+<owl:NamedIndividual rdf:about="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#exploratoryobservation3">
   <rdf:type rdf:resource="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#ExploratoryObservation"/>
-  <kmds:finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">For this task, the period considered is first quarter of 2010, other data are not relevant for this report </kmds:finding>
-  <kmds:exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</kmds:exploratory_observation_type>
+  <kmds:finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some Quantities are not numbers</kmds:finding>
+  <kmds:exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</kmds:exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#exploratoryobservation2">
+  <rdf:type rdf:resource="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#ExploratoryObservation"/>
+  <kmds:finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Customer ID, Description and Stock Code have null values</kmds:finding>
+  <kmds:exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</kmds:exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#exploratoryobservation5">
@@ -188,15 +181,15 @@
   <kmds:exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</kmds:exploratory_observation_type>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#datarepresentationobservation1">
-  <rdf:type rdf:resource="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#DataRepresentationObservation"/>
-  <kmds:finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A simple finding</kmds:finding>
-  <kmds:data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Transformation Observation</kmds:data_representation_observation_type>
+<owl:NamedIndividual rdf:about="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#exploratoryobservation6">
+  <rdf:type rdf:resource="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#ExploratoryObservation"/>
+  <kmds:finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">For this task, the period considered is first quarter of 2010, other data are not relevant for this report </kmds:finding>
+  <kmds:exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</kmds:exploratory_observation_type>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#datarepresentationobservation2">
+<owl:NamedIndividual rdf:about="#datarepresentationobservation1">
   <rdf:type rdf:resource="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#DataRepresentationObservation"/>
-  <kmds:finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Another simple finding</kmds:finding>
+  <kmds:finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The daily sales data for the store inventory for Q1 was generated by computing sales    for each inventory item for each business day of Q1</kmds:finding>
   <kmds:data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Transformation Observation</kmds:data_representation_observation_type>
 </owl:NamedIndividual>
 
