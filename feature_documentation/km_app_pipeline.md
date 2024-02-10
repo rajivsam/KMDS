@@ -1,6 +1,7 @@
-## The Knowledge Management Application Workflows
+<div style="text-align: justify">
 
-There are two basic workflows to consider in developing knowledge based applications:
+
+The Knowledge Management Application Workflow<div style="text-align: justify">
 
 1. Scenario A: Application Based Pipeline
    In this scenario, the computational approach to develop the model (for an analytics application) or the learning approach (for a machine learning model) is considered an established fact. There is limited experimental evaluation in the workflow stages. These experiments are primarily intended to work through the variations in the workflow introduced by the data you receive. For example, the input data sources may have sources of error you have not seen before. Model parameters are estimated from the data, so new data implies that the parameters need to be re-estimated. You may want to use this workflow for analytic tasks where you are performing computation on the data, for example, if your analytics use case computes shortest paths, but the network data keeps changing for each time period, then you would use this workflow. You may also want to use this workflow for machine learning tasks where the algorithmic approach is fixed, for example, you have decided to use XGBoost or AutoGluon, however, you need data specific customizations for each run of the workflow.

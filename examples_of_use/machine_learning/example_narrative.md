@@ -1,3 +1,5 @@
+<div style="text-align: justify">
+
 ## An Example of Using KMDS in a Machine Learning Use Case
 
 An example of using KMDS in a machine learning use case is illustrated with a real world use case from the retail domain. This is a supplement to implement the [the recipe](../../feature_documentation/workflow_recipe.md) for a machine learning use case. The data for this use case is a set of transactions at an online retail store based in the UK. The data is available from the [UCI machine learning repository](https://archive.ics.uci.edu/dataset/502/online+retail+ii). The data spans transactions at the store over the years 2010 through 2011. The task description for this use case is given below.
