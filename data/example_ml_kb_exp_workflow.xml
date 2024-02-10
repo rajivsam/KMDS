@@ -139,88 +139,44 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:NamedIndividual rdf:about="#test application workflow">
+<owl:NamedIndividual rdf:about="#retail_customer_modelling">
   <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation1"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation5"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation2"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation1"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation5"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation4"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation2"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation3"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation1">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - 1</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
-  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quantity, Price and Customer ID attributes have mixed types</finding>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation2">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - 2</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Customer ID, Description and Stock Code have null values</finding>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation3">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - 3</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</finding_sequence>
-  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some Quantities are not numbers</finding>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation4">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - 4</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</finding_sequence>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some Prices are not numbers, these correspond to transactions that are some kind of adjustment - like returns, or,denoting some kind of payment adjustment. </finding>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation5">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - 5</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</finding_sequence>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some products are not valid products. For example, some of these products seem to be created by software testers </finding>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation6">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">For this task, the period considered is first quarter of 2010, other data are not relevant for this report </finding>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#datarepresentationobservation1">
-  <rdf:type rdf:resource="#DataRepresentationObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - 1</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
-  <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feature Engineering Observation</data_representation_observation_type>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#datarepresentationobservation2">
-  <rdf:type rdf:resource="#DataRepresentationObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - 2</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
-  <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Transformation Observation</data_representation_observation_type>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#datarepresentationobservation3">
-  <rdf:type rdf:resource="#DataRepresentationObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - 3</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</finding_sequence>
-  <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feature Engineering Observation</data_representation_observation_type>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#datarepresentationobservation4">
-  <rdf:type rdf:resource="#DataRepresentationObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - 4</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</finding_sequence>
-  <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Transformation Observation</data_representation_observation_type>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#datarepresentationobservation5">
-  <rdf:type rdf:resource="#DataRepresentationObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - 5</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</finding_sequence>
-  <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feature Engineering Observation</data_representation_observation_type>
 </owl:NamedIndividual>
 
 

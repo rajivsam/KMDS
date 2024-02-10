@@ -141,16 +141,16 @@
 
 <owl:NamedIndividual rdf:about="#test application workflow">
   <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation5"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation1"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation5"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation2"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation1"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation5"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation4"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation2"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation3"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation1"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation1">
@@ -225,16 +225,16 @@
 
 <owl:NamedIndividual rdf:about="#test experiment workflow">
   <rdf:type rdf:resource="#KnowledgeExtractionExperimentationWorkflow"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation10"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation6"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation9"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation10"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation7"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation8"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation9"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation7"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation10"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation6"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation7"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation8"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation9"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation10"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation6">

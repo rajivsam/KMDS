@@ -3,8 +3,8 @@ from tagging.tag_types import *
 from ontology.kmds_ontology import *
 from typing import List
 from utils.path_utils import *
-from knowledge_base_data_loader import KnowledgeBaseDataLoader
 from owlready2 import *
+from utils.load_utils import *
 
 
 
@@ -126,8 +126,8 @@ def test_knowledge_extraction_experiment_workflow():
 def test_load_knowledge_base_application_workflow():
     """ Test the load application knowledge base workflow.
     """
-    kb_dl = KnowledgeBaseDataLoader("test_kb_app_workflow")
-    df = kb_dl.load_exploratory_obs()
+
+    df = load_exp_observations("test_kb_app_workflow")
     assert df.shape[0] == 5
 
     return
@@ -135,8 +135,7 @@ def test_load_knowledge_base_application_workflow():
 def test_load_knowledge_base_exp_workflow():
     """ Test the load experimental knowledge base workflow
     """
-    kb_dl = KnowledgeBaseDataLoader("test_kb_exp_workflow")
-    df = kb_dl.load_exploratory_obs()
+    df = load_exp_observations("test_kb_exp_workflow")
     assert df.shape[0] == 5
 
     return
