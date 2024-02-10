@@ -33,12 +33,19 @@ Exploratory Data Analysis performs the following tasks:
 
 ![](../../images/raw_data_rep.png)
 
-2. As discussed in the exploratory data section, compute a representation where we aggregate all the sales transactions per day and then represent the daily sales for the quarter as a vector that has length equal to the size of the inventory. An element of the vector represents the daily sales corresponding to the inventory item coordinate. A sample of this representation is shown below.
+2. As discussed in the exploratory data section, compute a representation where we aggregate all the sales transactions per day and then represent the daily sales for the quarter as a vector that has length equal to the size of the inventory. An element of the vector represents the daily sales corresponding to the inventory item coordinate. A sample of this representation is shown below. This representation is called the _daily sales representation_ in this discussion.
 
 ![](../../images/q1_sales_summary.png)
 
 As part of capturing knowledge about data representations, the above two statmements are logged.
 
 ## Modelling
+
+The _daily sales representaion_ , as computed initially is high dimensional. A review of the bottom left corner of the above figure shows that there are 3092 items in the inventory. There are a few approaches that we can take to reduce the dimensionality of the raw representation. Some of these are:
+
+* Compute inventory items that contribute materially to the revenue in the first quarter. Order them by contribution, drop the list that does not contribute
+* Use an approach like PCA or an autoencoder to determine an optimal low dimensional representation
+
+Since the purpose of this exercise is to illustrate the steps in using the knowledge management tool rather than to illustrate modelling techniques, the first approach will be used. We will document this as a modelling choice.
 
 ## Knowledge Capture
