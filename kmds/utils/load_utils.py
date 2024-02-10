@@ -44,6 +44,14 @@ def load_kb(kb_name: str) ->Ontology:
     return onto
 
 def load_exp_observations(kb_name: str) ->List[ExploratoryObservation]:
+    """ Given a Knowledge Base, load the exploratory observations
+
+    Args:
+        kb_name (str): the knowledge base from which the exploratory observations are loaded
+
+    Returns:
+        List[ExploratoryObservation]: List of exploratory observations
+    """
 
     onto : Ontology = load_kb(kb_name)
     the_workflow : Workflow = get_workflow(onto)
@@ -53,6 +61,31 @@ def load_exp_observations(kb_name: str) ->List[ExploratoryObservation]:
     for o in exp_obs:
         a_row = {}
         a_row["obs_type"] = o.exploratory_observation_type
+        a_row["finding"] = o.finding
+        a_row["finding_seq"] = o.finding_sequence
+        records.append(a_row)
+
+    
+    return DataFrame(records)
+
+def load_data_rep_observations(kb_name: str) ->List[DataRepresentationObservation]:
+    """ Given a Knowledge Base, load the data representation observations
+
+    Args:
+        kb_name (str): the knowledge base from which the data representation observations are loaded
+
+    Returns:
+        List[ExploratoryObservation]: List of data representation observations
+    """
+
+    onto : Ontology = load_kb(kb_name)
+    the_workflow : Workflow = get_workflow(onto)
+    dr_obs : List[DataRepresentationObservation] = the_workflow.has_data_representation_observations
+    records = []
+
+    for o in dr_obs:
+        a_row = {}
+        a_row["obs_type"] = o.data_representation_observation_type
         a_row["finding"] = o.finding
         a_row["finding_seq"] = o.finding_sequence
         records.append(a_row)

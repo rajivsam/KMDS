@@ -127,16 +127,20 @@ def test_load_knowledge_base_application_workflow():
     """ Test the load application knowledge base workflow.
     """
 
-    df = load_exp_observations("test_kb_app_workflow")
-    assert df.shape[0] == 5
+    dfe = load_exp_observations("test_kb_app_workflow")
+    dfd = load_data_rep_observations("test_kb_app_workflow")
+    assert dfe.shape[0] == 5
+    assert dfd.shape[0] == 5
 
     return
 
 def test_load_knowledge_base_exp_workflow():
     """ Test the load experimental knowledge base workflow
     """
-    df = load_exp_observations("test_kb_exp_workflow")
-    assert df.shape[0] == 5
+    dfe = load_exp_observations("test_kb_exp_workflow")
+    dfd = load_data_rep_observations("test_kb_exp_workflow")
+    assert dfe.shape[0] == 5
+    assert dfd.shape[0] == 5
 
     return
 
