@@ -29,5 +29,3 @@ The activities for each stage can be done in Jupyter notebooks on a compute clus
 2. The rationale for making modelling choices and the experimental pipelines that informed the rationale should be clearly logged with documentation.
 3. Methodology to evaluate task performance must be logged.
 4. Assumptions for modelling must be logged.
-
-A knowledge management tool for data science should make the above possible. This package is a step in this direction.
