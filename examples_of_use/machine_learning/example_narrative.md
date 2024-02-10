@@ -41,11 +41,30 @@ As part of capturing knowledge about data representations, the above two statmem
 
 ## Modelling
 
-The _daily sales representaion_ , as computed initially is high dimensional. A review of the bottom left corner of the above figure shows that there are 3092 items in the inventory. There are a few approaches that we can take to reduce the dimensionality of the raw representation. Some of these are:
+There are two sub-stages in modelling:
 
-* Compute inventory items that contribute materially to the revenue in the first quarter. Order them by contribution, drop the list that does not contribute
-* Use an approach like PCA or an autoencoder to determine an optimal low dimensional representation
+### Modelling Choices:
+
+In this phase you explore and evaluate indirect modelling choices related to developing a model that accomplishes the task goal. Some examples of indirect modelling choices:
+
+1. Feature Engineering choices - for example do you want to use PCA or an auto-encoder to develop a new representation for your modelling task.
+2. Hyper-parameter choices in support of specific modelling choices. For example, do you want to use a specific kernel for your kernel learning method. Do you want to use a specific decision tree height parameter
+   Note that these choices can be informed by other knowledge extraction experiments. These knowledge extraction experiments have the explicit goal of informing the model selection approaches used in this pipeline.
+
+For this example, the modelling choices are as follows. The _daily sales representaion_ , as computed initially is high dimensional. A review of the bottom left corner of the above figure shows that there are 3092 items in the inventory. There are a few approaches that we can take to reduce the dimensionality of the raw representation. Some of these are:
+
+1. Compute inventory items that contribute materially to the revenue in the first quarter. Order them by contribution, drop the list that does not contribute
+2. Use an approach like PCA or an autoencoder to determine an optimal low dimensional representation
 
 Since the purpose of this exercise is to illustrate the steps in using the knowledge management tool rather than to illustrate modelling techniques, the first approach will be used. We will document this as a modelling choice.
+
+### Model Selection
+
+In this phase you explore the modelling approaches you want to evaluate towards accomplishing your task goal. This example has the goal of identifying customer taste. One approach to doing this is by computing similarities in the daily sales data. There are 75 business days in the first quarter of 2010. An daily sales similarity computation would yield a similarity matrix that yields a measure of similarity in the shopping activity for two given days in the first quarter of 2010. This matrix can then clustered to determine the patterns of shopping activity in the store in the first quarter of 2010. There are many approaches to clustering. In this work, we will consider only a single modelling approach to clustering. However, it is possible to evaluate multiple modelling approaches and then pick the best approach based on its ability to accomplish the task goal. The purpose of this example is not illustrate the best way to cluster this data. The purpose is to illustrate how decisions made during modelling can be captured by the tool. We will use a graph clustering algorithm with this example. This is because this approach is a good fit for clustering similarity data. The observations we make during modelling are noted and logged using the api.
+
+
+
+
+
 
 ## Knowledge Capture
