@@ -35,8 +35,6 @@ Exploratory Data Analysis performs the following tasks:
 
 ![](../../images/q1_sales_summary.png)
 
-As discussed in the exploratory data section, compute a representation where we aggregate all the sales transactions per day and then represent the daily sales for the quarter as a vector that has length equal to the size of the inventory. An element of the vector represents the daily sales corresponding to the inventory item coordinate. A sample of this representation is shown below.
-
 As part of capturing knowledge about data representations, the above two statmements are logged.
 
 ## Modelling
