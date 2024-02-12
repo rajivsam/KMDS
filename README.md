@@ -19,12 +19,11 @@ This tool is for data scientists and data analysts.
 1. You install this library along with the other python dependecies you need for your analysis task.
 2. Decide on a workflow for your analytic or machine learning task. Please see the [the knowledge application pipeline](/feature_documentation/km_app_pipeline.md) document for details of the workflows available. Examples for each of these workflows are provided.
 3. A work flow consists of exploratory, data representation and modelling phases. As the analyst works through each of this phases, they decide on the facts they want to document. They collect the facts, tag and order them as a list and then call the API to record them in the knowledge base.
-4. When an analyst needs to look up the details of a particular project task, they search the knowledge base. At present, the API supports logging and retrieval of information. Search interfaces, for example with LLM's can be added once the data is available.
+4. When an analyst needs to look up the details of a particular project task, they search the knowledge base. At present, the API supports logging and retrieval of information. Search interfaces, for example with LLM's can be added once the data is available. The tool uses an ontology for knowledge representation. So it should be possible to perform task specific reasoning on it.
 
 ### Licensing and Feature Questions
 
 1. The tool is open source with an [apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.txt)
 2. If you need help with a particular task or phase in developing a workflow, please set up a [meeting](https://calendly.com/rajiv-sambasivan/help-with-kmds-feature) with me.
 3. You can also set up a [meeting](https://calendly.com/rajiv-sambasivan/help-with-kmds-feature) with me to discuss customizing this tool for your specific project or use case. For example, you may want to integrate this tool with a meta-data management solution or a feature engineering solution.
-4. If you have a suggestion, open an issue in the repo.
-5. If you would like to contribute, submit an issue and if the feature makes sense we can discuss the possiblity of submitting a PR for it. Of course, you can fork this repo and use it per the licensing information.
+4. If this problem resonates with you as a developer  and you would like to contribute, submit an issue and if the feature makes sense we can discuss the possiblity of submitting a PR for it. Of course, you can fork this repo and use it per the licensing information. Thank you for your interest.
