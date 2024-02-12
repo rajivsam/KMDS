@@ -4,7 +4,8 @@ from typing import List
 from pandas import DataFrame
 from utils.path_utils import get_kb_file_path
 
-def get_workflow(onto: Ontology) ->Workflow:
+
+def get_workflow(onto: Ontology) -> Workflow:
     """Given an ontology, return the workflow instance
 
     Args:
@@ -13,21 +14,25 @@ def get_workflow(onto: Ontology) ->Workflow:
     Returns:
         Workflow: The workflow in this ontology
     """
-
-    ind_instances = onto.individuals()
     the_workflow_instance = None
-
-    for inst in ind_instances:
-        is_workflow_instance = isinstance(inst, KnowledgeApplicationWorkflow) | isinstance(inst, KnowledgeExtractionExperimentationWorkflow)
-        if is_workflow_instance:
-            the_workflow_instance = inst
-            break
-
     
+    with onto:
+        workflow_instances = Workflow.instances()
+        if workflow_instances is None:
+            print("No workflow available")
+
+        else:
+            if len(workflow_instances) > 1:
+                print("There was more than one workflow, returning the first")
+            
+            the_workflow_instance = workflow_instances[0]
+
     return the_workflow_instance
 
-def load_kb(kb_name: str) ->Ontology:
-    """ Load knowledge base from data dir
+
+def load_kb(kb_name: str) -> Ontology:
+    """ Load knowledge base from data dir. This is a method to be used by other convinience
+    methods to load the sets of observations. Not meant to be used directly in a notebook
 
     Args:
         kb_name (str): the knowledge base to load
@@ -36,14 +41,15 @@ def load_kb(kb_name: str) ->Ontology:
             Ontology: Returns a previously created knowledge base
     """
     try:
-        onto : Ontology = get_ontology(get_kb_file_path(kb_name)).load()
+        onto: Ontology = get_ontology(get_kb_file_path(kb_name)).load()
+        set_ontology(onto)
     except OSError as e:
         print("Error opening KB, check if KB exists and permissions are right")
 
-
     return onto
 
-def load_exp_observations(kb_name: str) ->List[ExploratoryObservation]:
+
+def load_exp_observations(kb_name: str) -> List[ExploratoryObservation]:
     """ Given a Knowledge Base, load the exploratory observations
 
     Args:
@@ -53,9 +59,9 @@ def load_exp_observations(kb_name: str) ->List[ExploratoryObservation]:
         List[ExploratoryObservation]: List of exploratory observations
     """
 
-    onto : Ontology = load_kb(kb_name)
-    the_workflow : Workflow = get_workflow(onto)
-    exp_obs : List[ExploratoryObservation] = the_workflow.has_exploratory_observations
+    onto: Ontology = load_kb(kb_name)
+    the_workflow: Workflow = get_workflow(onto)
+    exp_obs: List[ExploratoryObservation] = the_workflow.has_exploratory_observations
     records = []
 
     for o in exp_obs:
@@ -65,10 +71,10 @@ def load_exp_observations(kb_name: str) ->List[ExploratoryObservation]:
         a_row["finding_seq"] = o.finding_sequence
         records.append(a_row)
 
-    
     return DataFrame(records)
 
-def load_data_rep_observations(kb_name: str) ->List[DataRepresentationObservation]:
+
+def load_data_rep_observations(kb_name: str) -> List[DataRepresentationObservation]:
     """ Given a Knowledge Base, load the data representation observations
 
     Args:
@@ -78,9 +84,9 @@ def load_data_rep_observations(kb_name: str) ->List[DataRepresentationObservatio
         List[ExploratoryObservation]: List of data representation observations
     """
 
-    onto : Ontology = load_kb(kb_name)
-    the_workflow : Workflow = get_workflow(onto)
-    dr_obs : List[DataRepresentationObservation] = the_workflow.has_data_representation_observations
+    onto: Ontology = load_kb(kb_name)
+    the_workflow: Workflow = get_workflow(onto)
+    dr_obs: List[DataRepresentationObservation] = the_workflow.has_data_representation_observations
     records = []
 
     for o in dr_obs:
@@ -90,5 +96,4 @@ def load_data_rep_observations(kb_name: str) ->List[DataRepresentationObservatio
         a_row["finding_seq"] = o.finding_sequence
         records.append(a_row)
 
-    
     return DataFrame(records)

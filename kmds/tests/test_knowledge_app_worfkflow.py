@@ -6,9 +6,10 @@ from utils.path_utils import *
 from owlready2 import *
 from utils.load_utils import *
 
-
-
 NUM_OBSERVATIONS = 5
+
+ 
+
 
 def generate_exploratory_observations() -> List[ExploratoryObservation]:
     """ Generates the exploratory observations for the test cas
@@ -92,10 +93,8 @@ def test_knowledge_application_workflow():
 
     assert num_obs_data_rep == 5
     onto = get_ontology(get_ontology_path()).load()
-    onto.save(file=get_kb_file_path(file_name="test_kb_app_workflow"), format="rdfxml")
+    onto.save(file=get_kb_file_path("test_kb_app_workflow"), format="rdfxml")
     #onto.destroy()
-
-    return
 
 def test_knowledge_extraction_experiment_workflow():
     """ Test the knowledge extraction experiment workflow.
@@ -119,9 +118,10 @@ def test_knowledge_extraction_experiment_workflow():
 
     assert num_obs_data_rep == 5
     onto = get_ontology(get_ontology_path()).load()
-    onto.save(file=get_kb_file_path(file_name="test_kb_exp_workflow"), format="rdfxml")
+    onto.save(file=get_kb_file_path("test_kb_exp_workflow"), format="rdfxml")
 
     return
+
 
 def test_load_knowledge_base_application_workflow():
     """ Test the load application knowledge base workflow.

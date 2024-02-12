@@ -3,7 +3,7 @@ from typing import List
 from enum import Enum
 from tagging import *
 import os
-from utils.path_utils import get_ontology_path
+from utils.path_utils import get_ontology_path, get_kb_dir
 from pathlib import Path 
 
 
@@ -18,9 +18,13 @@ class PipelineType(str, Enum):
     KNOWLEDGE_APPLICATION_WORKFLOW = "Knowledge Application Workflow"
     KNOWLEDGE_EXTRACTION_EXPERIMENT_WORKFLOW = "Knowledge Extraction Experiment Workflow"
 
+onto = get_ontology(get_ontology_path()).load()
 
-
-onto = get_ontology(get_ontology_path())
+def set_ontology(the_onto : Ontology) ->None:
+    global onto
+    onto = the_onto
+    return
+    
 
 with onto:
     class Workflow(Thing):

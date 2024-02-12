@@ -3,10 +3,133 @@
          xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:owl="http://www.w3.org/2002/07/owl#"
-         xml:base="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml"
-         xmlns="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml#">
+         xml:base="http://test.org/kmds/kmds.owl"
+         xmlns="http://test.org/kmds/kmds.owl#">
 
-<owl:Ontology rdf:about="/Users/rajivsambasivan/Programming/kmds/kmds/ontology/kmds_ontology.xml"/>
+<owl:Ontology rdf:about="http://test.org/kmds/kmds.owl"/>
+
+<owl:ObjectProperty rdf:about="#is_exploratory_observation_of_type">
+  <rdfs:domain rdf:resource="#ExploratoryObservation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#log_exploratory_fact">
+  <rdfs:domain rdf:resource="#ExploratoryObservation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#log_exploratory_fact_sequence">
+  <rdfs:domain rdf:resource="#ExploratoryObservation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_KB_name">
+  <rdfs:domain rdf:resource="#KnowledgeApplicationWorkflow"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:domain rdf:resource="#KnowledgeExtractionExperimentationWorkflow"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_developed_in">
+  <rdfs:domain rdf:resource="#DataRepresentation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#data_representation_for_exploration">
+  <rdfs:domain rdf:resource="#KnowledgeApplicationWorkflow"/>
+  <rdfs:range rdf:resource="#DataRepresentation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_data_engg_observation_of_type">
+  <rdfs:domain rdf:resource="#DataEnggObservation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#log_data_engg_fact">
+  <rdfs:domain rdf:resource="#DataEnggObservation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#log_data_engg_fact_sequence">
+  <rdfs:domain rdf:resource="#DataEnggObservation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_modelling_choice_observation_of_type">
+  <rdfs:domain rdf:resource="#ModellingChoiceObservation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#log_modelling_choice_fact">
+  <rdfs:domain rdf:resource="#ModellingChoiceObservation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#log_modelling_choice_fact_sequence">
+  <rdfs:domain rdf:resource="#ModellingChoiceObservation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_model_selection_observation_of_type">
+  <rdfs:domain rdf:resource="#ModelSelectionObservation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#log_model_selection_fact">
+  <rdfs:domain rdf:resource="#ModelSelectionObservation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#log_model_selection_fact_sequence">
+  <rdfs:domain rdf:resource="#ModelSelectionObservation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#depends_on">
+  <rdfs:domain rdf:resource="#KnowledgeExtractionExperimentationWorkflow"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:domain rdf:resource="#Workflow"/>
+  <rdfs:range rdf:resource="#KnowledgeExtractionExperimentationWorkflow"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_experimental_observation_of_type">
+  <rdfs:domain rdf:resource="#ExperimentalObservation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#log_experimental_fact">
+  <rdfs:domain rdf:resource="#ExperimentalObservation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#log_experimental_fact_sequence">
+  <rdfs:domain rdf:resource="#ExperimentalObservation"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_description">
+  <rdfs:domain rdf:resource="#PerformanceMeasure"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_computed_in">
+  <rdfs:domain rdf:resource="#PerformanceMeasure"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#business_performance_measure">
+  <rdfs:domain rdf:resource="#KnowledgeApplicationWorkflow"/>
+  <rdfs:range rdf:resource="#PerformanceMeasure"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#experiment_performance_measure">
+  <rdfs:domain rdf:resource="#KnowledgeExtractionExperimentationWorkflow"/>
+  <rdfs:range rdf:resource="#PerformanceMeasure"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#contains_experimental_obs">
+  <rdfs:domain rdf:resource="#KnowledgeApplicationWorkflow"/>
+  <rdfs:range rdf:resource="#ExploratoryObservation"/>
+</owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#has_exploratory_observations">
   <rdfs:domain rdf:resource="#Workflow"/>
@@ -28,24 +151,9 @@
   <rdfs:range rdf:resource="#ModelSelectionObservation"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#depends_on">
-  <rdfs:domain rdf:resource="#Workflow"/>
-  <rdfs:range rdf:resource="#KnowledgeExtractionExperimentationWorkflow"/>
-</owl:ObjectProperty>
-
 <owl:ObjectProperty rdf:about="#has_experimental_observations">
   <rdfs:domain rdf:resource="#Workflow"/>
   <rdfs:range rdf:resource="#ExperimentalObservation"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#business_performance_measure">
-  <rdfs:domain rdf:resource="#KnowledgeApplicationWorkflow"/>
-  <rdfs:range rdf:resource="#PerformanceMeasure"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#experiment_performance_measure">
-  <rdfs:domain rdf:resource="#KnowledgeExtractionExperimentationWorkflow"/>
-  <rdfs:range rdf:resource="#PerformanceMeasure"/>
 </owl:ObjectProperty>
 
 <owl:DatatypeProperty rdf:about="#description">
@@ -99,31 +207,31 @@
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
 </owl:DatatypeProperty>
 
-<owl:Class rdf:about="#Workflow">
+<owl:Class rdf:about="#ExploratoryObservation">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf rdf:resource="#KMObservation"/>
 </owl:Class>
 
 <owl:Class rdf:about="#KnowledgeApplicationWorkflow">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   <rdfs:subClassOf rdf:resource="#Workflow"/>
 </owl:Class>
 
 <owl:Class rdf:about="#KnowledgeExtractionExperimentationWorkflow">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   <rdfs:subClassOf rdf:resource="#Workflow"/>
 </owl:Class>
 
-<owl:Class rdf:about="#KMObservation">
+<owl:Class rdf:about="#DataRepresentation">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#ExploratoryObservation">
-  <rdfs:subClassOf rdf:resource="#KMObservation"/>
-</owl:Class>
-
-<owl:Class rdf:about="#DataRepresentationObservation">
-  <rdfs:subClassOf rdf:resource="#KMObservation"/>
+<owl:Class rdf:about="#DataEnggObservation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#ModellingChoiceObservation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   <rdfs:subClassOf rdf:resource="#KMObservation"/>
 </owl:Class>
 
@@ -139,18 +247,30 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
+<owl:Class rdf:about="#Workflow">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#KMObservation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DataRepresentationObservation">
+  <rdfs:subClassOf rdf:resource="#KMObservation"/>
+</owl:Class>
+
 <owl:NamedIndividual rdf:about="#test application workflow">
   <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation1"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation5"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation1"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation2"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation4"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation3"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation5"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation2"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation1"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation3"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation2"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation4"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation5"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation1">
