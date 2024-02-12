@@ -24,7 +24,7 @@ This tool is for data scientists and data analysts.
 ### Licensing and Feature Questions
 
 1. The tool is open source with an [apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.txt)
-2. If you have an analysis task that you would like consulting help with, please set up a [meeting](https://calendly.com/rajiv-sambasivan/help-with-kmds-feature) with me.
+2. If you need help with a particular task or phase in developing a workflow, please set up a [meeting](https://calendly.com/rajiv-sambasivan/help-with-kmds-feature) with me.
 3. You can also set up a [meeting](https://calendly.com/rajiv-sambasivan/help-with-kmds-feature) with me to discuss customizing this tool for your specific project or use case. For example, you may want to integrate this tool with a meta-data management solution or a feature engineering solution.
 4. If you have a suggestion, open an issue in the repo.
 5. If you would like to contribute, submit an issue and if the feature makes sense we can discuss the possiblity of submitting a PR for it. Of course, you can fork this repo and use it per the licensing information.
