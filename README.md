@@ -17,7 +17,7 @@ This tool is for data scientists and data analysts.
 ### How do you use this tool?
 
 1. You install this library along with the other python dependecies you need for your analysis task.
-2. Decide on a workflow for your analytic or machine learning task. Please see the [the knowledge application pipeline](/feature_documentation/km_app_pipeline.md) document for details of the workflows available. Examples for each of these workflows are provided.
+2. Decide on a workflow for your analytic or machine learning task. Please see the [the knowledge application pipeline](/feature_documentation/km_app_pipeline.md) document for details of the workflows available. [A machine learning example](/examples_of_use/machine_learning/example_narrative.md) and an analytics example is provided.
 3. A work flow consists of exploratory, data representation and modelling phases. As the analyst works through each of this phases, they decide on the facts they want to document. They collect the facts, tag and order them as a list and then call the API to record them in the knowledge base.
 4. When an analyst needs to look up the details of a particular project task, they search the knowledge base. At present, the API supports logging and retrieval of information. Search interfaces, for example with LLM's can be added once the data is available. The tool uses an ontology for knowledge representation. So it should be possible to perform task specific reasoning on it.
 
