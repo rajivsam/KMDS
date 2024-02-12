@@ -32,7 +32,7 @@ def get_workflow(onto: Ontology) -> Workflow:
 
 def load_kb(kb_name: str) -> Ontology:
     """ Load knowledge base from data dir. This is a method to be used by other convinience
-    methods to load the sets of observations. Not meant to be used directly in a notebook
+    methods to load the sets of observations. Not meant to be used directly in a notebookx
 
     Args:
         kb_name (str): the knowledge base to load
