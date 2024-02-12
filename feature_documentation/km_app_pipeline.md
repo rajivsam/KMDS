@@ -25,7 +25,7 @@ The activities for each stage can be done in Jupyter notebooks on a compute clus
 
 ## Guidelines for capturing facts that must be logged
 
-1. In genral, all decisions that change input data or data representations need to be logged with documentation that makes it possible to reproduce these changes. In other words, it is possible for data scientists to reproduce the intermediate data artifacts from the input data by following the logged documentation.
+1. In general, all decisions that change input data or data representations need to be logged with documentation that makes it possible to reproduce these changes. In other words, it is possible for data scientists to reproduce the intermediate data artifacts from the input data by following the logged documentation.
 2. The rationale for making modelling choices and the experimental pipelines that informed the rationale should be clearly logged with documentation.
 3. Methodology to evaluate task performance must be logged.
 4. Assumptions for modelling must be logged.
