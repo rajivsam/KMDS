@@ -1,9 +1,8 @@
 from owlready2 import *
 from typing import List
 from enum import Enum
-from tagging import *
-import os
-from utils.path_utils import get_ontology_path, get_kb_dir
+from kmds.tagging import *
+from kmds.utils.path_utils import get_ontology_path, get_kb_dir
 from pathlib import Path 
 
 

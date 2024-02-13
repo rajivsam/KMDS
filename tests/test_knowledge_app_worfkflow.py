@@ -1,10 +1,10 @@
 import pytest
-from tagging.tag_types import *
-from ontology.kmds_ontology import *
+from kmds.tagging.tag_types import *
+from kmds.ontology.kmds_ontology import *
 from typing import List
-from utils.path_utils import *
+from kmds.utils.path_utils import *
 from owlready2 import *
-from utils.load_utils import *
+from kmds.utils.load_utils import *
 
 NUM_OBSERVATIONS = 5
 

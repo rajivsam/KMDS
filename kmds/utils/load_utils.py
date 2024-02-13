@@ -1,8 +1,8 @@
-from ontology.kmds_ontology import *
+from kmds.ontology.kmds_ontology import *
 from owlready2.namespace import Ontology
 from typing import List
 from pandas import DataFrame
-from utils.path_utils import get_kb_file_path
+from kmds.utils.path_utils import get_kb_file_path
 
 
 def get_workflow(onto: Ontology) -> Workflow:
