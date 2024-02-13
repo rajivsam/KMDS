@@ -97,3 +97,27 @@ def load_data_rep_observations(kb_name: str) -> List[DataRepresentationObservati
         records.append(a_row)
 
     return DataFrame(records)
+
+def load_modelling_choice_observations(kb_name: str) -> List[ModellingChoiceObservation]:
+    """ Given a Knowledge Base, load the data representation observations
+
+    Args:
+        kb_name (str): the knowledge base from which the data representation observations are loaded
+
+    Returns:
+        List[ExploratoryObservation]: List of data representation observations
+    """
+
+    onto: Ontology = load_kb(kb_name)
+    the_workflow: Workflow = get_workflow(onto)
+    mc_obs: List[ModellingChoiceObservation] = the_workflow.has_modeling_choice_observations
+    records = []
+
+    for o in mc_obs:
+        a_row = {}
+        a_row["obs_type"] = o.modelling_choice_observation_type
+        a_row["finding"] = o.finding
+        a_row["finding_seq"] = o.finding_sequence
+        records.append(a_row)
+
+    return DataFrame(records)

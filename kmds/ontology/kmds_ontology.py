@@ -156,7 +156,7 @@ with onto:
         domain = [Workflow]
         range = [ModellingChoiceObservation]
 
-    class modelling_choice_observation_type(DataProperty):
+    class modelling_choice_observation_type(DataProperty, FunctionalProperty):
         """ Specify that the modelling observation type in tagging modelling choice observations - see tagging for the options available
 
         Args:

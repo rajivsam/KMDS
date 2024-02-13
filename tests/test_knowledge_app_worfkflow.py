@@ -52,6 +52,26 @@ def generate_data_representation_observations() -> List[DataRepresentationObserv
         data_rep_obs.append(e)
     return data_rep_obs
 
+def generate_modelling_choice_observations() -> List[ModellingChoiceObservation]:
+    """ Generates the data representation observations for testing
+
+    Returns:
+        List[ModellingChoice]: list of data representation observations for testing
+    """
+    mc_obs : List[ModellingChoiceObservation] = []
+    obs_type = [ ModellingChoiceTags.MODELLING_ASSUMPTION_OBSERVATION.value, ModellingChoiceTags.MODELLING_CHOICE_OBSERVATION.value]
+
+    for i in range(NUM_OBSERVATIONS):
+        tag_index = i % 2
+        seq = i+1
+        e = ModellingChoiceObservation()
+        e.finding = "Modelling Choice Observation - " + str(seq)
+        e.finding_sequence = seq
+        e.modelling_choice_observation_type = obs_type[tag_index]
+
+        mc_obs.append(e)
+    return mc_obs
+
 def generate_experimental_observations() -> List[ExperimentalObservation]:
     """ Generate experimental observations for testing
 
@@ -92,6 +112,13 @@ def test_knowledge_application_workflow():
     num_obs_data_rep = len(kaw.has_data_representation_observations)
 
     assert num_obs_data_rep == 5
+    
+    mc_obs = generate_modelling_choice_observations()
+    kaw.has_modeling_choice_observations = mc_obs
+
+    num_obs_data_rep = len(kaw.has_modeling_choice_observations)
+
+    assert num_obs_data_rep == 5
     onto = get_ontology(get_ontology_path()).load()
     onto.save(file=get_kb_file_path("test_kb_app_workflow"), format="rdfxml")
     #onto.destroy()
@@ -117,6 +144,13 @@ def test_knowledge_extraction_experiment_workflow():
     num_obs_data_rep = len(keew.has_data_representation_observations)
 
     assert num_obs_data_rep == 5
+
+    mc_obs = generate_modelling_choice_observations()
+    keew.has_modeling_choice_observations = mc_obs
+
+    num_obs_data_rep = len(keew.has_modeling_choice_observations)
+
+    assert num_obs_data_rep == 5
     onto = get_ontology(get_ontology_path()).load()
     onto.save(file=get_kb_file_path("test_kb_exp_workflow"), format="rdfxml")
 
@@ -139,8 +173,10 @@ def test_load_knowledge_base_exp_workflow():
     """
     dfe = load_exp_observations("test_kb_exp_workflow")
     dfd = load_data_rep_observations("test_kb_exp_workflow")
+    dfmc = load_modelling_choice_observations("test_kb_exp_workflow")
     assert dfe.shape[0] == 5
     assert dfd.shape[0] == 5
+    assert dfmc.shape[0] == 5
 
     return
 

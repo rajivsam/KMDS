@@ -181,6 +181,7 @@
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#modelling_choice_observation_type">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#ModellingChoiceObservation"/>
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 </owl:DatatypeProperty>
@@ -261,16 +262,21 @@
 
 <owl:NamedIndividual rdf:about="#test application workflow">
   <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation1"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation5"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation2"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation5"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation1"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation1"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation4"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation3"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation5"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation2"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation3"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation4"/>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation3"/>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation2"/>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation4"/>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation5"/>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation1"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation1">
@@ -341,6 +347,41 @@
   <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Representation Observation - 5</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</finding_sequence>
   <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feature Engineering Observation</data_representation_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#modellingchoiceobservation1">
+  <rdf:type rdf:resource="#ModellingChoiceObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modelling Choice Observation - 1</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <modelling_choice_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modelling Assumption Observation</modelling_choice_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#modellingchoiceobservation2">
+  <rdf:type rdf:resource="#ModellingChoiceObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modelling Choice Observation - 2</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
+  <modelling_choice_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modelling Choice Observation</modelling_choice_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#modellingchoiceobservation3">
+  <rdf:type rdf:resource="#ModellingChoiceObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modelling Choice Observation - 3</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</finding_sequence>
+  <modelling_choice_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modelling Assumption Observation</modelling_choice_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#modellingchoiceobservation4">
+  <rdf:type rdf:resource="#ModellingChoiceObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modelling Choice Observation - 4</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</finding_sequence>
+  <modelling_choice_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modelling Choice Observation</modelling_choice_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#modellingchoiceobservation5">
+  <rdf:type rdf:resource="#ModellingChoiceObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modelling Choice Observation - 5</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</finding_sequence>
+  <modelling_choice_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modelling Assumption Observation</modelling_choice_observation_type>
 </owl:NamedIndividual>
 
 
