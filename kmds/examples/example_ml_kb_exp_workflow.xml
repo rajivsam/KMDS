@@ -262,28 +262,15 @@
 
 <owl:NamedIndividual rdf:about="#retail_customer_modelling">
   <rdf:type rdf:resource="#KnowledgeExtractionExperimentationWorkflow"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation6"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation5"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation2"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation1"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation6"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation1"/>
   <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation1"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#exploratoryobservation6">
-  <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">For this task, the period considered is first quarter of 2010, other data are not relevant for this report </finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</finding_sequence>
-  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#exploratoryobservation3">
-  <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some Quantities are not numbers</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</finding_sequence>
-  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+  <has_model_selection_observations rdf:resource="#modelselectionobservation1"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation5">
@@ -300,10 +287,10 @@
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#exploratoryobservation4">
+<owl:NamedIndividual rdf:about="#exploratoryobservation3">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some Prices are not numbers, these correspond to transactions that are some kind of adjustment - like returns, or,denoting some kind of payment adjustment. </finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</finding_sequence>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some Quantities are not numbers</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
@@ -312,6 +299,20 @@
   <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quantity, Price and Customer ID attributes have mixed types</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation4">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some Prices are not numbers, these correspond to transactions that are some kind of adjustment - like returns, or,denoting some kind of payment adjustment. </finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation6">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">For this task, the period considered is first quarter of 2010, other data are not relevant for this report </finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#datarepresentationobservation1">
@@ -326,6 +327,13 @@
   <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contribution of products towards quaterly revenue shows a power law like behavior andso to facilitate understanding of the products that go significantly towards the generated quaterlyrevenue, we drop the products that materially do not contribute towards the revenue and simply add dimensionality to the problem.</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
   <modelling_choice_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modelling Choice Observation</modelling_choice_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#modelselectionobservation1">
+  <rdf:type rdf:resource="#ModelSelectionObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">For this iteration, PCA was the only modelling approach to explain the variance in dailyproduct sales. This is sufficient to illustrate how a model selection workflow is logged with KMDS.</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <model_selection_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Model Selection Statement</model_selection_observation_type>
 </owl:NamedIndividual>
 
 

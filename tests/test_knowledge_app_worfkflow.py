@@ -87,7 +87,7 @@ def generate_model_selection_observations() -> List[ModelSelectionObservation]:
         e = ModellingChoiceObservation()
         e.finding = "Modelling Choice Observation - " + str(seq)
         e.finding_sequence = seq
-        e.modelling_choice_observation_type = obs_type[tag_index]
+        e.model_selection_observation_type = obs_type[tag_index]
 
         ms_obs.append(e)
     return ms_obs
