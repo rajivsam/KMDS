@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+from importlib_resources import files
 
 def get_ontology_path() ->Path:
     """ Return the ontology file path as a Path
@@ -7,8 +8,9 @@ def get_ontology_path() ->Path:
     Returns:
         Path: the path to the ontology file 
     """
-    p = os.path.join(Path(__file__).absolute().parent.parent, "ontology/kmds_ontology.xml")
-    file_path =  p
+    file_path = str(files('kmds.ontology').joinpath('kmds_ontology.xml'))
+    #p = os.path.join(Path(__file__).absolute().parent.parent, "ontology/kmds_ontology.xml")
+    
     return file_path
 
 def get_kb_file_path(file_name: str) ->Path:
@@ -20,14 +22,14 @@ def get_kb_file_path(file_name: str) ->Path:
     Returns:
         Path: the path corresponding to the provided file name
     """
-    kb_segment = "data/" + file_name + ".xml"
-    p = os.path.join(Path(__file__).absolute().parent.parent.parent, kb_segment)
-    file_path =  p
+
+
+
+    file_path =  str(files('kmds.examples').joinpath(file_name))
     return file_path
 
 def get_kb_dir() ->Path:
-    kb_segment = "data/" 
-    return os.path.join(Path(__file__).absolute().parent.parent.parent, kb_segment)
+    return str(files('kmds.examples'))
 
 
 
