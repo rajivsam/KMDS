@@ -176,9 +176,11 @@ def test_knowledge_extraction_experiment_workflow():
 def test_load_knowledge_base_application_workflow():
     """ Test the load application knowledge base workflow.
     """
+    kb_path_string: str = get_package_kb_path("test_kb_app_workflow")
+    onto2 :Ontology = load_kb(kb_path_string)
 
-    dfe = load_exp_observations("test_kb_app_workflow")
-    dfd = load_data_rep_observations("test_kb_app_workflow")
+    dfe = load_exp_observations(onto2)
+    dfd = load_data_rep_observations(onto2)
     assert dfe.shape[0] == 5
     assert dfd.shape[0] == 5
 
@@ -187,10 +189,13 @@ def test_load_knowledge_base_application_workflow():
 def test_load_knowledge_base_exp_workflow():
     """ Test the load experimental knowledge base workflow
     """
-    dfe = load_exp_observations("test_kb_exp_workflow")
-    dfd = load_data_rep_observations("test_kb_exp_workflow")
-    dfmc = load_modelling_choice_observations("test_kb_exp_workflow")
-    dfms = load_model_selection_observations("test_kb_exp_workflow")
+    kb_path_string: str = get_package_kb_path("test_kb_exp_workflow")
+    onto2 :Ontology = load_kb(kb_path_string)
+    
+    dfe = load_exp_observations(onto2)
+    dfd = load_data_rep_observations(onto2)
+    dfmc = load_modelling_choice_observations(onto2)
+    dfms = load_model_selection_observations(onto2)
     assert dfe.shape[0] == 5
     assert dfd.shape[0] == 5
     assert dfmc.shape[0] == 5

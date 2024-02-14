@@ -50,17 +50,17 @@ def load_kb(kb_name: str) -> Ontology:
     return onto
 
 
-def load_exp_observations(kb_name: str) -> List[ExploratoryObservation]:
-    """ Given a Knowledge Base, load the exploratory observations
+def load_exp_observations(onto: Ontology) -> List[ExploratoryObservation]:
+    """ Return the exploratory data analysis observations from the ontology
 
     Args:
-        kb_name (str): the knowledge base from which the exploratory observations are loaded
+        onto (Ontology): The ontology from which the EDA observations are to be returned
 
     Returns:
-        List[ExploratoryObservation]: List of exploratory observations
+        List[ExploratoryObservation]: List of EDA observations in the ontology
     """
 
-    onto: Ontology = load_kb(kb_name)
+
     the_workflow: Workflow = get_workflow(onto)
     exp_obs: List[ExploratoryObservation] = the_workflow.has_exploratory_observations
     records = []
@@ -75,17 +75,17 @@ def load_exp_observations(kb_name: str) -> List[ExploratoryObservation]:
     return DataFrame(records)
 
 
-def load_data_rep_observations(kb_name: str) -> List[DataRepresentationObservation]:
-    """ Given a Knowledge Base, load the data representation observations
+def load_data_rep_observations(onto: Ontology) -> List[DataRepresentationObservation]:
+    """ Load the data representation observations from the provided ontology
 
     Args:
-        kb_name (str): the knowledge base from which the data representation observations are loaded
+        onto (Ontology): The ontology containing the data representation observations
 
     Returns:
-        List[DataRepresentationObservation]: List of data representation observations
+        List[DataRepresentationObservation]: The list of data representation observations
     """
 
-    onto: Ontology = load_kb(kb_name)
+
     the_workflow: Workflow = get_workflow(onto)
     dr_obs: List[DataRepresentationObservation] = the_workflow.has_data_representation_observations
     records = []
@@ -99,17 +99,17 @@ def load_data_rep_observations(kb_name: str) -> List[DataRepresentationObservati
 
     return DataFrame(records)
 
-def load_modelling_choice_observations(kb_name: str) -> List[ModellingChoiceObservation]:
-    """ Given a Knowledge Base, load the modelling choice observations
+def load_modelling_choice_observations(onto: Ontology) -> List[ModellingChoiceObservation]:
+    """ Load the modelling choice observations from the ontology
 
     Args:
-        kb_name (str): the knowledge base from which the data representation observations are loaded
+        onto (Ontology): The ontology containing modelling choice observations
 
     Returns:
-        List[ModellingChoiceObservation]: List of modelling choice observations
+        List[ModellingChoiceObservation]: The list of modelling choice observations in the ontology
     """
 
-    onto: Ontology = load_kb(kb_name)
+
     the_workflow: Workflow = get_workflow(onto)
     mc_obs: List[ModellingChoiceObservation] = the_workflow.has_modeling_choice_observations
     records = []
@@ -123,17 +123,17 @@ def load_modelling_choice_observations(kb_name: str) -> List[ModellingChoiceObse
 
     return DataFrame(records)
 
-def load_model_selection_observations(kb_name: str) -> List[ModelSelectionObservation]:
-    """ Given a Knowledge Base, load the model selection observations
+def load_model_selection_observations(onto: Ontology) -> List[ModelSelectionObservation]:
+    """ Load the model selection observations from the ontology
 
     Args:
-        kb_name (str): the knowledge base from which the data representation observations are loaded
+        onto (Ontology): The ontology containing the model selection observations
 
     Returns:
-        List[ModelSelectionObservation]: List of model selection observations
+        List[ModelSelectionObservation]: The list of model selection observations
     """
 
-    onto: Ontology = load_kb(kb_name)
+
     the_workflow: Workflow = get_workflow(onto)
     mc_obs: List[ModelSelectionObservation] = the_workflow.has_model_selection_observations
     records = []
