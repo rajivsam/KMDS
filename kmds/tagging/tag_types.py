@@ -39,7 +39,7 @@ class ExperimentationTags(str, Enum):
     EXPERIMENTAL_CONJECTURE = "Experimental Conjecture"
     RESULT_SUMMARY = "Experimental Result Summary"
 
-class ModelSelection(str, Enum):
+class ModelSelectionTags(str, Enum):
     """ Tags corresponding to Model Selection observation type
     Args:
         str (_type_): string type tag

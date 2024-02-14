@@ -53,10 +53,10 @@ def generate_data_representation_observations() -> List[DataRepresentationObserv
     return data_rep_obs
 
 def generate_modelling_choice_observations() -> List[ModellingChoiceObservation]:
-    """ Generates the data representation observations for testing
+    """ Generates the modelling choice observations for testing
 
     Returns:
-        List[ModellingChoice]: list of data representation observations for testing
+        List[ModellingChoice]: list of modelling choice observations
     """
     mc_obs : List[ModellingChoiceObservation] = []
     obs_type = [ ModellingChoiceTags.MODELLING_ASSUMPTION_OBSERVATION.value, ModellingChoiceTags.MODELLING_CHOICE_OBSERVATION.value]
@@ -72,25 +72,27 @@ def generate_modelling_choice_observations() -> List[ModellingChoiceObservation]
         mc_obs.append(e)
     return mc_obs
 
-def generate_experimental_observations() -> List[ExperimentalObservation]:
-    """ Generate experimental observations for testing
+def generate_model_selection_observations() -> List[ModelSelectionObservation]:
+    """ Generates the data representation observations for testing
 
     Returns:
-        List[ExperimentalObservation]: List of experimental observations
+        List[ModelSelectionObservation]: list of model selection observations for testing
     """
-    exp_obs : List[ExperimentalObservation] = []
-    obs_type = [ ExperimentationTags.HYPOTHESIS_STATEMENT, ExperimentationTags.EXPERIMENTAL_OBSERVATION.value, ExperimentationTags.EXPERIMENTAL_CONJECTURE, ExperimentationTags.RESULT_SUMMARY]
+    ms_obs : List[ModelSelectionObservation] = []
+    obs_type = [ ModelSelectionTags.MODEL_SELECTION_OBSERVATION.value, ModelSelectionTags.MODEL_SELECTION_RESULT_SUMMARY.value, ModelSelectionTags.MODEL_SELECTION_SETUP_DESCRIPTION.value, ModelSelectionTags.MODEL_SELECTION_STATEMENT.value]
 
     for i in range(NUM_OBSERVATIONS):
         tag_index = i % len(obs_type)
         seq = i+1
-        e = ExperimentalObservation()
-        e.finding = "Experimental Observation - " + str(seq)
+        e = ModellingChoiceObservation()
+        e.finding = "Modelling Choice Observation - " + str(seq)
         e.finding_sequence = seq
-        e.experimental_observation_type = obs_type[tag_index]
+        e.modelling_choice_observation_type = obs_type[tag_index]
 
-        exp_obs.append(e)
-    return exp_obs
+        ms_obs.append(e)
+    return ms_obs
+
+
     
 
 def test_knowledge_application_workflow():
@@ -116,9 +118,16 @@ def test_knowledge_application_workflow():
     mc_obs = generate_modelling_choice_observations()
     kaw.has_modeling_choice_observations = mc_obs
 
-    num_obs_data_rep = len(kaw.has_modeling_choice_observations)
+    num_obs_mc = len(kaw.has_modeling_choice_observations)
 
-    assert num_obs_data_rep == 5
+    assert num_obs_mc == 5
+    ms_obs = generate_model_selection_observations()
+    kaw.has_model_selection_observations = ms_obs
+
+    num_obs_ms = len(kaw.has_model_selection_observations)
+
+    assert num_obs_ms == 5
+    
     onto = get_ontology(get_ontology_path()).load()
     onto.save(file=get_kb_file_path("test_kb_app_workflow"), format="rdfxml")
     #onto.destroy()
@@ -148,9 +157,16 @@ def test_knowledge_extraction_experiment_workflow():
     mc_obs = generate_modelling_choice_observations()
     keew.has_modeling_choice_observations = mc_obs
 
-    num_obs_data_rep = len(keew.has_modeling_choice_observations)
+    num_obs_mc = len(keew.has_modeling_choice_observations)
 
-    assert num_obs_data_rep == 5
+    assert num_obs_mc == 5
+    ms_obs = generate_model_selection_observations()
+    keew.has_model_selection_observations = ms_obs
+
+    num_obs_ms = len(keew.has_model_selection_observations)
+
+    assert num_obs_ms == 5
+
     onto = get_ontology(get_ontology_path()).load()
     onto.save(file=get_kb_file_path("test_kb_exp_workflow"), format="rdfxml")
 
@@ -174,9 +190,11 @@ def test_load_knowledge_base_exp_workflow():
     dfe = load_exp_observations("test_kb_exp_workflow")
     dfd = load_data_rep_observations("test_kb_exp_workflow")
     dfmc = load_modelling_choice_observations("test_kb_exp_workflow")
+    dfms = load_model_selection_observations("test_kb_exp_workflow")
     assert dfe.shape[0] == 5
     assert dfd.shape[0] == 5
     assert dfmc.shape[0] == 5
+    assert dfms.shape[0] == 5
 
     return
 

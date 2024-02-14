@@ -82,7 +82,7 @@ def load_data_rep_observations(kb_name: str) -> List[DataRepresentationObservati
         kb_name (str): the knowledge base from which the data representation observations are loaded
 
     Returns:
-        List[ExploratoryObservation]: List of data representation observations
+        List[DataRepresentationObservation]: List of data representation observations
     """
 
     onto: Ontology = load_kb(kb_name)
@@ -100,13 +100,13 @@ def load_data_rep_observations(kb_name: str) -> List[DataRepresentationObservati
     return DataFrame(records)
 
 def load_modelling_choice_observations(kb_name: str) -> List[ModellingChoiceObservation]:
-    """ Given a Knowledge Base, load the data representation observations
+    """ Given a Knowledge Base, load the modelling choice observations
 
     Args:
         kb_name (str): the knowledge base from which the data representation observations are loaded
 
     Returns:
-        List[ExploratoryObservation]: List of data representation observations
+        List[ModellingChoiceObservation]: List of modelling choice observations
     """
 
     onto: Ontology = load_kb(kb_name)
@@ -117,6 +117,30 @@ def load_modelling_choice_observations(kb_name: str) -> List[ModellingChoiceObse
     for o in mc_obs:
         a_row = {}
         a_row["obs_type"] = o.modelling_choice_observation_type
+        a_row["finding"] = o.finding
+        a_row["finding_seq"] = o.finding_sequence
+        records.append(a_row)
+
+    return DataFrame(records)
+
+def load_model_selection_observations(kb_name: str) -> List[ModelSelectionObservation]:
+    """ Given a Knowledge Base, load the model selection observations
+
+    Args:
+        kb_name (str): the knowledge base from which the data representation observations are loaded
+
+    Returns:
+        List[ModelSelectionObservation]: List of model selection observations
+    """
+
+    onto: Ontology = load_kb(kb_name)
+    the_workflow: Workflow = get_workflow(onto)
+    mc_obs: List[ModelSelectionObservation] = the_workflow.has_model_selection_observations
+    records = []
+
+    for o in mc_obs:
+        a_row = {}
+        a_row["obs_type"] = o.model_selection_observation_type
         a_row["finding"] = o.finding
         a_row["finding_seq"] = o.finding_sequence
         records.append(a_row)
