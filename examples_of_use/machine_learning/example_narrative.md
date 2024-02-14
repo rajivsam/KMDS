@@ -6,7 +6,7 @@ An example of using KMDS in a machine learning use case is illustrated with a re
 
 ### Task Description
 
-Let's set the date for this exercise to be the first week after the business quarter in the year 2010. The store management would like to understand the shopping preferences of customers who shopped at the store in the first quarter. They have not done developed a model like this before. They would like to approach the model development guided by principled experiments to understand the characteristics of the data. This phase will be modelled with the Knowledge Extraction Experiment Workflow. This sketch illustrates how KMDS can be used to log data from an experimental workflow.
+Let's set the date for this exercise to be the first week after the business quarter in the year 2010. The store management would like to understand the shopping activity in the store in the previous quarter. The store is visited by many customers and there is variation in the items that are purchased in the store every day. They would also like to apply data science to summarize the shopping activity in the store in the first quarter. This would help them understand customer taste in that time period. This kind of analysis can inform inventory planning tasks for the store. They have not done developed a model like this before. They would like to approach the model development guided by principled experiments to understand the characteristics of the data. This phase will be modelled with the Knowledge Extraction Experiment Workflow. This sketch illustrates how KMDS can be used to log data from an experimental workflow.
 
 ## Data Processing Approach
 
