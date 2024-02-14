@@ -26,6 +26,7 @@ Exploratory Data Analysis performs the following tasks:
 3. Given our task description, we evaluate transformations of the raw data that can help us achieve the task goal. Since our goal is to understand customer behavior in the first quarter. We could compute the sales of each of the store inventory items for each day of the first quarter (there are 75 business days in the first quarter). We could then analyze this sales per day representation from a similarity view point and evaluate if we can find patterns of daily purchases at the store during the first quarter.  In other words, we _explore_ ways to develop _data representations_ that can help us achieve our task goals.
 4. Details of the issues identified and the processing steps to resolve them are captured as _knowledge_ and logged.
 5. Details describing the approaches that are evaluated to develop _data representations_ that can help us with the analysis task are logged.
+6. See [this notebook](/examples_of_use/machine_learning/example_ml_eda_phase.ipynb) for the implementation.
 
 ## Data Representation
 
@@ -37,7 +38,7 @@ Exploratory Data Analysis performs the following tasks:
 
 ![](../../images/q1_sales_summary.png)
 
-As part of capturing knowledge about data representations, the above two statmements are logged.
+As part of capturing knowledge about data representations, the above two statmements are logged. See [this notebook](/examples_of_use/machine_learning/examples_of_use/machine_learning/example_ml_data_rep_phase.ipynb) for the implementation.
 
 ## Modelling
 
@@ -51,9 +52,8 @@ In this phase you explore and evaluate indirect modelling choices related to dev
 2. Hyper-parameter choices in support of specific modelling choices. For example, do you want to use a specific kernel for your kernel learning method. Do you want to use a specific decision tree height parameter
    Note that these choices can be informed by other knowledge extraction experiments. These knowledge extraction experiments have the explicit goal of informing the model selection approaches used in this pipeline.
 
-For this example, the modelling choices are as follows. The _daily sales representaion_ , as computed initially is high dimensional. A review of the bottom left corner of the above figure shows that there are 3092 items in the inventory. A review of the contribution of each inventory item to the quaterly sales revenue exhibits a power law type curve. Over two thirds of the inventory items do not contribute to the revenue generated from sales in the first quarter. We remove these items from the daily sales representation. This is a modelling choice that simplifies the problem we are trying to model - that of characterizing the shopping activity of the shoppers at the store succintly and extracting patterns of shopping behavior from it.  After removing these rendundant items from the daily sales representation we have a much smaller daily representation. We then apply Principal Component Analysis to reveal a small set of store inventory items that can account for most of the shopping activity in the store during the first quarter of 2010.
-
+For this example, the modelling choices are as follows. The _daily sales representaion_ , as computed initially is high dimensional. A review of the bottom left corner of the above figure shows that there are 3092 items in the inventory. A review of the contribution of each inventory item to the quaterly sales revenue exhibits a power law type curve. Over two thirds of the inventory items do not contribute to the revenue generated from sales in the first quarter. We remove these items from the daily sales representation. This is a modelling choice that simplifies the problem we are trying to model - that of characterizing the shopping activity of the shoppers at the store succintly and extracting patterns of shopping behavior from it.  After removing these rendundant items from the daily sales representation we have a much smaller daily representation. We then apply Principal Component Analysis to reveal a small set of store inventory items that can account for most of the shopping activity in the store during the first quarter of 2010. See [this notebook](examples_of_use/machine_learning/examples_of_use/machine_learning/example_ml_modelling_phase_mc.ipynb) for details of the implementation.
 
 ### Model Selection
 
-In this phase you explore the modelling approaches you want to evaluate towards accomplishing your task goal. As discussed in the previous paragraph, we will use Principal Components Analysis for this purpose. There are multiple techniques to summarize datasets. The choice of the approach depends on the application and practical considerations such as schedule and cost. In this work, we are establishing a baseline, so we use a standard technique. The observations we make during modelling are noted and logged using the api.
+In this phase you explore the modelling approaches you want to evaluate towards accomplishing your task goal. As discussed in the previous paragraph, we will use Principal Components Analysis for this purpose. There are multiple techniques to summarize datasets. The choice of the approach depends on the application and practical considerations such as schedule and cost. In this work, we are establishing a baseline, so we use a standard technique. The observations we make during modelling are noted and logged using the api. See [this notebook](examples_of_use/machine_learning/examples_of_use/machine_learning/example_ml_modelling_phase_ms.ipynb) for details of the implementation.
