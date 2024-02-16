@@ -16,7 +16,7 @@ These representations can also be used develop derived representations.
 
 ## The Exploratory Nature of Knowledge Creation and Curation
 
-This process of developing knowledge representations iterative and experimental. A data analyst or business analyst rarely has a epiphany that reveals the best knowledge representations for a particular use case. There is a lot of experimental evaluation to determine the best representation. A data scientist developing models using these representations can derive new representations that may help his/her models perform better. This idea is called feature engineering.
+This process of developing knowledge representations iterative and experimental. A data analyst or business analyst rarely has an epiphany that reveals the best knowledge representations for a particular use case. There is a lot of experimental evaluation to determine the best representation. A data scientist developing models using these representations can derive new representations that may help his/her models perform better.
 
 ## The Evolutionary Nature of Knowledge Creation and Curation
 
