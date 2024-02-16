@@ -2,8 +2,12 @@ from owlready2 import *
 from typing import List
 from enum import Enum
 from kmds.tagging import *
-from kmds.utils.path_utils import get_ontology_path, get_kb_dir
-from pathlib import Path 
+from kmds.utils.path_utils import get_ontology_path
+
+import logging
+LOG_FILE = "../../logs/kmds.log"
+logging.basicConfig(filename=LOG_FILE, format='%(filename)s: %(message)s',
+                    level=logging.DEBUG)
 
 
 

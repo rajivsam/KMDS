@@ -49,3 +49,5 @@ src/config/
 docker/
 ## don't add the data directory
 data
+## ignore logs
+logs/

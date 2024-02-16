@@ -2,7 +2,7 @@ from kmds.ontology.kmds_ontology import *
 from owlready2.namespace import Ontology
 from typing import List
 from pandas import DataFrame
-from kmds.utils.path_utils import get_kb_file_path
+import logging
 
 
 
@@ -24,7 +24,7 @@ def get_workflow(onto: Ontology) -> Workflow:
 
         else:
             if len(workflow_instances) > 1:
-                print("There was more than one workflow, returning the first")
+                logging.info("There was more than one workflow, using the first one")
             
             the_workflow_instance = workflow_instances[0]
 
@@ -46,9 +46,9 @@ def load_kb(kb_location: str) -> Ontology:
         onto = get_ontology(kb_location).load()
         set_ontology(onto)
     except Exception as e:
-        print("Error opening KB, check if KB exists and permissions are right")
+        logging.error("Error opening KB, check if KB exists and permissions are right")
     if onto is None:
-        print("Could not load Ontology, check the file and try again.")
+        logging.error("Could not load Ontology, check the file and try again.")
 
 
     return onto
