@@ -1,3 +1,5 @@
+![](images/kmds_logo_resized.jpg)
+
 <div style="text-align: justify">
 
 ## An Example of Using KMDS in an Analytic Use Case

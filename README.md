@@ -1,3 +1,5 @@
+<div style="text-align:center"><img src="images/kmds_logo_resized.jpg" /></div>
+
 ## Knowledge Management for Data Science
 
 ### What is this tool used for?
@@ -24,11 +26,9 @@ This tool is for data scientists and data analysts.
 ### Licensing and Feature Questions
 
 1. The tool is open source with an [apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.txt)
-2. If you are interested in the following features:
-
+2. If you are interested in the following features, please set up a [meeting](https://calendly.com/rajiv-sambasivan/help-with-kmds-feature) with me:
    1. Help with a data analysis task for your use case
    2. Developing an ontology based solution similar to the above for your specific use case.
-   3. Customizing this tool with other extensions, for example to integrate a feature store or meta-data management tool that you use with this approach,
-
-   please set up a [meeting](https://calendly.com/rajiv-sambasivan/help-with-kmds-feature) with me
-3. If this problem resonates with you as a developer  and you would like to contribute, submit an issue and if the feature makes sense we can discuss the possiblity of submitting a PR for it. Of course, you can fork this repository and use it per the licensing information. Thank you for your interest.
+   3. Customizing this tool with other extensions, for example to integrate a feature store or meta-data management tool that you use with this approach, please set up a [meeting](https://calendly.com/rajiv-sambasivan/help-with-kmds-feature) with
+3. You can also set up a [meeting](https://calendly.com/rajiv-sambasivan/help-with-kmds-feature) with me to discuss customizing this tool for your specific project or use case. For example, you may want to integrate this tool with a meta-data management solution or a feature engineering solution.
+4. If this problem resonates with you as a developer  and you would like to contribute, submit an issue and if the feature makes sense we can discuss the possiblity of submitting a PR for it. Of course, you can fork this repository and use it per the licensing information. Thank you for your interest.
