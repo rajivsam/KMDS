@@ -25,7 +25,8 @@ This tool is for data scientists and data analysts.
 
 1. You install this library along with the other python dependecies you need for your analysis task
 2. Review the [basic recipe](examples_of_use/workflow_recipe.md) for capturing your observations.
-3. Use the example workflows in the [guidelines section](examples_of_use/workflow_recipe.md) as a template to start capturing knowledge facts in your projects.
+3. Review the templates in [the templates section](examples_of_use/workflow_recipe.md) as a to start capturing knowledge facts in your projects. For analytics projects, review the analytics template. For machine learning projects, review the machine learning template.
+4. Start using the tool in your projects using the information from your review of the above two steps.
 
 ### Licensing and Feature Questions
 
