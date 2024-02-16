@@ -1,6 +1,6 @@
 ## Summary of Steps in using KMDS
 
-1. Decide on your workflow. Please see the [the knowledge application pipeline](../feature_documentation/km_app_pipeline.md) document for details of the workflows available. Are you going to use a fixed, pre-defined algorithm for either learning or computation? Then use the Knowledge Application Workflow. Otherwise, if you need experimentation use the Knowledge Extraction Experiment workflow to determine what you need to nail before developing the final model with the Knowledge Application Workflow. Knowledge Experiment Workflows inform other Knowledge Experiment Workflows, or, a Knowledge Application Workflow.
+1. Decide on your workflow. Please see the [the knowledge application pipeline](../feature_documentation/km_app_pipeline.md) document for details of the workflows available.
 2. Work through the phases. There is an ordering of the phases. The exploratory phase informs the knowledge representation phase that is used in the modelling phase.
 3. Track observations and observation types.
 4. Order your observations. In each phase (exploratory, data representation. modelling choices or model selection), assign a sequence number to each observation. Collect your observations in groups - exploratory, data representation. modelling choices or model selection.
