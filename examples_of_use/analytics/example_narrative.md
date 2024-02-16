@@ -44,7 +44,7 @@ There are two sub-stages in modelling:
 
 In this phase you explore and evaluate indirect modelling choices related to developing a model that accomplishes the task goal. Some examples of indirect modelling choices:
 
-1. Feature Engineering choices - for example do you want to use PCA or an auto-encoder to develop a new representation for your modelling task.
+1. Feature Engineering choices - for example do you want to use an auto-encoder to develop a new representation for your modelling task.
 2. Hyper-parameter choices in support of specific modelling choices. For example, do you want to use a specific kernel for your kernel learning method. Do you want to use a specific decision tree height parameter
    Note that these choices can be informed by other knowledge extraction experiments. These knowledge extraction experiments have the explicit goal of informing the model selection approaches used in this pipeline.
 
