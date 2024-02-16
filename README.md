@@ -2,7 +2,7 @@
 
 ### What is this tool used for?
 
-This tool is used for knowledge management in data science. In software design, conceptual domain models inform lower level models. In data science work, experiments yield knowledge that inform modelling choices. Data science models are almost always informed by a variety of analysis experiments. Experimentation and organization of knowledge artifacts supporting modeling decisions is a requirement for reproducible data science models and improving model quality and performance.
+This tool is used for knowledge management in data science. In software design, conceptual domain models inform lower-level models. In data science work, experiments yield knowledge that informs modeling choices. Data science models are almost always informed by a variety of analysis experiments. Experimentation and organization of knowledge artifacts supporting modeling decisions a requirement for reproducible data science models and improving model quality and performance.This tool is used for knowledge management in data science. In software design, conceptual domain models inform lower level models. In data science work, experiments yield knowledge that inform modelling choices. Data science models are almost always informed by a variety of analysis experiments. Experimentation and organization of knowledge artifacts supporting modeling decisions is a requirement for reproducible data science models and improving model quality and performance.
 
 Please see [knowledge application development context](/feature_documentation/knowledge_management_in_DS.md ) for a description of a typical knowledge application development setting.
 
@@ -24,6 +24,11 @@ This tool is for data scientists and data analysts.
 ### Licensing and Feature Questions
 
 1. The tool is open source with an [apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.txt)
-2. If you need help with a particular task or phase in developing a workflow, please set up a [meeting](https://calendly.com/rajiv-sambasivan/help-with-kmds-feature) with me.
-3. You can also set up a [meeting](https://calendly.com/rajiv-sambasivan/help-with-kmds-feature) with me to discuss customizing this tool for your specific project or use case. For example, you may want to integrate this tool with a meta-data management solution or a feature engineering solution.
-4. If this problem resonates with you as a developer  and you would like to contribute, submit an issue and if the feature makes sense we can discuss the possiblity of submitting a PR for it. Of course, you can fork this repository and use it per the licensing information. Thank you for your interest.
+2. If you are interested in the following features:
+
+   1. Help with a data analysis task for your use case
+   2. Developing an ontology based solution similar to the above for your specific use case.
+   3. Customizing this tool with other extensions, for example to integrate a feature store or meta-data management tool that you use with this approach,
+
+   please set up a [meeting](https://calendly.com/rajiv-sambasivan/help-with-kmds-feature) with me
+3. If this problem resonates with you as a developer  and you would like to contribute, submit an issue and if the feature makes sense we can discuss the possiblity of submitting a PR for it. Of course, you can fork this repository and use it per the licensing information. Thank you for your interest.
