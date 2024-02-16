@@ -31,9 +31,9 @@ def get_workflow(onto: Ontology) -> Workflow:
     return the_workflow_instance
 
 
-def load_kb(kb_name: str) -> Ontology:
-    """ Load knowledge base from data dir. This is a method to be used by other convinience
-    methods to load the sets of observations. Not meant to be used directly in a notebookx
+def load_kb(kb_location: str) -> Ontology:
+    """ Load knowledge base. The user can verify the knowledge base path with check_valid_path() in
+    path utils, the knowledge base can be a url, the onus of verifying that that the knowledgebase location is valid is on the caller of the method, this method does not verify the validity
 
     Args:
         kb_name (str): the knowledge base to load
@@ -43,7 +43,7 @@ def load_kb(kb_name: str) -> Ontology:
     """
     onto :Ontology = None
     try:
-        onto = get_ontology(kb_name).load()
+        onto = get_ontology(kb_location).load()
         set_ontology(onto)
     except Exception as e:
         print("Error opening KB, check if KB exists and permissions are right")
