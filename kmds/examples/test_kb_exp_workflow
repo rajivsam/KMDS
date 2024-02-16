@@ -262,26 +262,26 @@
 
 <owl:NamedIndividual rdf:about="#test application workflow">
   <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation5"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation1"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation2"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation5"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation1"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation5"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation2"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation3"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation4"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation1"/>
-  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation4"/>
-  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation1"/>
-  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation2"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation2"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation4"/>
   <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation5"/>
   <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation3"/>
-  <has_model_selection_observations rdf:resource="#modellingchoiceobservation9"/>
-  <has_model_selection_observations rdf:resource="#modellingchoiceobservation10"/>
-  <has_model_selection_observations rdf:resource="#modellingchoiceobservation6"/>
-  <has_model_selection_observations rdf:resource="#modellingchoiceobservation7"/>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation1"/>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation2"/>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation4"/>
   <has_model_selection_observations rdf:resource="#modellingchoiceobservation8"/>
+  <has_model_selection_observations rdf:resource="#modellingchoiceobservation9"/>
+  <has_model_selection_observations rdf:resource="#modellingchoiceobservation6"/>
+  <has_model_selection_observations rdf:resource="#modellingchoiceobservation10"/>
+  <has_model_selection_observations rdf:resource="#modellingchoiceobservation7"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation1">
@@ -426,26 +426,26 @@
 
 <owl:NamedIndividual rdf:about="#test experiment workflow">
   <rdf:type rdf:resource="#KnowledgeExtractionExperimentationWorkflow"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation10"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation6"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation8"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation9"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation7"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation8"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation10"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation9"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation10"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation6"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation7"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation8"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation9"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation6"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation10"/>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation15"/>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation11"/>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation12"/>
   <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation13"/>
   <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation14"/>
-  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation11"/>
-  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation15"/>
-  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation12"/>
+  <has_model_selection_observations rdf:resource="#modellingchoiceobservation17"/>
+  <has_model_selection_observations rdf:resource="#modellingchoiceobservation18"/>
   <has_model_selection_observations rdf:resource="#modellingchoiceobservation19"/>
   <has_model_selection_observations rdf:resource="#modellingchoiceobservation20"/>
   <has_model_selection_observations rdf:resource="#modellingchoiceobservation16"/>
-  <has_model_selection_observations rdf:resource="#modellingchoiceobservation17"/>
-  <has_model_selection_observations rdf:resource="#modellingchoiceobservation18"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation6">
