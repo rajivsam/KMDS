@@ -1,6 +1,6 @@
-<div style="text-align: center;">
-    <img width="25%" src="images/kmds_logo_resized.jpg">
-</div>
+<p align="center">
+  <img width="460" height="300" src="images/kmds_logo_resized.jpg">
+</p>
 
 ## Knowledge Management for Data Science
 
