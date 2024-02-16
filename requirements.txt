@@ -8,3 +8,9 @@ owlready2
 rdflib
 flask
 pytest
+lxml
+html5lib
+plotly
+dash
+dash-bootstrap-components
+python-dateutil

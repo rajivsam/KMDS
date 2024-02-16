@@ -41,11 +41,15 @@ def load_kb(kb_name: str) -> Ontology:
         Returns:
             Ontology: Returns a previously created knowledge base
     """
+    onto :Ontology = None
     try:
-        onto: Ontology = get_ontology(get_kb_file_path(kb_name)).load()
+        onto = get_ontology(kb_name).load()
         set_ontology(onto)
-    except OSError as e:
+    except Exception as e:
         print("Error opening KB, check if KB exists and permissions are right")
+    if onto is None:
+        print("Could not load Ontology, check the file and try again.")
+
 
     return onto
 

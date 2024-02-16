@@ -1,0 +1,5 @@
+attribute,type
+number,str
+sys_created_at,datetime64[ns]
+closed_at,datetime64[ns]
+assignment_group,str
