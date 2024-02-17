@@ -11,10 +11,12 @@ The help desk administration would like to review and understand the performance
 1. The time taken to resolve tickets submitted to the help desk for that quarter.
 2. The number of tickets closed by each support group for that quarter.
    
-   
+
 For this purpose two models are constructed:
    1. Model 1: Calculate the resolution time for each ticket resolved that quarter, obtain a distributional visualization of the resolution times. The characteristics of the distributional visualization should yield information about the resolution activity that quarter. The cumulative distribution of resolution times should yield a probablistic perspective of the resolution time. It helps the administration understand and set service level agreeements. Such a plot can tell the adminstration that x percentage of tickets are resolved in y hours. This not only helps the adminstration set expectations with customers of the help desk, it can also be used to track if the effectiveness of the help desk organization is improving or deteriorating with time.
    2. Model 2: Calculate the number of tickets closed by each support group in the organization. This helps the adminstration understand the ticket load and effectiveness of each support group.
+
+The details of implementing a workflow for this example are provided below. Since there is no experimentation involved and the approach to computing these models is the same each quarter, a _Knowledge Application Workflow_ is used for this example.
    
 ## Exploratory Data Analysis
 
