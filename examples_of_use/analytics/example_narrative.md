@@ -33,23 +33,9 @@ There are two models that are developed, as a result there are two data represen
 2. Data Representation 2: Starting with the raw dataset from exploratory data analysis, count the number of tickets for each support group (this a group by on the support group attribute). This is implemented in [](example_analytics_data_rep_model_selection2.ipynb)
 
 ## Modelling
+Since there are two models that are needed in this use case, there are two sets of model selection observations, with one set of observations for each model. There is parameter selection or supporting analysis that we need to document for either of the two models. As a consequence, there are no modelling choice observations. See [this notebook](example_analytics_model_selection_1.ipynb) for the details of the implementation for Model 1. See [this notebook](example_analytics_data_rep_model_selection2.ipynb) for the details of the implementation for Model 2.
 
-There are two sub-stages in modelling:
-
-### Modelling Choices:
-
-In this phase you explore and evaluate indirect modelling choices related to developing a model that accomplishes the task goal. Some examples of indirect modelling choices:
-
-1. Feature Engineering choices - for example do you want to use an auto-encoder to develop a new representation for your modelling task.
-2. Hyper-parameter choices in support of specific modelling choices. For example, do you want to use a specific kernel for your kernel learning method. Do you want to use a specific decision tree height parameter
-   Note that these choices can be informed by other knowledge extraction experiments. These knowledge extraction experiments have the explicit goal of informing the model selection approaches used in this pipeline.
-
-For this example, the modelling choices are as follows. The _daily sales representaion_ , as computed initially is high dimensional. A review of the bottom left corner of the above figure shows that there are 3092 items in the inventory. A review of the contribution of each inventory item to the quaterly sales revenue exhibits a power law type curve. Over two thirds of the inventory items do not contribute to the revenue generated from sales in the first quarter. We remove these items from the daily sales representation. This is a modelling choice that simplifies the problem we are trying to model - that of characterizing the shopping activity of the shoppers at the store succintly and extracting patterns of shopping behavior from it.  After removing these rendundant items from the daily sales representation we have a much smaller daily representation. We then apply Principal Component Analysis to reveal a small set of store inventory items that can account for most of the shopping activity in the store during the first quarter of 2010. See [this notebook](/examples_of_use/machine_learning/example_ml_modelling_phase_mc.ipynb) for details of the implementation.
-
-### Model Selection
-
-In this phase you explore the modelling approaches you want to evaluate towards accomplishing your task goal. As discussed in the previous paragraph, we will use Principal Components Analysis for this purpose. There are multiple techniques to summarize datasets. The choice of the approach depends on the application and practical considerations such as schedule and cost. In this work, we are establishing a baseline, so we use a standard technique. The observations we make during modelling are noted and logged using the api. See [this notebook](/examples_of_use/machine_learning/example_ml_modelling_phase_ms.ipynb) for details of the implementation.
 
 ## Retrieving Logged Information
 
-Information logged durring analysis tasks can be retrieved using the API, see [this notebook](/examples_of_use/machine_learning/example_ml_observations_report.ipynb) for how this is done for the provided example.
+Information logged durring analysis tasks can be retrieved using the API, see [this notebook](example_analytics_observations_report.ipynb) for how this is done for the provided example.
