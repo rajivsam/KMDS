@@ -28,13 +28,13 @@ Exploratory Data Analysis performs the following tasks:
 4. Write the denoised data for the next phase in the workflow.
 5. Log the relevance and noise processing details done as part of exploratory data analysis to KMDS
 
-This is implemented in [](example_analytics_eda_phase.ipynb)
+This is implemented in [this notebook](example_analytics_eda_phase.ipynb)
 
 ## Data Representation
 There are two models that are developed, as a result there are two data representations that are needed.
 
-1. Data Representation 1: Starting the raw data from the exploratory data analysis phase, compute a new derived attribute (feature engineering) called _resolution time_ that captures the time to resolve a ticket. This is the time difference between the creation and the closing of the ticket. This is implemented in [](example_analytics_data_rep_1.ipynb)
-2. Data Representation 2: Starting with the raw dataset from exploratory data analysis, count the number of tickets for each support group (this a group by on the support group attribute). This is implemented in [](example_analytics_data_rep_model_selection2.ipynb)
+1. Data Representation 1: Starting the raw data from the exploratory data analysis phase, compute a new derived attribute (feature engineering) called _resolution time_ that captures the time to resolve a ticket. This is the time difference between the creation and the closing of the ticket. This is implemented in [this notebook](example_analytics_data_rep_1.ipynb)
+2. Data Representation 2: Starting with the raw dataset from exploratory data analysis, count the number of tickets for each support group (this a group by on the support group attribute). This is implemented in [this notebook](example_analytics_data_rep_model_selection2.ipynb)
 
 ## Modelling
 Since there are two models that are needed in this use case, there are two sets of model selection observations, with one set of observations for each model. There is parameter selection or supporting analysis that we need to document for either of the two models. As a consequence, there are no modelling choice observations. See [this notebook](example_analytics_model_selection_1.ipynb) for the details of the implementation for Model 1. See [this notebook](example_analytics_data_rep_model_selection2.ipynb) for the details of the implementation for Model 2.
