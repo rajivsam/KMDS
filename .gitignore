@@ -52,6 +52,5 @@ data
 ## ignore logs
 *.log
 ## stuff in documentation
-docs/*
-!docs/_build/html/
+docs/_build
 
