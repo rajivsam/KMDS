@@ -38,21 +38,7 @@ As part of capturing knowledge about data representations, the above two statmem
 
 ## Modelling
 
-There are two sub-stages in modelling:
-
-### Modelling Choices:
-
-In this phase you explore and evaluate indirect modelling choices related to developing a model that accomplishes the task goal. Some examples of indirect modelling choices:
-
-1. Feature Engineering choices - for example do you want to use PCA or an auto-encoder to develop a new representation for your modelling task.
-2. Hyper-parameter choices in support of specific modelling choices. For example, do you want to use a specific kernel for your kernel learning method. Do you want to use a specific decision tree height parameter
-   Note that these choices can be informed by other knowledge extraction experiments. These knowledge extraction experiments have the explicit goal of informing the model selection approaches used in this pipeline.
-
-For this example, the modelling choices are as follows. The _daily sales representaion_ , as computed initially is high dimensional. A review of the bottom left corner of the above figure shows that there are 3092 items in the inventory. A review of the contribution of each inventory item to the quaterly sales revenue exhibits a power law type curve. Over two thirds of the inventory items do not contribute to the revenue generated from sales in the first quarter. We remove these items from the daily sales representation. This is a modelling choice that simplifies the problem we are trying to model - that of characterizing the shopping activity of the shoppers at the store succintly and extracting patterns of shopping behavior from it.  After removing these rendundant items from the daily sales representation we have a much smaller daily representation. We then apply Principal Component Analysis to reveal a small set of store inventory items that can account for most of the shopping activity in the store during the first quarter of 2010. See [this notebook](/examples_of_use/machine_learning/example_ml_modelling_phase_mc.ipynb) for details of the implementation.
-
-### Model Selection
-
-In this phase you explore the modelling approaches you want to evaluate towards accomplishing your task goal. As discussed in the previous paragraph, we will use Principal Components Analysis for this purpose. There are multiple techniques to summarize datasets. The choice of the approach depends on the application and practical considerations such as schedule and cost. In this work, we are establishing a baseline, so we use a standard technique. The observations we make during modelling are noted and logged using the api. See [this notebook](/examples_of_use/machine_learning/example_ml_modelling_phase_ms.ipynb) for details of the implementation.
+As discussed in [Modelling Observations](../../feature_documentation/glossary_observation_types.md), in the modelling stage we evaluate models used to achieve the task or use case goals. In this example, the goal is to explain the variation in daily sales succintly so that we can understand the inventory items that have active sales activity in the first quarter. To do this we use Principal Component Analysis (PCA) in this example. There are several ways to explain the variation in sales activity. The goal of this example is to illustrate how observations in a machine learning workflow are captured with KMDS rather than a critical analysis of the modelling approach to solve this proble. Nevertheless, PCA is a good baseline and does yield useful information that helps us with the goals of this task. So observations made about the application of PCA would be recorded as _Model Selection Observations_. It turns out that most of the store inventory is inactive in the first quarter. These are inventory items that did not contribute significantly to the revenue generated in the first quarter. We can drop these inventory items to reduce the sparsity in the data representation. The analysis and observations pertaining to doing this are recorded as _Modelling Choice Observations_ . This observation supports our modelling decision to use PCA. See [this notebook](/examples_of_use/machine_learning/example_ml_modelling_phase_mc.ipynb) for details of the implementation for modelling choice observations. See [this notebook](/examples_of_use/machine_learning/example_ml_modelling_phase_ms.ipynb) for details of model selection  observations.
 
 
 ## Retrieving Logged Information
