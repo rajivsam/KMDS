@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kmds.ontology.kmds_ontology &mdash; KMDS 0.2.7 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=58050c01"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            KMDS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">kmds</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">KMDS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">kmds.ontology.kmds_ontology</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for kmds.ontology.kmds_ontology</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">owlready2</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">kmds.tagging</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">kmds.utils.path_utils</span> <span class="kn">import</span> <span class="n">get_ontology_path</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">LOG_FILE</span> <span class="o">=</span> <span class="s2">&quot;../../kmds.log&quot;</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">LOG_FILE</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(filename)s</span><span class="s1">: </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span>
+                    <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+
+
+<div class="viewcode-block" id="PipelineType">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.PipelineType">[docs]</a>
+<span class="k">class</span> <span class="nc">PipelineType</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Enumeration to define the types of workflows that can be created</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        str (_type_): The enumeration values are strings</span>
+<span class="sd">        Enum (_type_): The enumeration values are strings</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">KNOWLEDGE_APPLICATION_WORKFLOW</span> <span class="o">=</span> <span class="s2">&quot;Knowledge Application Workflow&quot;</span>
+    <span class="n">KNOWLEDGE_EXTRACTION_EXPERIMENT_WORKFLOW</span> <span class="o">=</span> <span class="s2">&quot;Knowledge Extraction Experiment Workflow&quot;</span></div>
+
+
+<span class="n">onto</span> <span class="o">=</span> <span class="n">get_ontology</span><span class="p">(</span><span class="n">get_ontology_path</span><span class="p">())</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+
+<div class="viewcode-block" id="set_ontology">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.set_ontology">[docs]</a>
+<span class="k">def</span> <span class="nf">set_ontology</span><span class="p">(</span><span class="n">the_onto</span> <span class="p">:</span> <span class="n">Ontology</span><span class="p">)</span> <span class="o">-&gt;</span><span class="kc">None</span><span class="p">:</span>
+    <span class="k">global</span> <span class="n">onto</span>
+    <span class="n">onto</span> <span class="o">=</span> <span class="n">the_onto</span>
+    <span class="k">return</span></div>
+
+    
+
+<span class="k">with</span> <span class="n">onto</span><span class="p">:</span>
+<div class="viewcode-block" id="Workflow">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.Workflow">[docs]</a>
+    <span class="k">class</span> <span class="nc">Workflow</span><span class="p">(</span><span class="n">Thing</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Ontology definition for workflow</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            Thing (_type_): Thing is a base concept from OWL</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+    <span class="k">class</span> <span class="nc">KnowledgeApplicationWorkflow</span><span class="p">(</span><span class="n">Workflow</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; knowledge application workflow definition - inherits from workflow</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            Workflow (_type_): Base workflow classxs</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">pass</span>
+    
+    <span class="k">class</span> <span class="nc">KnowledgeExtractionExperimentationWorkflow</span><span class="p">(</span><span class="n">Workflow</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; knowledge extraction experiment workflow definition - inherits from workflow</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            Workflow (_type_): Base workflow class</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">pass</span>
+    
+    <span class="k">class</span> <span class="nc">description</span><span class="p">(</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">FunctionalProperty</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Description as property of workflow</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            DataProperty (_type_): This is a OWLReady2 way to say that this property is of a built in type as opposed to a defined type</span>
+<span class="sd">            FunctionalProperty (_type_): This is a OWLReady2 way to say that this property is of a built in type as opposed to a defined type</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+
+        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Workflow</span><span class="p">]</span>
+        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+
+<div class="viewcode-block" id="name">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.name">[docs]</a>
+    <span class="k">class</span> <span class="nc">name</span><span class="p">(</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">FunctionalProperty</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; name as property of workflow</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            DataProperty (_type_): This is a OWLReady2 way to say that this property is of a built in type as opposed to a defined type</span>
+<span class="sd">            FunctionalProperty (_type_): This is a OWLReady2 way to say that this property is of a built in type as opposed to a defined type</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Workflow</span><span class="p">]</span>
+        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="KMObservation">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.KMObservation">[docs]</a>
+    <span class="k">class</span> <span class="nc">KMObservation</span><span class="p">(</span><span class="n">Thing</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Base class for observations, the specific types of observations derive from this class</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            Thing (_type_): OWL base class for everything</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+    
+    <span class="k">class</span> <span class="nc">ExploratoryObservation</span><span class="p">(</span><span class="n">KMObservation</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Class to capture exploratory observations</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            KMObservation (_type_): the base observation class</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+<div class="viewcode-block" id="has_exploratory_observations">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.has_exploratory_observations">[docs]</a>
+    <span class="k">class</span> <span class="nc">has_exploratory_observations</span><span class="p">(</span><span class="n">ObjectProperty</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; property to capture the exploratory observations of the workflow</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ObjectProperty (_type_): captures the exploratory observations of the workflow</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Workflow</span><span class="p">]</span>
+        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="n">ExploratoryObservation</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="exploratory_observation_type">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.exploratory_observation_type">[docs]</a>
+    <span class="k">class</span> <span class="nc">exploratory_observation_type</span><span class="p">(</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">FunctionalProperty</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; property to capture the type of exploratory observation - see tagging types for the options</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            DataProperty (_type_): OWL2library specific way of defining a property with a built in value</span>
+<span class="sd">            FunctionalProperty (_type_): OWL2library specific way of defining a property with a built in value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">ExploratoryObservation</span><span class="p">]</span>
+        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span></div>
+
+
+
+
+<div class="viewcode-block" id="DataRepresentationObservation">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.DataRepresentationObservation">[docs]</a>
+    <span class="k">class</span> <span class="nc">DataRepresentationObservation</span><span class="p">(</span><span class="n">KMObservation</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; property to capture the data representation observation</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            KMObservation (_type_): base class for observations</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="has_data_representation_observations">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.has_data_representation_observations">[docs]</a>
+    <span class="k">class</span> <span class="nc">has_data_representation_observations</span><span class="p">(</span><span class="n">ObjectProperty</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Property to capture the data representation observations of a workflow</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ObjectProperty (_type_): OWLReady2 specific way of capturing object properties</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Workflow</span><span class="p">]</span>
+        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="n">DataRepresentationObservation</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="data_representation_observation_type">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.data_representation_observation_type">[docs]</a>
+    <span class="k">class</span> <span class="nc">data_representation_observation_type</span><span class="p">(</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">FunctionalProperty</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Specify the data representation observation type</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            DataProperty (_type_): OWLReady2 specific way of specifying the data property type</span>
+<span class="sd">            FunctionalProperty (_type_): OWLReady2 specific way of specifying the data property type</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">DataRepresentationObservation</span><span class="p">]</span>
+        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span></div>
+
+
+    <span class="k">class</span> <span class="nc">ModellingChoiceObservation</span><span class="p">(</span><span class="n">KMObservation</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Definition of modelling choice observations</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            KMObservation (_type_): Base class for observations</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+<div class="viewcode-block" id="has_modeling_choice_observations">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.has_modeling_choice_observations">[docs]</a>
+    <span class="k">class</span> <span class="nc">has_modeling_choice_observations</span><span class="p">(</span><span class="n">ObjectProperty</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Specify that the workflow has modelling choice observations</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ObjectProperty (_type_): the OWLReady2 way to specify that these observations are objects</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Workflow</span><span class="p">]</span>
+        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="n">ModellingChoiceObservation</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="modelling_choice_observation_type">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.modelling_choice_observation_type">[docs]</a>
+    <span class="k">class</span> <span class="nc">modelling_choice_observation_type</span><span class="p">(</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">FunctionalProperty</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Specify that the modelling observation type in tagging modelling choice observations - see tagging for the options available</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            DataProperty (_type_): OWLReady2 specific way of describing properties</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">ModellingChoiceObservation</span><span class="p">]</span>
+        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span></div>
+
+
+    <span class="k">class</span> <span class="nc">ModelSelectionObservation</span><span class="p">(</span><span class="n">Thing</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Definition of Model Selection Observations</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            Thing (_type_): Base class for everything in OWL</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+    
+<div class="viewcode-block" id="has_model_selection_observations">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.has_model_selection_observations">[docs]</a>
+    <span class="k">class</span> <span class="nc">has_model_selection_observations</span><span class="p">(</span><span class="n">ObjectProperty</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Specify that the workflow has model selection observations recorded</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ObjectProperty (_type_): OWLReady2 specific way of capturing object properties</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Workflow</span><span class="p">]</span>
+        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="n">ModelSelectionObservation</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="model_selection_observation_type">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.model_selection_observation_type">[docs]</a>
+    <span class="k">class</span> <span class="nc">model_selection_observation_type</span><span class="p">(</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">FunctionalProperty</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Specify the model selection observation type - see tagging for options</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            DataProperty (_type_): OWLReady2 specific of specifying properties of builtin type</span>
+<span class="sd">            FunctionalProperty (_type_): OWLReady2 specific of specifying properties of builtin type</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">ModelSelectionObservation</span><span class="p">]</span>
+        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span></div>
+
+
+    <span class="k">class</span> <span class="nc">depends_on</span><span class="p">(</span><span class="n">ObjectProperty</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Property to capture the workflows that a particular workflow is informed by, and, therefore depends on, these workflows must have been run prior to this workflow</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ObjectProperty (_type_): OWLReady2 specific way of specifying Object properties, as opposed to built in types</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Workflow</span><span class="p">]</span>
+        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="n">KnowledgeExtractionExperimentationWorkflow</span><span class="p">]</span>
+
+    <span class="k">class</span> <span class="nc">ExperimentalObservation</span><span class="p">(</span><span class="n">Thing</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Define experimental observation type</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            Thing (_type_): OWL base class for everything</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+<div class="viewcode-block" id="has_experimental_observations">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.has_experimental_observations">[docs]</a>
+    <span class="k">class</span> <span class="nc">has_experimental_observations</span><span class="p">(</span><span class="n">ObjectProperty</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Property of the workflow to capture its experimental observations</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ObjectProperty (_type_): OWLReady2 specific way of specifying that this property is an object type as opposed to a built in type</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Workflow</span><span class="p">]</span>
+        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="n">ExperimentalObservation</span><span class="p">]</span></div>
+
+    
+<div class="viewcode-block" id="experimental_observation_type">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.experimental_observation_type">[docs]</a>
+    <span class="k">class</span> <span class="nc">experimental_observation_type</span><span class="p">(</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">FunctionalProperty</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Property to capture the experimental observation type - see tagging for definition</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            DataProperty (_type_): OWLReady2 specific way of defining built in types as properties</span>
+<span class="sd">            FunctionalProperty (_type_): OWLReady2 specific way of defining built in types as properties</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">ExperimentalObservation</span><span class="p">]</span>
+        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span></div>
+
+
+    <span class="k">class</span> <span class="nc">PerformanceMeasure</span><span class="p">(</span><span class="n">Thing</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Definition of performance measure as a concept</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            Thing (_type_): OWL base class for everything</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+<div class="viewcode-block" id="description">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.description">[docs]</a>
+    <span class="k">class</span> <span class="nc">description</span><span class="p">(</span><span class="n">DataProperty</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; description of the workflow</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            DataProperty (_type_): OWLReady2 specific way of describing built in type properties</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span></div>
+
+
+
+    <span class="k">class</span> <span class="nc">business_performance_measure</span><span class="p">(</span><span class="n">ObjectProperty</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Capture the business performance measure of the workflow</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ObjectProperty (_type_): OWLReady2 specific way of specifying object properties</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">KnowledgeApplicationWorkflow</span><span class="p">]</span>
+        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="n">PerformanceMeasure</span><span class="p">]</span>
+
+    <span class="k">class</span> <span class="nc">experiment_performance_measure</span><span class="p">(</span><span class="n">ObjectProperty</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Property to capture experiment performance measure</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ObjectProperty (_type_): Experiment performance measure as an object property</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">KnowledgeExtractionExperimentationWorkflow</span><span class="p">]</span>
+        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="n">PerformanceMeasure</span><span class="p">]</span>
+
+<div class="viewcode-block" id="finding">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.finding">[docs]</a>
+    <span class="k">class</span> <span class="nc">finding</span><span class="p">(</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">FunctionalProperty</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Speficy the finding property of an observation</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            DataProperty (_type_): OWLReady 2 specific way to say that the range is a srting</span>
+<span class="sd">            FunctionalProperty (_type_): OWLReady 2 specific way to say that the domain is an object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">Domain</span> <span class="o">=</span><span class="p">[</span><span class="n">KMObservation</span><span class="p">]</span>
+        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="finding_sequence">
+<a class="viewcode-back" href="../../../kmds.ontology.html#kmds.ontology.kmds_ontology.finding_sequence">[docs]</a>
+    <span class="k">class</span> <span class="nc">finding_sequence</span><span class="p">(</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">FunctionalProperty</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Speficy the finding sequence property of an observation</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            DataProperty (_type_): OWLReady 2 specific way to say that the range is an integer</span>
+<span class="sd">            FunctionalProperty (_type_): OWLReady 2 specific way to say that the domain is an object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">Domain</span> <span class="o">=</span><span class="p">[</span><span class="n">KMObservation</span><span class="p">]</span>   
+        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">]</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Rajiv Sambasivan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
