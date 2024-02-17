@@ -5,7 +5,7 @@ from kmds.tagging import *
 from kmds.utils.path_utils import get_ontology_path
 
 import logging
-LOG_FILE = "../../logs/kmds.log"
+LOG_FILE = "../../kmds.log"
 logging.basicConfig(filename=LOG_FILE, format='%(filename)s: %(message)s',
                     level=logging.DEBUG)
 
