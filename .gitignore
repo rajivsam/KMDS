@@ -51,3 +51,5 @@ docker/
 data
 ## ignore logs
 *.log
+## ignore sphinx build directory
+docs/_build
