@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>kmds.utils.load_utils &mdash; KMDS-Documentation 0.2.7 documentation</title>
+  <title>kmds.utils.load_utils &mdash; KMDS 0.2.7 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
 
@@ -31,7 +31,7 @@
           
           
           <a href="../../../index.html" class="icon icon-home">
-            KMDS-Documentation
+            KMDS
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -52,7 +52,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">KMDS-Documentation</a>
+          <a href="../../../index.html">KMDS</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -75,7 +75,7 @@
 <span class="kn">from</span> <span class="nn">owlready2.namespace</span> <span class="kn">import</span> <span class="n">Ontology</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
 <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>
-<span class="kn">from</span> <span class="nn">kmds.utils.path_utils</span> <span class="kn">import</span> <span class="n">get_kb_file_path</span>
+<span class="kn">import</span> <span class="nn">logging</span>
 
 
 
@@ -99,7 +99,7 @@
 
         <span class="k">else</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">workflow_instances</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There was more than one workflow, returning the first&quot;</span><span class="p">)</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;There was more than one workflow, using the first one&quot;</span><span class="p">)</span>
             
             <span class="n">the_workflow_instance</span> <span class="o">=</span> <span class="n">workflow_instances</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
@@ -109,9 +109,9 @@
 
 <div class="viewcode-block" id="load_kb">
 <a class="viewcode-back" href="../../../kmds.utils.html#kmds.utils.load_utils.load_kb">[docs]</a>
-<span class="k">def</span> <span class="nf">load_kb</span><span class="p">(</span><span class="n">kb_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Ontology</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; Load knowledge base from data dir. This is a method to be used by other convinience</span>
-<span class="sd">    methods to load the sets of observations. Not meant to be used directly in a notebookx</span>
+<span class="k">def</span> <span class="nf">load_kb</span><span class="p">(</span><span class="n">kb_location</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Ontology</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Load knowledge base. The user can verify the knowledge base path with check_valid_path() in</span>
+<span class="sd">    path utils, the knowledge base can be a url, the onus of verifying that that the knowledgebase location is valid is on the caller of the method, this method does not verify the validity</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        kb_name (str): the knowledge base to load</span>
@@ -121,12 +121,12 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">onto</span> <span class="p">:</span><span class="n">Ontology</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">onto</span> <span class="o">=</span> <span class="n">get_ontology</span><span class="p">(</span><span class="n">kb_name</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+        <span class="n">onto</span> <span class="o">=</span> <span class="n">get_ontology</span><span class="p">(</span><span class="n">kb_location</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
         <span class="n">set_ontology</span><span class="p">(</span><span class="n">onto</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error opening KB, check if KB exists and permissions are right&quot;</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Error opening KB, check if KB exists and permissions are right&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">onto</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not load Ontology, check the file and try again.&quot;</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Could not load Ontology, check the file and try again.&quot;</span><span class="p">)</span>
 
 
     <span class="k">return</span> <span class="n">onto</span></div>

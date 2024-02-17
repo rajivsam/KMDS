@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>kmds.utils package &mdash; KMDS-Documentation 0.2.7 documentation</title>
+  <title>kmds.utils package &mdash; KMDS 0.2.7 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -33,7 +33,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            KMDS-Documentation
+            KMDS
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -67,7 +67,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">KMDS-Documentation</a>
+          <a href="index.html">KMDS</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -167,9 +167,9 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="kmds.utils.load_utils.load_kb">
-<span class="sig-prename descclassname"><span class="pre">kmds.utils.load_utils.</span></span><span class="sig-name descname"><span class="pre">load_kb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kb_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Ontology</span></span></span><a class="reference internal" href="_modules/kmds/utils/load_utils.html#load_kb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kmds.utils.load_utils.load_kb" title="Link to this definition"></a></dt>
-<dd><p>Load knowledge base from data dir. This is a method to be used by other convinience
-methods to load the sets of observations. Not meant to be used directly in a notebookx</p>
+<span class="sig-prename descclassname"><span class="pre">kmds.utils.load_utils.</span></span><span class="sig-name descname"><span class="pre">load_kb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kb_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Ontology</span></span></span><a class="reference internal" href="_modules/kmds/utils/load_utils.html#load_kb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kmds.utils.load_utils.load_kb" title="Link to this definition"></a></dt>
+<dd><p>Load knowledge base. The user can verify the knowledge base path with check_valid_path() in
+path utils, the knowledge base can be a url, the onus of verifying that that the knowledgebase location is valid is on the caller of the method, this method does not verify the validity</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
