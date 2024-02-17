@@ -10,5 +10,8 @@ These are observations that document the findings of an analyst preparing the _r
 ### Modelling Observations
 The analyst may consider a set of modelling approaches to develop a model to accomplish a use case goal. The observations that capture the rationale and assumptions for considering a specific set of approaches and the salient aspects of the results in each approach are captured with _Model Selection Observations_. Each modelling approach may further require the selection of parameters specific to the modelling approach. The observations documenting these choices and the rationale and assumptions for making them are captured with _Model Choice Observations_.
 
+### Experimental Observations
+Experimental Observations are used to capture the details of the experiment that an analyst is performing with the workflow. This should capture the description of the goals of the experiment, assumptions, observations, results and conclusions. This set of features is work in progress and will be illustrated with an example in a future release.
+
 
 See the ```tagging.tag_types.py``` module for further resolution of the types available in each category. The example notebooks should illustrate how these types are specified when observations are recorded. The observations must be ordered while recording them. This is done by specifying a sequence number for the observation.
