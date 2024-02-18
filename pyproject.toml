@@ -20,6 +20,12 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [[tool.poetry.source]]
-name = "test"
+name = "default"
 url = "https://test.pypi.org/simple/"
-secondary = true
+priority = "primary"
+
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
