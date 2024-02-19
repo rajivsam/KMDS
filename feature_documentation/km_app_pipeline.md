@@ -6,9 +6,9 @@
 
 Pick a workflow for your task. The following types of workflow are available:
 
-1. Scenario A: Application Based Pipeline
+1. #### Scenario A: Application Based Pipeline
    In this scenario, the computational approach to develop the model (for an analytics application) or the learning approach (for a machine learning model) is considered an established fact. You perform the same analysis with different data at some cadence. There is limited experimental evaluation in the workflow stages. These experiments are primarily intended to work through the variations in the workflow introduced by the data you receive. This is a good fit for analytic use cases, for example, ranking, order statistics etc. You may also want to use this workflow for machine learning tasks where the algorithmic approach is fixed, for example, you have decided to use XGBoost or [AutoGluon](https://auto.gluon.ai/stable/index.html) , however, you need data specific customizations for each run of the workflow.
-2. Scenario B: Experiment Based Pipeline
+2. #### Scenario B: Experiment Based Pipeline
    In this scenario the computational approach or the modelling approach is not established. A sequence of experiments are needed to establish a suitable approach. Experimental approaches go towards informing Scenario A pipelines. This would be the scenario you use in a project where you are going through a design phase where you are going to evaluate different design choices and then make a determination of the final modelling approach based on the experimental results observed.
 
    ## Perform the Activities in the Workflow
