@@ -1,0 +1,7 @@
+sphinx
+sphinx_rtd_theme
+owlready2
+importlib-resources
+prefect
+pyyaml
+pandas
