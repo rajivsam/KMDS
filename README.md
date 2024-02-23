@@ -1,4 +1,5 @@
 [![DOI](https://zenodo.org/badge/753950832.svg)](https://zenodo.org/doi/10.5281/zenodo.10695270)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 <p align="center">
   <img width="460" height="300" src="images/kmds_logo_resized.jpg">
 </p>
