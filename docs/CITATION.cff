@@ -1,12 +1,12 @@
 cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
-title: My Research Software
-abstract: This is my awesome research software. It does many things.
+title: KMDS
+abstract: This is a knowledge management system for data scientists and data analysts
 authors:
   - family-names: Sambasivan
     given-names: Rajiv
     orcid: "https://orcid.org//0000-0002-4865-7218"
-version: 0.11.2
+version: 0.2.2.8
 date-released: "2024-02-23"
 identifiers:
   - description: This is a knowledge management system for data scientists and data analysts
