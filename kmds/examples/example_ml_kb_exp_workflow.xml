@@ -270,7 +270,7 @@
   <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation1"/>
   <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation1"/>
-  <has_model_selection_observations rdf:resource="#modelselectionobservation1"/>
+  <has_model_selection_observations rdf:resource="#modelselectionobservation2"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation4">
@@ -330,6 +330,13 @@
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#modelselectionobservation1">
+  <rdf:type rdf:resource="#ModelSelectionObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">For this iteration, PCA was the only modelling approach to explain the variance in dailyproduct sales. This is sufficient to illustrate how a model selection workflow is logged with KMDS.</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <model_selection_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Model Selection Statement</model_selection_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#modelselectionobservation2">
   <rdf:type rdf:resource="#ModelSelectionObservation"/>
   <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">For this iteration, PCA was the only modelling approach to explain the variance in dailyproduct sales. This is sufficient to illustrate how a model selection workflow is logged with KMDS.</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>

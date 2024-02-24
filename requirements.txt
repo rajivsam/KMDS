@@ -16,3 +16,4 @@ dash-bootstrap-components
 python-dateutil
 sphinx
 sphinx-rtd-theme
+hdbscan
