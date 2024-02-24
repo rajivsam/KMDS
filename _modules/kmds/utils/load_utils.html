@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kmds.utils.load_utils &mdash; KMDS 0.2.7 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=58050c01"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            KMDS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">kmds</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">KMDS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">kmds.utils.load_utils</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for kmds.utils.load_utils</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">kmds.ontology.kmds_ontology</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">owlready2.namespace</span> <span class="kn">import</span> <span class="n">Ontology</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+
+
+<div class="viewcode-block" id="get_workflow">
+<a class="viewcode-back" href="../../../kmds.utils.html#kmds.utils.load_utils.get_workflow">[docs]</a>
+<span class="k">def</span> <span class="nf">get_workflow</span><span class="p">(</span><span class="n">onto</span><span class="p">:</span> <span class="n">Ontology</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Workflow</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Given an ontology, return the workflow instance</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        onto (Ontology): The ontology from which the workflow instance must be loaded</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Workflow: The workflow in this ontology</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">the_workflow_instance</span> <span class="o">=</span> <span class="kc">None</span>
+    
+    <span class="k">with</span> <span class="n">onto</span><span class="p">:</span>
+        <span class="n">workflow_instances</span> <span class="o">=</span> <span class="n">Workflow</span><span class="o">.</span><span class="n">instances</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">workflow_instances</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No workflow available&quot;</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">workflow_instances</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;There was more than one workflow, using the first one&quot;</span><span class="p">)</span>
+            
+            <span class="n">the_workflow_instance</span> <span class="o">=</span> <span class="n">workflow_instances</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">the_workflow_instance</span></div>
+
+
+
+<div class="viewcode-block" id="load_kb">
+<a class="viewcode-back" href="../../../kmds.utils.html#kmds.utils.load_utils.load_kb">[docs]</a>
+<span class="k">def</span> <span class="nf">load_kb</span><span class="p">(</span><span class="n">kb_location</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Ontology</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Load knowledge base. The user can verify the knowledge base path with check_valid_path() in</span>
+<span class="sd">    path utils, the knowledge base can be a url, the onus of verifying that that the knowledgebase location is valid is on the caller of the method, this method does not verify the validity</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        kb_name (str): the knowledge base to load</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Ontology: Returns a previously created knowledge base</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">onto</span> <span class="p">:</span><span class="n">Ontology</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">onto</span> <span class="o">=</span> <span class="n">get_ontology</span><span class="p">(</span><span class="n">kb_location</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+        <span class="n">set_ontology</span><span class="p">(</span><span class="n">onto</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Error opening KB, check if KB exists and permissions are right&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">onto</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Could not load Ontology, check the file and try again.&quot;</span><span class="p">)</span>
+
+
+    <span class="k">return</span> <span class="n">onto</span></div>
+
+
+
+<div class="viewcode-block" id="load_exp_observations">
+<a class="viewcode-back" href="../../../kmds.utils.html#kmds.utils.load_utils.load_exp_observations">[docs]</a>
+<span class="k">def</span> <span class="nf">load_exp_observations</span><span class="p">(</span><span class="n">onto</span><span class="p">:</span> <span class="n">Ontology</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ExploratoryObservation</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Return the exploratory data analysis observations from the ontology</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        onto (Ontology): The ontology from which the EDA observations are to be returned</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List[ExploratoryObservation]: List of EDA observations in the ontology</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+    <span class="n">the_workflow</span><span class="p">:</span> <span class="n">Workflow</span> <span class="o">=</span> <span class="n">get_workflow</span><span class="p">(</span><span class="n">onto</span><span class="p">)</span>
+    <span class="n">exp_obs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ExploratoryObservation</span><span class="p">]</span> <span class="o">=</span> <span class="n">the_workflow</span><span class="o">.</span><span class="n">has_exploratory_observations</span>
+    <span class="n">records</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">exp_obs</span><span class="p">:</span>
+        <span class="n">a_row</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">a_row</span><span class="p">[</span><span class="s2">&quot;obs_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">exploratory_observation_type</span>
+        <span class="n">a_row</span><span class="p">[</span><span class="s2">&quot;finding&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">finding</span>
+        <span class="n">a_row</span><span class="p">[</span><span class="s2">&quot;finding_seq&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">finding_sequence</span>
+        <span class="n">records</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a_row</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">records</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="load_data_rep_observations">
+<a class="viewcode-back" href="../../../kmds.utils.html#kmds.utils.load_utils.load_data_rep_observations">[docs]</a>
+<span class="k">def</span> <span class="nf">load_data_rep_observations</span><span class="p">(</span><span class="n">onto</span><span class="p">:</span> <span class="n">Ontology</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">DataRepresentationObservation</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Load the data representation observations from the provided ontology</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        onto (Ontology): The ontology containing the data representation observations</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List[DataRepresentationObservation]: The list of data representation observations</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+    <span class="n">the_workflow</span><span class="p">:</span> <span class="n">Workflow</span> <span class="o">=</span> <span class="n">get_workflow</span><span class="p">(</span><span class="n">onto</span><span class="p">)</span>
+    <span class="n">dr_obs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">DataRepresentationObservation</span><span class="p">]</span> <span class="o">=</span> <span class="n">the_workflow</span><span class="o">.</span><span class="n">has_data_representation_observations</span>
+    <span class="n">records</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">dr_obs</span><span class="p">:</span>
+        <span class="n">a_row</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">a_row</span><span class="p">[</span><span class="s2">&quot;obs_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">data_representation_observation_type</span>
+        <span class="n">a_row</span><span class="p">[</span><span class="s2">&quot;finding&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">finding</span>
+        <span class="n">a_row</span><span class="p">[</span><span class="s2">&quot;finding_seq&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">finding_sequence</span>
+        <span class="n">records</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a_row</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">records</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="load_modelling_choice_observations">
+<a class="viewcode-back" href="../../../kmds.utils.html#kmds.utils.load_utils.load_modelling_choice_observations">[docs]</a>
+<span class="k">def</span> <span class="nf">load_modelling_choice_observations</span><span class="p">(</span><span class="n">onto</span><span class="p">:</span> <span class="n">Ontology</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ModellingChoiceObservation</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Load the modelling choice observations from the ontology</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        onto (Ontology): The ontology containing modelling choice observations</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List[ModellingChoiceObservation]: The list of modelling choice observations in the ontology</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+    <span class="n">the_workflow</span><span class="p">:</span> <span class="n">Workflow</span> <span class="o">=</span> <span class="n">get_workflow</span><span class="p">(</span><span class="n">onto</span><span class="p">)</span>
+    <span class="n">mc_obs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ModellingChoiceObservation</span><span class="p">]</span> <span class="o">=</span> <span class="n">the_workflow</span><span class="o">.</span><span class="n">has_modeling_choice_observations</span>
+    <span class="n">records</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">mc_obs</span><span class="p">:</span>
+        <span class="n">a_row</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">a_row</span><span class="p">[</span><span class="s2">&quot;obs_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">modelling_choice_observation_type</span>
+        <span class="n">a_row</span><span class="p">[</span><span class="s2">&quot;finding&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">finding</span>
+        <span class="n">a_row</span><span class="p">[</span><span class="s2">&quot;finding_seq&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">finding_sequence</span>
+        <span class="n">records</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a_row</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">records</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="load_model_selection_observations">
+<a class="viewcode-back" href="../../../kmds.utils.html#kmds.utils.load_utils.load_model_selection_observations">[docs]</a>
+<span class="k">def</span> <span class="nf">load_model_selection_observations</span><span class="p">(</span><span class="n">onto</span><span class="p">:</span> <span class="n">Ontology</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelSelectionObservation</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Load the model selection observations from the ontology</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        onto (Ontology): The ontology containing the model selection observations</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List[ModelSelectionObservation]: The list of model selection observations</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+    <span class="n">the_workflow</span><span class="p">:</span> <span class="n">Workflow</span> <span class="o">=</span> <span class="n">get_workflow</span><span class="p">(</span><span class="n">onto</span><span class="p">)</span>
+    <span class="n">mc_obs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelSelectionObservation</span><span class="p">]</span> <span class="o">=</span> <span class="n">the_workflow</span><span class="o">.</span><span class="n">has_model_selection_observations</span>
+    <span class="n">records</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">mc_obs</span><span class="p">:</span>
+        <span class="n">a_row</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">a_row</span><span class="p">[</span><span class="s2">&quot;obs_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">model_selection_observation_type</span>
+        <span class="n">a_row</span><span class="p">[</span><span class="s2">&quot;finding&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">finding</span>
+        <span class="n">a_row</span><span class="p">[</span><span class="s2">&quot;finding_seq&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">finding_sequence</span>
+        <span class="n">records</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a_row</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">records</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Rajiv Sambasivan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
