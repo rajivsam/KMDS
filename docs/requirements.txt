@@ -1,7 +1,4 @@
 sphinx
-sphinx_rtd_theme
-owlready2
-importlib-resources
-prefect
-pyyaml
+sphinx-rtd-theme
 pandas
+importlib-resources
