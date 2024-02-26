@@ -7,6 +7,7 @@ class ExploratoryTags(str, Enum):
         str (_type_): string type tag
         Enum (_type_): string type tag
     """
+
     RELEVANCE_OBSERVATION = "Relevance Observation" 
     DATA_QUALITY_OBSERVATION = "Data Quality Observation"
 
@@ -16,6 +17,7 @@ class DataRepresentationTags(str, Enum):
         str (_type_): string type tag
         Enum (_type_): string type tag
     """
+
     FEATURE_ENGG_OBSERVATION = "Feature Engineering Observation"
     DATA_TRANSFORMATION_OBSERVATION = "Data Transformation Observation"
 
@@ -25,6 +27,7 @@ class ModellingChoiceTags(str, Enum):
         str (_type_): string type tag
         Enum (_type_): string type tag
     """
+
     MODELLING_CHOICE_OBSERVATION = "Modelling Choice Observation"
     MODELLING_ASSUMPTION_OBSERVATION = "Modelling Assumption Observation"
 
@@ -34,6 +37,7 @@ class ExperimentationTags(str, Enum):
         str (_type_): string type tag
         Enum (_type_): string type tag
     """
+
     HYPOTHESIS_STATEMENT = "Hypothesis Statement"
     EXPERIMENTAL_OBSERVATION = "Experimental Observation"
     EXPERIMENTAL_CONJECTURE = "Experimental Conjecture"
@@ -45,6 +49,7 @@ class ModelSelectionTags(str, Enum):
         str (_type_): string type tag
         Enum (_type_): string type tag
     """
+    
     MODEL_SELECTION_STATEMENT = "Model Selection Statement"
     MODEL_SELECTION_SETUP_DESCRIPTION = "Model Selection Setup Description"
     MODEL_SELECTION_OBSERVATION = "Model Selection Observation"
