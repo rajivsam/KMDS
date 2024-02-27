@@ -1,0 +1,7 @@
+kmds.utils.path\_utils module
+=============================
+
+.. automodule:: kmds.utils.path_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,7 @@
+kmds.tagging.tag\_types module
+==============================
+
+.. automodule:: kmds.tagging.tag_types
+   :members:
+   :undoc-members:
+   :show-inheritance:
