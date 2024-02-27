@@ -51,4 +51,6 @@ docker/
 data
 ## ignore logs
 *.log
+##
+docs/build
 

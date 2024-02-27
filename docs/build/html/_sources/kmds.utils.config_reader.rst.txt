@@ -1,7 +1,0 @@
-kmds.utils.config\_reader module
-================================
-
-.. automodule:: kmds.utils.config_reader
-   :members:
-   :undoc-members:
-   :show-inheritance:
