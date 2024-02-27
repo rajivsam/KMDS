@@ -1,7 +1,8 @@
 [![DOI](https://zenodo.org/badge/753950832.svg)](https://zenodo.org/doi/10.5281/zenodo.10695270)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Documentation Status](https://readthedocs.org/projects/kmds/badge/?version=latest)](https://kmds.readthedocs.io/en/latest/?badge=latest)
 <p align="center">
-  <img width="460" height="300" src="images/kmds_logo_resized.jpg">
+  <img width="460" height="300" src="https://github.com/rajivsam/KMDS/blob/main/images/kmds_logo_resized.jpg">
 </p>
 
 ## Knowledge Management for Data Science
@@ -10,7 +11,7 @@
 
 This tool is used for knowledge management in data science. In software design, conceptual domain models inform lower-level models. In data science work, experiments yield knowledge that informs modeling choices. Data science models are almost always informed by a variety of analysis experiments. Experimentation and organization of knowledge artifacts supporting modeling decisions is a requirement for reproducible data science models and improving model quality and performance.
 
-Please see [knowledge application development context](/feature_documentation/knowledge_management_in_DS.md ) for a description of a typical knowledge application development setting.
+Please see [knowledge application development context](https://github.com/rajivsam/KMDS/blob/main/feature_documentation/knowledge_management_in_DS.md) for a description of a typical knowledge application development setting.
 
 ### Why do you need this tool?
 
@@ -26,8 +27,8 @@ This tool is for data scientists and data analysts.
 ### How do you use this tool?
 
 1. You install this library along with the other python dependecies you need for your analysis task
-2. Review the [basic recipe](examples_of_use/workflow_recipe.md) for capturing your observations.
-3. Review [the templates section](examples_of_use/workflow_recipe.md) to find the example relevant to you. For analytics projects, review the analytics template. For machine learning projects, review the machine learning template.
+2. Review the [basic recipe](https://github.com/rajivsam/KMDS/blob/main/examples_of_use/workflow_recipe.md) for capturing your observations.
+3. Review [the templates section](https://github.com/rajivsam/KMDS/blob/main/examples_of_use/workflow_recipe.md) to find the example relevant to you. For analytics projects, review the analytics template. For machine learning projects, review the machine learning template.
 4. Start using the tool in your projects using the information from your review of the above two steps.
 
 ### Licensing and Feature Questions
