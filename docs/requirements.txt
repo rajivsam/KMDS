@@ -6,3 +6,4 @@ owlready2
 pytest
 PyYAML
 kmds
+prefect
