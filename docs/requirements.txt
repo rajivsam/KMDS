@@ -3,7 +3,6 @@ sphinx-rtd-theme
 pandas
 importlib-resources
 owlready2
-rdflib
-Flask
 pytest
 PyYAML
+kmds
