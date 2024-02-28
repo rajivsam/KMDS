@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Documentation Status](https://readthedocs.org/projects/kmds/badge/?version=latest)](https://kmds.readthedocs.io/en/latest/?badge=latest)
 <p align="center">
-  <img width="460" height="300" src="https://github.com/rajivsam/KMDS/blob/main/images/kmds_logo_resized.jpg">
+  <img width="460" height="300" src="https://raw.githubusercontent.com/rajivsam/KMDS/main/images/kmds_logo_resized.jpg">
 </p>
 
 ## Knowledge Management for Data Science
