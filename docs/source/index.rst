@@ -6,11 +6,15 @@
 Welcome to KMDS's documentation!
 ================================
 
+For details of how you can use KMDS in your projects, refer to *"How do you use this tool?"* section in the `KMDS repository`_.
+
+.. _KMDS repository: https://github.com/rajivsam/KMDS
+   
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
-modules
+   
+   modules
 
 
 Indices and tables
