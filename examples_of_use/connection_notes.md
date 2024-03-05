@@ -1,0 +1,2 @@
+## Using S3 Storage
+See the [example in the cloud folder](https://github.com/rajivsam/KMDS/blob/main/examples_of_use/cloud/minio_example.ipynb) and the associated example configuration file for connecting to an s3 bucket to get your data. A docker file is provided in the docker directory. 

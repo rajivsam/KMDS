@@ -1,0 +1,5 @@
+HOST_URL: “your url:9000”
+ACCESS_KEY: “your s3 bucket user”
+SECRET_KEY: “s3 bucket password”
+BUCKET_NAME: “s3 bucket name”
+

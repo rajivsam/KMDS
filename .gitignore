@@ -45,12 +45,21 @@ src/config/
 ## history
 **/.history
 
-## ignore docker for now
-docker/
+
 ## don't add the data directory
 data
 ## ignore logs
 *.log
 ##
 docs/build
+
+.DS_Store
+.vagrant
+
+# code & config
+_service-provider/*
+_solr/schema.xml
+_src/*
+local/*
+.env
 
