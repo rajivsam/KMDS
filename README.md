@@ -30,6 +30,7 @@ This tool is for data scientists and data analysts.
 2. Review the [basic recipe](https://github.com/rajivsam/KMDS/blob/main/examples_of_use/workflow_recipe.md) for capturing your observations.
 3. Review [the templates section](https://github.com/rajivsam/KMDS/blob/main/examples_of_use/workflow_recipe.md) to find the example relevant to you. For analytics projects, review the analytics template. For machine learning projects, review the machine learning template.
 4. Start using the tool in your projects using the information from your review of the above two steps.
+_Note: The examples are based on using the files in the package, but it is quite straight forward to connect to S3 storage to get your data files, see [the connection notes document](https://github.com/rajivsam/KMDS/blob/main/examples_of_use/connection_notes.md) for details._
 
 ## Road Map
 The next planned feature is the integration of KMDS with a data catalog. This makes the products produced using KMDS available to users along with information about creating (and reproducting) these products.
