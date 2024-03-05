@@ -19,4 +19,5 @@ sphinx-rtd-theme
 minio
 dask[distributed]
 ckanapi
+importlib_resources
 
