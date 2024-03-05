@@ -262,17 +262,16 @@
 
 <owl:NamedIndividual rdf:about="#ITSM modelling">
   <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation2"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation1"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#exploratoryobservation1">
-  <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Only (number', 'sys_created_at', 'closed_at', 'assignment_group') are needed for this analysis</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
-  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation1"/>
+  <has_model_selection_observations rdf:resource="#modelselectionobservation2"/>
+  <has_model_selection_observations rdf:resource="#modelselectionobservation3"/>
+  <has_model_selection_observations rdf:resource="#modelselectionobservation1"/>
+  <has_model_selection_observations rdf:resource="#modelselectionobservation4"/>
+  <has_model_selection_observations rdf:resource="#modelselectionobservation5"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation2">
@@ -289,11 +288,60 @@
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
+<owl:NamedIndividual rdf:about="#exploratoryobservation1">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Only (number', 'sys_created_at', 'closed_at', 'assignment_group') are needed for this analysis</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
 <owl:NamedIndividual rdf:about="#exploratoryobservation4">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
   <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">There is inconsistency in the datetime format for both ticket creation and ticket closed times.The parse function from the dateutil library is used to parse times into ISO format and then use that form for the calculation of the time to resolution</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#datarepresentationobservation1">
+  <rdf:type rdf:resource="#DataRepresentationObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The resolution time attribute is defined. It is calculated as the time difference between closing and creationtimes of the ticket.</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feature Engineering Observation</data_representation_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#modelselectionobservation2">
+  <rdf:type rdf:resource="#ModelSelectionObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">About 80% of the tickets are resolved within 1000 hours. The other 20 percent are associated with longerresolution time. Identifying if ticket resolution will fall into this long tail was done in https://doi.org/10.1016/j.mlwa.2021.100237</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
+  <model_selection_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Model Selection Observation</model_selection_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#modelselectionobservation3">
+  <rdf:type rdf:resource="#ModelSelectionObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">There are no assumptions or choices that have to be made to develop these models,so there are no model choice observations</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</finding_sequence>
+  <model_selection_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Model Selection Observation</model_selection_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#modelselectionobservation1">
+  <rdf:type rdf:resource="#ModelSelectionObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Resolution time clusters into five groups. A large group of tickets that are resolved fairlyquickly and four groups of varying, but larger resolution times.</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <model_selection_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Model Selection Observation</model_selection_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#modelselectionobservation4">
+  <rdf:type rdf:resource="#ModelSelectionObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A small group of support groups account for most ticket closures</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <model_selection_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Model Selection Observation</model_selection_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#modelselectionobservation5">
+  <rdf:type rdf:resource="#ModelSelectionObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Many support groups (four from model 1 results) work on longer activity tickets</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
+  <model_selection_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Model Selection Observation</model_selection_observation_type>
 </owl:NamedIndividual>
 
 
