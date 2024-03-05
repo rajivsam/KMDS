@@ -52,7 +52,7 @@ data
 *.log
 ##
 docs/build
-
+docker/*.env
 .DS_Store
 .vagrant
 
