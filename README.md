@@ -34,8 +34,6 @@ This tool is for data scientists and data analysts.
 
 _Note: The examples are based on using the files in the package, but it is quite straight forward to connect to S3 storage to get your data files, see [the connection notes document](https://github.com/rajivsam/KMDS/blob/main/examples_of_use/connection_notes.md) for details. Minio provides a sandbox where you can try this_
 
-## Road Map
-The next planned feature is the integration of KMDS with a data catalog. This makes the products produced using KMDS available to users along with information about creating (and reproducting) these products.
 
 ### Licensing and Feature Questions
 
