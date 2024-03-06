@@ -266,12 +266,12 @@
   <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation1"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation1"/>
   <has_model_selection_observations rdf:resource="#modelselectionobservation2"/>
   <has_model_selection_observations rdf:resource="#modelselectionobservation3"/>
   <has_model_selection_observations rdf:resource="#modelselectionobservation1"/>
   <has_model_selection_observations rdf:resource="#modelselectionobservation4"/>
   <has_model_selection_observations rdf:resource="#modelselectionobservation5"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation3"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation2">
@@ -300,13 +300,6 @@
   <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">There is inconsistency in the datetime format for both ticket creation and ticket closed times.The parse function from the dateutil library is used to parse times into ISO format and then use that form for the calculation of the time to resolution</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#datarepresentationobservation1">
-  <rdf:type rdf:resource="#DataRepresentationObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The resolution time attribute is defined. It is calculated as the time difference between closing and creationtimes of the ticket.</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
-  <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feature Engineering Observation</data_representation_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#modelselectionobservation2">
@@ -342,6 +335,27 @@
   <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Many support groups (four from model 1 results) work on longer activity tickets</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
   <model_selection_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Model Selection Observation</model_selection_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#datarepresentationobservation2">
+  <rdf:type rdf:resource="#DataRepresentationObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The resolution time attribute is defined. It is calculated as the time difference between closing and creationtimes of the ticket.</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feature Engineering Observation</data_representation_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#datarepresentationobservation1">
+  <rdf:type rdf:resource="#DataRepresentationObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The resolution time attribute is defined. It is calculated as the time difference between closing and creationtimes of the ticket.</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feature Engineering Observation</data_representation_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#datarepresentationobservation3">
+  <rdf:type rdf:resource="#DataRepresentationObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The resolution time attribute is defined. It is calculated as the time difference between closing and creationtimes of the ticket.</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feature Engineering Observation</data_representation_observation_type>
 </owl:NamedIndividual>
 
 
