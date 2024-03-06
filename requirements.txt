@@ -20,4 +20,4 @@ minio
 dask[distributed]
 ckanapi
 importlib_resources
-
+woodwork
