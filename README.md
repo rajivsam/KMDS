@@ -9,7 +9,7 @@
 
 ### What is this tool used for?
 
-This tool is used for knowledge management in data science. In software design, conceptual domain models inform lower-level models. In data science work, experiments yield knowledge that informs modeling choices. Data science models are almost always informed by a variety of analysis experiments. Experimentation and organization of knowledge artifacts supporting modeling decisions is a requirement for reproducible data science models and improving model quality and performance.
+This tool is used for knowledge management in data science. In software design, conceptual domain models inform lower-level models. In data science work, experiments yield knowledge that informs modeling choices. Data science models are almost always informed by a variety of analysis experiments. Experimentation and organization of knowledge artifacts supporting modeling decisions is a requirement for reproducible data science models and improving model quality and performance. ([video](https://github.com/rajivsam/KMDS/blob/main/media/compressed_kmds_intro.mp4))
 
 Please see [knowledge application development context](https://github.com/rajivsam/KMDS/blob/main/feature_documentation/knowledge_management_in_DS.md) for a description of a typical knowledge application development setting.
 
