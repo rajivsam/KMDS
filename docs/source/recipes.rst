@@ -4,7 +4,7 @@ Recipes
 
 This section contains descriptions of recipes used to illustrate KMDS concepts with real world use cases. Please see `the workflow documentation guideline <https://github.com/rajivsam/KMDS/blob/main/examples_of_use/workflow_recipe.md>`_ for the details of the steps involved in integrating KMDS into your analytics and machine learning workflows. The examples discussed in this section follow this process. An example may illustrate a specific set of features and concepts. These are provided in the description.
 
-Data Quality
+Data Analysis
 *************
 
 Generating a Data Quality report
