@@ -15,9 +15,14 @@ Observation Logging
 *******************
 The following are guidelines for what must be captured as part of documenting a workflow.
 
+
 1. In general, all decisions that change input data or data representations need to be logged with documentation that makes it possible to reproduce these changes. In other words, it is possible for data scientists to reproduce the intermediate data artifacts from the input data by following the logged documentation.
+
 2. The rationale for making modelling choices and the experimental pipelines that informed the rationale should be clearly logged with documentation.
+
 3. Methodology to evaluate task performance must be logged.
+
+
 4. Assumptions for modelling must be logged.
 
 Glossary of Observation Types
@@ -28,11 +33,12 @@ The tasks within a workflow can be categorized as *exploratory*, *data represent
 Knowledge Graphs
 *****************
 The developed documentation is stored as an *RDF* graph. This graph can be shared between workflows. In otherwords, the following scenarios are possible:
+
 1. You could start with an exploratory workflow, save it, load the exploratory workflow in a notebook where you ware evaluating different data representations for a use case, once you have determined a suitable data representation you can update the workflow with your observations from data representation experimentation and save the workflow. You can then load the workflow with observations from exploratory data analysis and data represenations in a notebook where you are performing modeling experiments. Once you have determined a suitable model for your use case, you can update the workflow with your observations from modeling. After completing the modeling phase to your satisfaction, you can save the workflow with the documentation to a network location and then load it and review your observations.
 
 2. For workflows that require extensive experimentation, you can create separate workflows for experimentation and then indicate that your use case workflow depends on these experiments. 
 
-Examples of both these scenarios are provided. The repository contains a page explaining the implementation steps for managing the life cycle of the `knowledge graph <https://github.com/rajivsam/KMDS/blob/main/feature_documentation/ontology_management.md>`_ .
+Examples of both these scenarios are provided. The repository contains a page explaining the implementation steps for managing the life cycle of the `knowledge graph <https://github.com/rajivsam/KMDS/blob/main/feature_documentation/ontology_management.md>`_ . Please see the `ontology <https://github.com/rajivsam/KMDS/blob/main/kmds/ontology/kmds_ontology.py>`_ for details of the knowledge graph.
 
 
 

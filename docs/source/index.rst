@@ -12,6 +12,7 @@ KMDS, Knowledge Managemet for Data Science, is a python library to document your
    :maxdepth: 2
    :caption: Contents:
    
+   Installation <install>
    Concepts <concepts>
    Recipes <recipes>
    Modules <modules>
