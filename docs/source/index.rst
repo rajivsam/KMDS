@@ -5,21 +5,21 @@
 
 Welcome to KMDS's documentation!
 ================================
+The documentation for KMDS is organized on the basis of concepts and recipes. The concepts section describes the ideas that form the building blocks for capturing knowledge for your use case. The recipes section provides an illustration of these ideas. 
 
-For details of how you can use KMDS in your projects, refer to *"How do you use this tool?"* section in the `KMDS repository`_.
 
-.. _KMDS repository: https://github.com/rajivsam/KMDS
-   
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
    
-   modules
+   Concepts <concepts>
+   Recipes <recipes>
+   Modules <modules>
 
 
-Indices and tables
-==================
-
+KMDS 
+=====
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
