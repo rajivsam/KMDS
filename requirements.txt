@@ -14,3 +14,4 @@ sphinx-rtd-theme
 minio
 importlib_resources
 woodwork
+boxsdk

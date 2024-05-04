@@ -1,0 +1,5 @@
+CLIENT_ID: "use your client id"
+CLIENT_SECRET: "use your client secret"
+ACCESS_TOKEN: "use your access token"
+FILE_ID: "the file identifier for the file your want to read from box - get this from box from the address bar when you browse the file"
+
