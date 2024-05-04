@@ -7,7 +7,7 @@ There are two examples of reading from cloud end points that are provided.  The 
 
 1. Receive a data file from a colleague in a project, for example, some one from the product or business team, giving you a raw dataset for analysis.
 
-2. Recieve a file containing data products such as _embeddings_ produced by another team that you want to consume in your modeling.
+2. Recieve a file containing data products such as *embeddings* and *annotated data* produced by another team that you want to consume in your modeling.
 
 S3 is one of the most prevalent storage options for this type of exchange. Minio abstracts away the vendor dependency on S3 storage so you can move your S3 resources between cloud providers. `Minio <https://min.io/>`_ provides such an implementation. See `this minio sandbox video <https://www.youtube.com/watch?v=-r6UsTNGZcg&t=88s>`_ for details of using minio with python. See `the minio reader notebook <https://github.com/rajivsam/KMDS/blob/main/examples_of_use/cloud/minio_cloud_reader.ipynb>`_ for details of using minio with kmds.
 
