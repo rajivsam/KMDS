@@ -93,6 +93,17 @@ with onto:
         """
         pass
 
+    class intent(DataProperty, FunctionalProperty):
+        """ Tag intent of the observation
+
+        Args:
+            DataProperty (_type_): OWL2library specific way of defining a property with a built in value
+            FunctionalProperty (_type_): OWL2library specific way of defining a property with a built in value
+        """
+
+        domain = [KMObservation]
+        range = [str]
+
     class has_exploratory_observations(ObjectProperty):
         """ property to capture the exploratory observations of the workflow
 

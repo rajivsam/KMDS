@@ -1,9 +1,9 @@
 from kmds.ontology.kmds_ontology import *
 from owlready2.namespace import Ontology
 from typing import List
+
 from pandas import DataFrame
 import logging
-
 
 
 def get_workflow(onto: Ontology) -> Workflow:
@@ -16,7 +16,7 @@ def get_workflow(onto: Ontology) -> Workflow:
         Workflow: The workflow in this ontology
     """
     the_workflow_instance = None
-    
+
     with onto:
         workflow_instances = Workflow.instances()
         if workflow_instances is None:
@@ -24,8 +24,9 @@ def get_workflow(onto: Ontology) -> Workflow:
 
         else:
             if len(workflow_instances) > 1:
-                logging.info("There was more than one workflow, using the first one")
-            
+                logging.info(
+                    "There was more than one workflow, using the first one")
+
             the_workflow_instance = workflow_instances[0]
 
     return the_workflow_instance
@@ -41,15 +42,15 @@ def load_kb(kb_location: str) -> Ontology:
         Returns:
             Ontology: Returns a previously created knowledge base
     """
-    onto :Ontology = None
+    onto: Ontology = None
     try:
         onto = get_ontology(kb_location).load()
         set_ontology(onto)
     except Exception as e:
-        logging.error("Error opening KB, check if KB exists and permissions are right")
+        logging.error(
+            "Error opening KB, check if KB exists and permissions are right")
     if onto is None:
         logging.error("Could not load Ontology, check the file and try again.")
-
 
     return onto
 
@@ -64,7 +65,6 @@ def load_exp_observations(onto: Ontology) -> List[ExploratoryObservation]:
         List[ExploratoryObservation]: List of EDA observations in the ontology
     """
 
-
     the_workflow: Workflow = get_workflow(onto)
     exp_obs: List[ExploratoryObservation] = the_workflow.has_exploratory_observations
     records = []
@@ -74,9 +74,21 @@ def load_exp_observations(onto: Ontology) -> List[ExploratoryObservation]:
         a_row["obs_type"] = o.exploratory_observation_type
         a_row["finding"] = o.finding
         a_row["finding_seq"] = o.finding_sequence
+        intent_present = o.intent is not None
+        if intent_present:
+            a_row["intent"] = o.intent
         records.append(a_row)
+    df = DataFrame(records)
+    
+    if df.shape[0] > 0:
+        if len(df.columns.to_list()) == 4:
+            ord_col = ["obs_type", "intent", "finding", "finding_seq"]
+        else:
+            ord_col = ["obs_type", "finding", "finding_seq"]
+        df = df[ord_col]
 
-    return DataFrame(records)
+
+    return df
 
 
 def load_data_rep_observations(onto: Ontology) -> List[DataRepresentationObservation]:
@@ -89,7 +101,6 @@ def load_data_rep_observations(onto: Ontology) -> List[DataRepresentationObserva
         List[DataRepresentationObservation]: The list of data representation observations
     """
 
-
     the_workflow: Workflow = get_workflow(onto)
     dr_obs: List[DataRepresentationObservation] = the_workflow.has_data_representation_observations
     records = []
@@ -99,9 +110,16 @@ def load_data_rep_observations(onto: Ontology) -> List[DataRepresentationObserva
         a_row["obs_type"] = o.data_representation_observation_type
         a_row["finding"] = o.finding
         a_row["finding_seq"] = o.finding_sequence
-        records.append(a_row)
 
-    return DataFrame(records)
+        intent_present = o.intent is not None
+        if intent_present:
+            a_row["intent"] = o.intent
+        records.append(a_row)
+    
+    df = format_records(records=records)
+
+    return df
+
 
 def load_modelling_choice_observations(onto: Ontology) -> List[ModellingChoiceObservation]:
     """ Load the modelling choice observations from the ontology
@@ -113,7 +131,6 @@ def load_modelling_choice_observations(onto: Ontology) -> List[ModellingChoiceOb
         List[ModellingChoiceObservation]: The list of modelling choice observations in the ontology
     """
 
-
     the_workflow: Workflow = get_workflow(onto)
     mc_obs: List[ModellingChoiceObservation] = the_workflow.has_modeling_choice_observations
     records = []
@@ -123,9 +140,17 @@ def load_modelling_choice_observations(onto: Ontology) -> List[ModellingChoiceOb
         a_row["obs_type"] = o.modelling_choice_observation_type
         a_row["finding"] = o.finding
         a_row["finding_seq"] = o.finding_sequence
-        records.append(a_row)
 
-    return DataFrame(records)
+        intent_present = o.intent is not None
+        if intent_present:
+            a_row["intent"] = o.intent
+        records.append(a_row)
+    
+    df = format_records(records=records)
+
+
+    return df
+
 
 def load_model_selection_observations(onto: Ontology) -> List[ModelSelectionObservation]:
     """ Load the model selection observations from the ontology
@@ -137,7 +162,6 @@ def load_model_selection_observations(onto: Ontology) -> List[ModelSelectionObse
         List[ModelSelectionObservation]: The list of model selection observations
     """
 
-
     the_workflow: Workflow = get_workflow(onto)
     mc_obs: List[ModelSelectionObservation] = the_workflow.has_model_selection_observations
     records = []
@@ -147,6 +171,33 @@ def load_model_selection_observations(onto: Ontology) -> List[ModelSelectionObse
         a_row["obs_type"] = o.model_selection_observation_type
         a_row["finding"] = o.finding
         a_row["finding_seq"] = o.finding_sequence
-        records.append(a_row)
 
-    return DataFrame(records)
+        intent_present = o.intent is not None
+        if intent_present:
+            a_row["intent"] = o.intent
+        records.append(a_row)
+    df = format_records(records=records)
+
+
+    return df
+
+def format_records(records: List[KMObservation] ) ->DataFrame:
+    """ Format a list of observations into a dataframe for display
+
+    Args:
+        records (List[KMObservation]):  List of observations
+
+    Returns:
+        DataFrame: Dataframe containing the records
+    """
+    df = DataFrame(records)
+    if df.shape[0] > 0:
+        if len(df.columns.to_list()) == 4:
+            ord_col = ["obs_type", "intent", "finding", "finding_seq"]
+        else:
+            ord_col = ["obs_type", "finding", "finding_seq"]
+        df = df[ord_col]
+
+        
+
+    return df

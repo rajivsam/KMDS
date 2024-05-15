@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "kmds"
-version = "0.2.15"
+version = "0.2.16"
 description = "This is a package that helps data scientists and data analysts to capture notes while they work through data science tasks. The captured tasks can then be searched and analyzed."
 authors = ["Rajiv Sambasivan <rajiv.sambasivan@r2-ds.com>"]
 license = "Apache 2.0"
