@@ -8,9 +8,9 @@
 ## Knowledge Management for Data Science
 <div class="callout-left full">
 
-<h3>Needs Refactoring to Support LLM's</h3>
+<h3>Attention! Needs Refactoring to Support LLM's</h3>
 
-<p>This package was prepared pre-LLM, this package needs to be refactored to use LLM's for knowledge capture.</p>
+<p style="background-color:orange;">This package was prepared pre-LLM, this package needs to be refactored to use LLM's for knowledge capture.</p>
 
 </div>
 
