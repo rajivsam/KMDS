@@ -1,49 +1,114 @@
-[![DOI](https://zenodo.org/badge/753950832.svg)](https://zenodo.org/doi/10.5281/zenodo.10695270)
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Documentation Status](https://readthedocs.org/projects/kmds/badge/?version=latest)](https://kmds.readthedocs.io/en/latest/?badge=latest)
 <p align="center">
-  <img width="460" height="300" src="https://raw.githubusercontent.com/rajivsam/KMDS/main/images/kmds_logo_resized.jpg">
+  <a href="https://kmds.readthedocs.io/en/latest/">
+    <img width="460" height="300" src="https://raw.githubusercontent.com/rajivsam/KMDS/main/images/kmds_logo_resized.jpg" alt="KMDS Logo">
+  </a>
 </p>
 
-## Knowledge Management for Data Science
-<div class="callout-left full">
+<h1 align="center">Knowledge Management for Data Science (KMDS)</h1>
 
+<p align="center">
+  <strong>Capture, organize, and reuse knowledge from your data science experiments.</strong>
+</p>
 
-</div>
+<p align="center">
+  <a href="https://zenodo.org/doi/10.5281/zenodo.10695270"><img src="https://zenodo.org/badge/753950832.svg" alt="DOI"></a>
+  <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a>
+  <a href="https://kmds.readthedocs.io/en/latest/?badge=latest"><img src="https://readthedocs.org/projects/kmds/badge/?version=latest" alt="Documentation Status"></a>
+</p>
 
-### What is the tool and why do you need it?
+---
 
-This tool is used for knowledge management in data science. As data scientists, incremental experimentation is a way of life. The problem is we have a lot of them and even small projects accumalate context, decisions and rationale over time. This is not a problem if we have both the need for experimentation (the design question or issue) and the results documented over time, but this tends to be done in an adhoc manner, so when its time to rebuild or revisit a particular question, we can't find the research and the results related to it. This is the need this tool fulfils.
+## 🌟 What is KMDS?
 
-Please see [the video](https://www.youtube.com/watch?v=n7gE6bfLWtI) for a quick overview.
+KMDS is a Python-based tool designed for systematic knowledge management in data science projects. It helps you document the incremental process of experimentation, including context, decisions, and rationale, ensuring that valuable insights are not lost over time.
 
-### How is it related to process guidelines and vocabularies for machine learning?
-Initiatives such as [CRISP DM](https://www.datascience-pm.com/crisp-dm-2/) provide guidelines and processes for developing data science projects. Projects such as [Open ML](https://openml.github.io/openml-python/main/index.html) provide semantic vocabulary standardization for machine learning tasks. These are excellent tools. However, the guidelines they provide are task focussed. The gap between a conceptual idea and the final, or, even candidate data science tasks for a project is filled with many assumptions and experimental evaluations. The information in these assumptions and experimental evaluations is what this tool aims to capture. There is also an ordering to these assumptions and experimental evaluations. This is also what this tool aims to capture.
+### The Problem It Solves
 
-### Who would use this tool?
+Data scientists live by experimentation. However, the context and rationale behind each experiment are often documented in an ad-hoc manner. When it's time to revisit a question or build upon previous work, it's difficult to piece together the research and its results. KMDS addresses this by providing a structured way to log your findings.
 
-This tool is for data scientists and data analysts.
+🎥 **Watch a quick overview of KMDS:** [YouTube Video](https://www.youtube.com/watch?v=n7gE6bfLWtI)
 
-### How do you use this tool?
-This version of the tool takes all the recent advances (as of early 2026) into consideration in how this tool is used. This is a python package. It is assumed that you have an API key to a provider. The basic usage scenario is as follows:
-1. Install the python package in the environment where you intend to experiment and do your data science analysis.
-2. Work through your analysis plan for your model development or experiment. The tool will not offer help with how your analysis or experiment will be done. It assumes you are the expert and you know how to do this. Of course, you can use __Jupyternaut__ or a similar generative AI tool to generate your code for you.
-3. As you work through your exploratory data analysis, data representation and modeling phases, log your findings to ```kmds```
-4. Run a report to fetch the details of your design rationale as needed. To communicate your findings to your team or management, simply export your knowledge base. Point a generative AI tool such as __NotebookLM__ to the export and generate your report, video or other documentation artifact.
+---
 
-For a video excerpt of the design cosiderations, see [this video](https://www.youtube.com/watch?v=qRTsM6MNxIQ)
+## ✨ Key Features
 
-### Examples of use
-The repository contains two examples of use. One example is from analytics, the other is from machine learning. The notebooks for analytics are in [the analytics example](examples_of_use/analytics) and the notebooks for machine learning are in [the machine learning example](examples_of_use/machine_learning). The analytics example evaluates the effectiveness of ticket resolution help desk. Using ticket resolution data for a particular quarter, Q2 2016, the example illustrates how effectiveness of the organization can be evaluated. The reader can explore the notebooks to see the details of the implementation and details of how findings in each phase of the model building cycle are logged. The findings from the resulting knowledge base can be exported to create materials to communicate the details of the project to team members and management, see [this video](https://www.youtube.com/watch?v=zmm0O4_fK_c) and this [infographic](examples_of_use/analytics/usecase_overview_mindmap.png)
+- **Structured Logging:** Log findings from your exploratory data analysis, data representation, and modeling phases.
+- **Knowledge Base Export:** Export your knowledge base to communicate your findings to your team or management.
+- **Integration with Generative AI:** Use generative AI tools like NotebookLM to create reports, videos, and other documentation artifacts from your exported knowledge base.
+- **Process Agnostic:** Complements process guidelines like CRISP-DM and semantic vocabularies like OpenML by capturing the "why" behind your data science tasks.
 
-The machine learning example illustrates how Principal Components Analysis can be used to summarize the sales activity in an online store for a particular quarter. The reader can view the notebooks under [the machine learning example](examples_of_use/machine_learning) for details of the implementation. As with the analytics example, generative AI tools (Notebook LM in this case) can be used to communicate the findings and results from the knowledge base, see [this infographic](examples_of_use/machine_learning/ml_infographic_kmds.png).
+---
 
-### Licensing and Feature Questions
+## 🚀 Getting Started
 
-1. The tool is open source with an [apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.txt)
-2. If you are interested in the following features, please set up a [meeting](https://calendly.com/rajiv-sambasivan/help-with-kmds-feature) with me:
-   1. Help with a data analysis task for your use case
-   2. Developing an ontology based solution similar to the above for your specific use case.
-   3. Customizing this tool with other extensions, for example to integrate a feature store or meta-data management tool that you use in your data science tool stack.
+### 1. Installation
 
-3. If this problem resonates with you as a developer  and you would like to contribute, submit an issue and if the feature makes sense we can discuss the possiblity of submitting a PR for it. Of course, you can fork this repository and use it per the licensing information. Thank you for your interest.
+Install KMDS in your Python environment:
+
+```bash
+pip install kmds
+```
+
+### 2. Usage
+
+As you work through your analysis, log your findings to `kmds`. Here's a basic workflow:
+
+1.  **Import KMDS:**
+    ```python
+    from kmds import KnowledgeManagement
+    ```
+
+2.  **Initialize the Knowledge Base:**
+    ```python
+    km = KnowledgeManagement()
+    ```
+
+3.  **Log Your Findings:**
+    ```python
+    km.log_finding("My observation during EDA", "This is what I found...")
+    ```
+
+4.  **Export Your Knowledge Base:**
+    ```python
+    km.export("my_project_knowledge_base.txt")
+    ```
+
+5.  **Generate Reports:**
+    Point a generative AI tool to your exported knowledge base to create reports, presentations, and other documentation.
+
+---
+
+## 📚 Examples of Use
+
+This repository includes two detailed examples:
+
+-   **Analytics Example:** Evaluates the effectiveness of a ticket resolution help desk.
+    -   [Notebooks](examples_of_use/analytics)
+    -   [Video Summary](https://www.youtube.com/watch?v=zmm0O4_fK_c)
+    -   [Infographic](examples_of_use/analytics/usecase_overview_mindmap.png)
+
+-   **Machine Learning Example:** Uses Principal Component Analysis (PCA) to summarize online store sales activity.
+    -   [Notebooks](examples_of_use/machine_learning)
+    -   [Infographic](examples_of_use/machine_learning/ml_infographic_kmds.png)
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! If you have an idea for a new feature or would like to report a bug, please open an issue. If you'd like to contribute code, please fork the repository and submit a pull request.
+
+---
+
+## 📄 License
+
+This project is licensed under the Apache 2.0 License. See the [LICENSE](https://www.apache.org/licenses/LICENSE-2.0.txt) file for details.
+
+---
+
+## 📞 Contact
+
+If you have questions or are interested in the following, please [schedule a meeting](https://calendly.com/rajiv-sambasivan/help-with-kmds-feature):
+
+-   Help with a data analysis task for your use case.
+-   Developing a custom ontology-based solution.
+-   Integrating KMDS with other tools in your data science stack.
