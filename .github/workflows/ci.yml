@@ -29,7 +29,7 @@ jobs:
         path: .venv
         key: venv-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('**/uv.lock') }}
     - name: Install dependencies
-      run: uv sync --no-install-project
+      run: uv sync
     - name: Run tests
       run: uv run pytest
 
