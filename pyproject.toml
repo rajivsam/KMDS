@@ -20,9 +20,6 @@ PyYAML = "^6.0.1"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[project]
-requires-python = ">=3.12"
-
 [dependency-groups]
 dev = [
     "boxsdk>=10.3.0",
