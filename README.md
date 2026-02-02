@@ -51,30 +51,7 @@ pip install kmds
 
 ### 2. Usage
 
-As you work through your analysis, log your findings to `kmds`. Here's a basic workflow:
-
-1.  **Import KMDS:**
-    ```python
-    from kmds import KnowledgeManagement
-    ```
-
-2.  **Initialize the Knowledge Base:**
-    ```python
-    km = KnowledgeManagement()
-    ```
-
-3.  **Log Your Findings:**
-    ```python
-    km.log_finding("My observation during EDA", "This is what I found...")
-    ```
-
-4.  **Export Your Knowledge Base:**
-    ```python
-    km.export("my_project_knowledge_base.txt")
-    ```
-
-5.  **Generate Reports:**
-    Point a generative AI tool to your exported knowledge base to create reports, presentations, and other documentation.
+As you work through your analysis, log your findings to `kmds`. Check out the examples below.
 
 ---
 
