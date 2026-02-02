@@ -8,7 +8,7 @@
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../kmds/'))
+sys.path.insert(0, os.path.abspath('../../src/kmds/'))
 sys.path.insert(0, os.path.abspath('.'))
 project = 'KMDS'
 copyright = '2024, Rajiv Sambasivan'

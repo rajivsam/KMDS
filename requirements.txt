@@ -13,5 +13,9 @@ sphinx
 sphinx-rtd-theme
 minio
 importlib_resources
-woodwork
 boxsdk
+jupyter_ai[all]
+google-genai
+python-dotenv
+langchain-google-vertexai
+plotly
