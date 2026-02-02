@@ -14,8 +14,6 @@ KMDS, Knowledge Management for Data Science, is a Python library to document you
    
    Installation <install>
    Concepts <concepts>
-   Recipes <recipes>
-   Cloud Read/Write <cloud_read_write>
    Modules <modules>
 
 
