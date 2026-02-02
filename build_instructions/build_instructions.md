@@ -1,5 +1,5 @@
 ### Building KMDS
-This package is built with poetry. Install poetry, then run ``` uv pip build ```
+This package is built with ```uv```. Install uv, then run ``` uv build ```
 
 ### Updating Documentation
 This is the sequence of steps to follow to make changes to the documentation.
