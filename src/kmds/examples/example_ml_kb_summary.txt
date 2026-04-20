@@ -1,10 +1,10 @@
 obs_type,intent,finding,finding_seq
-Data Quality Observation,DATA_UNDERSTANDING,"Some products are not valid products. For example, some of these products seem to be created by software testers ",5
-Data Quality Observation,DATA_UNDERSTANDING,Some Quantities are not numbers,3
-Relevance Observation,DATA_UNDERSTANDING,"For this task, the period considered is first quarter of 2010, other data are not relevant for this report ",6
-Data Quality Observation,DATA_UNDERSTANDING,"Customer ID, Description and Stock Code have null values",2
 Data Quality Observation,DATA_UNDERSTANDING,"Quantity, Price and Customer ID attributes have mixed types",1
+Data Quality Observation,DATA_UNDERSTANDING,Some Quantities are not numbers,3
+Data Quality Observation,DATA_UNDERSTANDING,"Customer ID, Description and Stock Code have null values",2
+Relevance Observation,DATA_UNDERSTANDING,"For this task, the period considered is first quarter of 2010, other data are not relevant for this report ",6
 Data Quality Observation,DATA_UNDERSTANDING,"Some Prices are not numbers, these correspond to transactions that are some kind of adjustment - like returns, or,denoting some kind of payment adjustment. ",4
+Data Quality Observation,DATA_UNDERSTANDING,"Some products are not valid products. For example, some of these products seem to be created by software testers",5
 Data Transformation Observation,DATA_UNDERSTANDING,This data is from https://archive.ics.uci.edu/dataset/352/online+retail.The subset of transactions that fall in the first quarter of 2010 is filtered.Then the revenue for each product is computed. This is the data represenation for this example.,1
 Modelling Choice Observation,,"contribution of products towards quaterly revenue shows a power law like behavior andso to facilitate understanding of the products that go significantly towards the generated quaterlyrevenue, we drop the products that materially do not contribute towards the revenue andsimply add dimensionality to the problem. Specifically, only 732 products out of a total of 3092 products,contribute to 80 percent of the revenue. Data analysis techniques such as PCA may be useful in reducing this732 to a smaller number for example, 30. So we may be able to explain the revenue for the store in Q1 with lessthan 30 product combinations - not bad if you consider that the inventory is over 3000 items, that is like explainingthe inventory with one percent of the number of items in the inventory.",1
 Model Selection Statement,MODEL_SELECTION,"
