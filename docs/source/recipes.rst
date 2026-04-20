@@ -7,6 +7,75 @@ This section contains descriptions of recipes used to illustrate KMDS concepts w
 Data Analysis
 *************
 
+Text-First Exploratory Logging
+==============================
+
+Business analysts can capture exploratory findings from a short project summary without writing notebook code.
+
+Application workflow example:
+
+.. code:: bash
+
+		kmds-summary-log \
+			--summary "This is a daily reporting workflow for support operations. Missing category labels were found in intake data." \
+			--workflow-name "support_reporting_intake" \
+			--workflow-type application \
+			--project-file ./support_reporting_intake.xml \
+			--create-project \
+			--no-prompt
+
+Ambiguous summary example (prompted):
+
+.. code:: bash
+
+		kmds-summary-log \
+			--summary "Project kickoff notes for the upcoming quarter." \
+			--workflow-name "quarterly_kickoff_notes" \
+			--project-file ./quarterly_kickoff_notes.xml \
+			--create-project
+
+When the summary does not clearly indicate the workflow type, KMDS prompts for either application or experimental and continues logging.
+
+Natural Language Observation Logging
+====================================
+
+KMDS also supports converting a single natural language statement directly into
+an ontology-backed observation.
+
+Examples of what this enables:
+
+1. A business analyst can summarize a finding as plain text and let KMDS infer
+   the observation type.
+2. A notebook author can replace one manual observation with the parser output
+   while keeping the rest of the notebook unchanged.
+3. A workflow can generate text from upstream checks and append those findings
+   to an existing KMDS knowledge base.
+
+CLI summary example:
+
+.. code:: bash
+
+		kmds-observe \
+			--text "The model accuracy dropped by 5% after pruning on 2026-04-20." \
+			--mode summary \
+			--output-format json
+
+CLI log example:
+
+.. code:: bash
+
+		kmds-observe \
+			--text "Missing values were observed in the customer_age field during intake validation." \
+			--mode log \
+			--workflow-name "support_reporting_intake" \
+			--project-file ./support_reporting_intake.xml \
+			--workflow-type application \
+			--create-project
+
+The analytics and machine-learning notebooks in the examples directory include a
+small notebook-based example of this feature as part of the observation logging
+section.
+
 Generating a Data Quality report
 ================================
 

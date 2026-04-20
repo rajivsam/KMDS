@@ -268,53 +268,21 @@
 
 <owl:NamedIndividual rdf:about="#retail_customer_modelling">
   <rdf:type rdf:resource="#KnowledgeExtractionExperimentationWorkflow"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation2"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation6"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation5"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation1"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
-  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation8"/>
-  <has_model_selection_observations rdf:resource="#modelselectionobservation1"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation6"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation2"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation1"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation1"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#exploratoryobservation2">
-  <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Customer ID, Description and Stock Code have null values</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
-  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
-  <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#exploratoryobservation6">
-  <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">For this task, the period considered is first quarter of 2010, other data are not relevant for this report </finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</finding_sequence>
-  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
-  <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#exploratoryobservation4">
-  <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some Prices are not numbers, these correspond to transactions that are some kind of adjustment - like returns, or,denoting some kind of payment adjustment. </finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</finding_sequence>
-  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
-  <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation1"/>
+  <has_model_selection_observations rdf:resource="#modelselectionobservation1"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation5">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
   <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some products are not valid products. For example, some of these products seem to be created by software testers </finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</finding_sequence>
-  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
-  <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#exploratoryobservation1">
-  <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quantity, Price and Customer ID attributes have mixed types</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
   <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
 </owl:NamedIndividual>
@@ -327,7 +295,47 @@
   <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#modellingchoiceobservation8">
+<owl:NamedIndividual rdf:about="#exploratoryobservation6">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">For this task, the period considered is first quarter of 2010, other data are not relevant for this report </finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
+  <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation2">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Customer ID, Description and Stock Code have null values</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+  <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation1">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quantity, Price and Customer ID attributes have mixed types</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+  <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation4">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some Prices are not numbers, these correspond to transactions that are some kind of adjustment - like returns, or,denoting some kind of payment adjustment. </finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+  <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#datarepresentationobservation1">
+  <rdf:type rdf:resource="#DataRepresentationObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This data is from https://archive.ics.uci.edu/dataset/352/online+retail.The subset of transactions that fall in the first quarter of 2010 is filtered.Then the revenue for each product is computed. This is the data represenation for this example.</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Transformation Observation</data_representation_observation_type>
+  <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#modellingchoiceobservation1">
   <rdf:type rdf:resource="#ModellingChoiceObservation"/>
   <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contribution of products towards quaterly revenue shows a power law like behavior andso to facilitate understanding of the products that go significantly towards the generated quaterlyrevenue, we drop the products that materially do not contribute towards the revenue andsimply add dimensionality to the problem. Specifically, only 732 products out of a total of 3092 products,contribute to 80 percent of the revenue. Data analysis techniques such as PCA may be useful in reducing this732 to a smaller number for example, 30. So we may be able to explain the revenue for the store in Q1 with lessthan 30 product combinations - not bad if you consider that the inventory is over 3000 items, that is like explainingthe inventory with one percent of the number of items in the inventory.</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
@@ -356,63 +364,6 @@ The core workflow is as follows:
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
   <model_selection_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Model Selection Statement</model_selection_observation_type>
   <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MODEL_SELECTION</intent>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#modellingchoiceobservation7">
-  <rdf:type rdf:resource="#ModellingChoiceObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contribution of products towards quaterly revenue shows a power law like behavior andso to facilitate understanding of the products that go significantly towards the generated quaterlyrevenue, we drop the products that materially do not contribute towards the revenue andsimply add dimensionality to the problem. Specifically, only 732 products out of a total of 3092 products,contribute to 80 percent of the revenue. Data analysis techniques such as PCA may be useful in reducing this732 to a smaller number for example, 30. So we may be able to explain the revenue for the store in Q1 with lessthan 30 product combinations - not bad if you consider that the inventory is over 3000 items, that is like explainingthe inventory with one percent of the number of items in the inventory.</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
-  <modelling_choice_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modelling Choice Observation</modelling_choice_observation_type>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#modellingchoiceobservation6">
-  <rdf:type rdf:resource="#ModellingChoiceObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contribution of products towards quaterly revenue shows a power law like behavior andso to facilitate understanding of the products that go significantly towards the generated quaterlyrevenue, we drop the products that materially do not contribute towards the revenue andsimply add dimensionality to the problem. Specifically, only 732 products out of a total of 3092 products,contribute to 80 percent of the revenue. Data analysis techniques such as PCA may be useful in reducing this732 to a smaller number for example, 30. So we may be able to explain the revenue for the store in Q1 with lessthan 30 product combinations - not bad if you consider that the inventory is over 3000 items, that is like explainingthe inventory with one percent of the number of items in the inventory.</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
-  <modelling_choice_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modelling Choice Observation</modelling_choice_observation_type>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#modellingchoiceobservation5">
-  <rdf:type rdf:resource="#ModellingChoiceObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contribution of products towards quaterly revenue shows a power law like behavior andso to facilitate understanding of the products that go significantly towards the generated quaterlyrevenue, we drop the products that materially do not contribute towards the revenue and simply add dimensionality to the problem.</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
-  <modelling_choice_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modelling Choice Observation</modelling_choice_observation_type>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#modellingchoiceobservation4">
-  <rdf:type rdf:resource="#ModellingChoiceObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contribution of products towards quaterly revenue shows a power law like behavior andso to facilitate understanding of the products that go significantly towards the generated quaterlyrevenue, we drop the products that materially do not contribute towards the revenue and simply add dimensionality to the problem.</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
-  <modelling_choice_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modelling Choice Observation</modelling_choice_observation_type>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#modellingchoiceobservation3">
-  <rdf:type rdf:resource="#ModellingChoiceObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contribution of products towards quaterly revenue shows a power law like behavior andso to facilitate understanding of the products that go significantly towards the generated quaterlyrevenue, we drop the products that materially do not contribute towards the revenue and simply add dimensionality to the problem.</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
-  <modelling_choice_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modelling Choice Observation</modelling_choice_observation_type>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#modellingchoiceobservation2">
-  <rdf:type rdf:resource="#ModellingChoiceObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contribution of products towards quaterly revenue shows a power law like behavior andso to facilitate understanding of the products that go significantly towards the generated quaterlyrevenue, we drop the products that materially do not contribute towards the revenue and simply add dimensionality to the problem.</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
-  <modelling_choice_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modelling Choice Observation</modelling_choice_observation_type>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#modellingchoiceobservation1">
-  <rdf:type rdf:resource="#ModellingChoiceObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contribution of products towards quaterly revenue shows a power law like behavior andso to facilitate understanding of the products that go significantly towards the generated quaterlyrevenue, we drop the products that materially do not contribute towards the revenue and simply add dimensionality to the problem.</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
-  <modelling_choice_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modelling Choice Observation</modelling_choice_observation_type>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#datarepresentationobservation1">
-  <rdf:type rdf:resource="#DataRepresentationObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This data is from https://archive.ics.uci.edu/dataset/352/online+retail.The subset of transactions that fall in the first quarter of 2010 is filtered.Then the revenue for each product is computed. This is the data represenation for this example.</finding>
-  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
-  <data_representation_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Transformation Observation</data_representation_observation_type>
-  <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
 </owl:NamedIndividual>
 
 

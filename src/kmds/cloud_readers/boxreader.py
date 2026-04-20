@@ -1,11 +1,9 @@
 from typing import Dict, Any
-from cloud_readers.cloud_data_reader import CloudDataReader
+from kmds.cloud_readers.cloud_data_reader import CloudDataReader
 from pandas import DataFrame
 import logging
-from minio import Minio
 import pandas as pd
 from io import StringIO
-from boxsdk import OAuth2, Client
 
 REQUIRED_INFO = ["CLIENT_ID", "CLIENT_SECRET", "ACCESS_TOKEN"]
 
@@ -34,7 +32,7 @@ class BoxReader(CloudDataReader):
         if self._cfg is None:
             logging.error("Initialize the reader with a connection configuration and try again")
         for req_key in REQUIRED_INFO:
-            if not req_key in self._cfg:
+            if req_key not in self._cfg:
                 logging.error("{required_key} is not in supplied\
                              connection configuration, please add\
                              this and try connectiong again".format(required_key=req_key))
@@ -44,6 +42,7 @@ class BoxReader(CloudDataReader):
         ACCESS_TOKEN = self._cfg["ACCESS_TOKEN"]
         df : DataFrame = None
         try:
+            from boxsdk import OAuth2, Client
             auth = OAuth2(client_id = CLIENT_ID,
                           client_secret = CLIENT_SECRET,
                           access_token = ACCESS_TOKEN)
@@ -52,7 +51,9 @@ class BoxReader(CloudDataReader):
             s = str(file_content,'utf-8')
             data = StringIO(s)
             df = pd.read_csv(data)
-        except :
+        except ImportError:
+            logging.error("Optional dependency 'boxsdk' is required to use BoxReader")
+        except Exception:
             msg = "Check your connection parameters, especially the access token. There is a problem connecting. Also verify that the file identifier for the object you want to retrive. You will need to log into Box to verify and obtain this information."
 
             logging.error(msg)

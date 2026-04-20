@@ -11,9 +11,7 @@ pytest
 python-dateutil
 sphinx
 sphinx-rtd-theme
-minio
 importlib_resources
-boxsdk
 jupyter_ai[all]
 google-genai
 python-dotenv

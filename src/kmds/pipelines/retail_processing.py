@@ -5,14 +5,13 @@ import pandas as pd
 
 @task(log_prints=True)
 def load_data_file(dataset_df:pd.DataFrame):
-    print(f"Loaded dataset")
+    print("Loaded dataset")
     return dataset_df
 
 @task(log_prints=True)
 def apply_noise_filter_1(dataset_df:pd.DataFrame):
     valid_cust = ~dataset_df["Customer ID"].isna()
     valid_desc = ~dataset_df["Description"].isna()
-    valid_stock_code = ~dataset_df["Description"].isna()
     noise_filter_1 = valid_cust & valid_desc
     dataset_df = dataset_df[noise_filter_1].reset_index(drop=True)
     return dataset_df
@@ -20,11 +19,8 @@ def apply_noise_filter_1(dataset_df:pd.DataFrame):
 def good_quantity_record_check(x):
     try:
         f_x = float(x)
-        if f_x > 0:
-            return True
-        else:
-            return False # returned purchase
-    except :
+        return f_x > 0
+    except Exception:
         return False
 
 @task(log_prints=True)

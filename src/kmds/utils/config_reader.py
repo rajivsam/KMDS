@@ -13,8 +13,6 @@ def get_config(config_file_name: str) -> Dict[Any, Any]:
         Dict[Any, Any]: The config file as a python dictionary - has keys for properties and values for corresponding settings
     """
     assert config_file_name is not None
-    
-    config_file_name
 
     with open(config_file_name) as fp:
         try:

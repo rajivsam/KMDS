@@ -1,0 +1,34 @@
+Text Search feature
+Develop a feature that creates a semantic index for a KMDS project. This should embed text from the RDF graph into a semantic vector database index. Make product choices that are open source, have considerable user footprint, and are robust and well maintained. When this feature is implemented, I expect to input a natural language query into a search API and receive the results.
+
+I want to include the examples in this package as part of the package resources. Can you modify the pyproject.toml file and the notebooks in the examples_of_use directory to work with the package resources?
+
+Build a search orchestrator that uses an LLM to map a natural language user query to a predefined set of API functions. The LLM should act as a router:
+1. Classify Intent: Identify which observation template (e.g., Exploratory, Modeling, Data Representation - look at the tool's set of templates) matches the user's request.
+2. Extract Entities: Identify specific filter parameters from the query (e.g., project phase, model name, or date).
+3. Execute & Summarize: Pass these parameters to the corresponding API/SPARQL template, then use the LLM to synthesize the raw JSON/RDF results into a concise natural language answer.
+
+Include the following constraints:
+1. A Pydantic Schema (or JSON Schema): To force the LLM to output valid arguments for your APIs.
+2. Fallback Logic: If the query doesn't match any template, the system should fall back to a Semantic Vector Search across the indexed observations as a "catch-all."
+3. Context Injection: Tell the tool to provide the LLM with a "Tool Description" (a list of your API templates and what they do) so it knows its options.
+
+Context: Please inspect the types of observations that this package supports and the order in which they are usually made. I need a module that converts natural language strings into structured observation objects compatible with my schema.
+The Task:
+Classify: Given a string (e.g., "The model accuracy dropped by 5% after pruning"), identify which ObservationType from the RDF schema it belongs to.
+Extract: Parse specific entities (values, metrics, timestamps, or affected components) from the string.
+Instantiate: Generate the Python code or JSON-LD structure to log this observation into the kmds knowledge graph.
+Requirements:
+Use an LLM (like GPT-4 or Claude) or a lightweight NLP library (like spaCy) to perform the mapping.
+Ensure the output maps strictly to the existing RDF classes and properties in the kmds schema.
+Include a validation step to ensure the "Natural Language" input contains enough information to form a valid RDF triple.
+
+Implement the feature in two modes:
+(1) Given a free form text, generate the data structures based on the procedure above and log it to the knowledge base.
+(2) Given a free form text, return a summary of the observation type. 
+
+Make open source choices that are freely available. If this is not possible to implement with open source/free tier, abort and don't implement.
+
+Please add documentation about using the natural language ingestion feature. Provide examples for all modes of interacting with the natural language ingestion feature.
+
+Update the notebooks in the examples_of_use directory in both the analytics and machine learning folder with examples of using the natural language ingestion feature by replacing one of the observations with a natural language observation. 

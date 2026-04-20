@@ -1,5 +1,4 @@
 from pathlib import Path
-import os
 from importlib_resources import files
 
 def get_ontology_path() ->Path:
@@ -44,16 +43,11 @@ def check_valid_path(file_path: Path) -> bool:
         return False
     
 def get_package_kb_path(kb_name: str) ->str:
-    """ Return path string to a package knowledge base
+    """Backward-compatible alias for get_kb_file_path.
 
-    Args:
-        kb_name (str): The knowledge base name
-
-    Returns:
-        str: The path (as a string) to the package knowledge base
+    This keeps the original public API while avoiding duplicate logic.
     """
-    file_path =  str(files('kmds.examples').joinpath(kb_name))
-    return file_path
+    return get_kb_file_path(kb_name)
 
     
 

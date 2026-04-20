@@ -1,4 +1,3 @@
-import pytest
 from kmds.tagging.tag_types import *
 from kmds.ontology.kmds_ontology import *
 from typing import List

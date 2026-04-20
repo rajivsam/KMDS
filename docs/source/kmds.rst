@@ -9,6 +9,7 @@ Subpackages
 
    kmds.ontology
    kmds.pipelines
+   kmds.search
    kmds.tagging
    kmds.utils
 

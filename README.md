@@ -20,11 +20,21 @@
 
 ## 🌟 What is KMDS?
 
-KMDS is a Python-based tool designed for systematic knowledge management in data science projects. It helps you document the incremental process of experimentation, including context, decisions, and rationale, ensuring that valuable insights are not lost over time.
+KMDS is a Python-based tool for systematic knowledge management in data science and analytics projects. It helps you document the incremental process of exploration, data preparation, and model development — capturing context, decisions, and rationale so that valuable insights are not lost over time.
 
 ### The Problem It Solves
 
-Data scientists live by experimentation. However, the context and rationale behind each experiment are often documented in an ad-hoc manner. When it's time to revisit a question or build upon previous work, it's difficult to piece together the research and its results. KMDS addresses this by providing a structured way to log your findings.
+Experimental work generates a stream of decisions and findings. The context and rationale behind each step are often documented ad-hoc, if at all. When it is time to revisit a question or build on earlier work, the research trail has gone cold. KMDS fixes this by providing a structured, ontology-backed way to log, search, and share your findings.
+
+### Who Can Use KMDS?
+
+KMDS was originally designed for data scientists writing Python. Recent additions to the CLI and natural-language tooling mean it is now practical for a broader set of users:
+
+| User | How they interact with KMDS |
+|---|---|
+| **Data scientist** | Python API, notebooks, CLI — full access to all features |
+| **Software developer** | CLI tools and Python API for automating knowledge capture in pipelines |
+| **Business analyst** | CLI commands and natural-language ingestion — no ontology code required |
 
 🎥 **Watch a quick overview of KMDS:** [YouTube Video](https://www.youtube.com/watch?v=n7gE6bfLWtI)
 
@@ -32,10 +42,13 @@ Data scientists live by experimentation. However, the context and rationale behi
 
 ## ✨ Key Features
 
-- **Structured Logging:** Log findings from your exploratory data analysis, data representation, and modeling phases.
-- **Knowledge Base Export:** Export your knowledge base to communicate your findings to your team or management.
-- **Integration with Generative AI:** Use generative AI tools like NotebookLM to create reports, videos, and other documentation artifacts from your exported knowledge base.
-- **Process Agnostic:** Complements process guidelines like CRISP-DM and semantic vocabularies like OpenML by capturing the "why" behind your data science tasks.
+- **Structured Observation Capture:** Log findings from exploration, data representation, modeling choice, and model selection stages using Python or the CLI.
+- **Natural Language Ingestion:** Describe a finding in plain English — KMDS classifies it, extracts structured entities, and optionally logs it to the knowledge base. No ontology code required.
+- **Ontology-Backed Knowledge Base:** Store and reload workflow knowledge as RDF/OWL artifacts that can be shared across projects and teams.
+- **Semantic Search:** Build a vector index from your knowledge base and retrieve relevant findings with natural-language queries.
+- **LLM Search Orchestrator:** Route natural-language questions to structured KMDS search templates with automatic semantic fallback.
+- **CLI-First Usability:** Every major feature is accessible as a command-line tool — usable by developers and analysts without writing notebook code.
+- **Simple Reporting Surface:** Load observations into tabular form for review, sharing, and downstream analysis.
 
 ---
 
@@ -53,9 +66,139 @@ pip install kmds
 
 As you work through your analysis, log your findings to `kmds`. Check out the examples below.
 
----
+### 3. Quick Summary Logging (CLI)
 
-## 📚 Examples of Use
+KMDS now supports logging exploratory observations directly from a free-text project summary. This is useful for business analysts and other non-developers who want to capture findings quickly.
+
+Application workflow example (explicit, non-interactive):
+
+```bash
+kmds-summary-log \
+  --summary "This is a daily reporting workflow for support operations. Missing category labels were found in intake data." \
+  --workflow-name "support_reporting_intake" \
+  --workflow-type application \
+  --project-file ./support_reporting_intake.xml \
+  --create-project \
+  --no-prompt
+```
+
+Ambiguous summary example (interactive prompt):
+
+```bash
+kmds-summary-log \
+  --summary "Project kickoff notes for the upcoming quarter." \
+  --workflow-name "quarterly_kickoff_notes" \
+  --project-file ./quarterly_kickoff_notes.xml \
+  --create-project
+```
+
+In the ambiguous case, KMDS will ask whether the workflow is `application` or `experimental`, then continue logging exploratory observations.
+
+### 4. Export Executive Summary (CLI)
+
+You can export a non-technical executive summary from a KMDS project file.
+
+```bash
+kmds-exec-summary \
+  --project-file ./support_reporting_intake.xml \
+  --output-file ./support_reporting_exec_summary.txt
+```
+
+Optional LLM mode (falls back to local summary if API/model is unavailable):
+
+```bash
+kmds-exec-summary \
+  --project-file ./support_reporting_intake.xml \
+  --output-file ./support_reporting_exec_summary.txt \
+  --use-llm \
+  --model gemini-1.5-flash
+```
+
+Markdown output option:
+
+```bash
+kmds-exec-summary \
+  --project-file ./support_reporting_intake.xml \
+  --output-file ./support_reporting_exec_summary.md \
+  --format markdown
+```
+
+### 5. Natural Language Observation Ingestion
+
+KMDS can classify a free-form natural language statement into the existing KMDS observation schema, extract structured entities, and either return a summary or log the result into a KMDS knowledge base.
+
+Summary mode example:
+
+```bash
+kmds-observe \
+  --text "The model accuracy dropped by 5% after pruning on 2026-04-20." \
+  --mode summary \
+  --output-format json
+```
+
+Log mode example for a new project:
+
+```bash
+kmds-observe \
+  --text "Missing values were observed in the customer_age field during intake validation." \
+  --mode log \
+  --workflow-name "support_reporting_intake" \
+  --project-file ./support_reporting_intake.xml \
+  --workflow-type application \
+  --create-project
+```
+
+Python API example:
+
+```python
+from kmds.utils.natural_language_observation import map_text_to_observation
+
+mapping = map_text_to_observation(
+    "We engineered a rolling 7 day demand feature from timestamped order counts."
+)
+
+print(mapping.workflow_family)
+print(mapping.observation_type)
+print(mapping.extracted_entities)
+```
+
+### 6. Semantic Search (CLI)
+
+Build a vector index from a KMDS knowledge base and retrieve relevant findings with a natural-language query. No API key required.
+
+```bash
+kmds-search \
+  --kb ./support_reporting_intake.xml \
+  --query "What data quality issues were found?" \
+  --n-results 5
+```
+
+Or from the Python API:
+
+```python
+from kmds.search import SemanticIndex
+
+idx = SemanticIndex()
+idx.build("./support_reporting_intake.xml")
+results = idx.search("What data quality issues were found?", n_results=5)
+for r in results:
+    print(r["obs_type"], "|", r["finding"])
+```
+
+### 7. LLM Search Orchestrator (CLI)
+
+Ask a free-form question. The orchestrator routes it to the best KMDS observation-query template using an LLM, executes the template, and synthesises a plain-English answer. Falls back to semantic search automatically.
+
+```bash
+export GOOGLE_API_KEY="your-api-key"
+kmds-ask \
+  --kb ./support_reporting_intake.xml \
+  --query "What assumptions drove the final model selection?"
+```
+
+The full documentation covers custom LLM functions, available routing templates, and output formats.
+
+
 
 This repository includes two detailed examples:
 

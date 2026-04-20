@@ -266,59 +266,230 @@
   <rdfs:subClassOf rdf:resource="#KMObservation"/>
 </owl:Class>
 
-<owl:NamedIndividual rdf:about="#test application workflow">
+<owl:NamedIndividual rdf:about="#exec_summary_workflow_app_1">
   <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation2"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation1"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation5"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation5"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation2"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation3"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation1"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation4"/>
-  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation3"/>
-  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation4"/>
-  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation2"/>
-  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation5"/>
-  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation1"/>
-  <has_model_selection_observations rdf:resource="#modellingchoiceobservation6"/>
-  <has_model_selection_observations rdf:resource="#modellingchoiceobservation9"/>
-  <has_model_selection_observations rdf:resource="#modellingchoiceobservation10"/>
-  <has_model_selection_observations rdf:resource="#modellingchoiceobservation7"/>
-  <has_model_selection_observations rdf:resource="#modellingchoiceobservation8"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation2"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a production reporting workflow. Missing values were observed in customer segment fields. Key attributes were selected for monthly trend reporting.</description>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation1">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - 1</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a production reporting workflow</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation2">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - 2</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Missing values were observed in customer segment fields</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation3">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Key attributes were selected for monthly trend reporting</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exec_summary_workflow_app_2">
+  <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation5"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation6"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a production reporting workflow. Missing values were observed in customer segment fields. Key attributes were selected for monthly trend reporting.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation4">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a production reporting workflow</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation5">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Missing values were observed in customer segment fields</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation6">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Key attributes were selected for monthly trend reporting</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exec_summary_workflow_app_3">
+  <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation7"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation8"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation9"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a production reporting workflow. Missing values were observed in customer segment fields. Key attributes were selected for monthly trend reporting.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation7">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a production reporting workflow</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation8">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Missing values were observed in customer segment fields</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation9">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Key attributes were selected for monthly trend reporting</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exec_summary_workflow_app_4">
+  <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation10"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation11"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation12"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a production reporting workflow. Missing values were observed in customer segment fields. Key attributes were selected for monthly trend reporting.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation10">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a production reporting workflow</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation11">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Missing values were observed in customer segment fields</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation12">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Key attributes were selected for monthly trend reporting</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exec_summary_workflow_app_5">
+  <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation14"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation15"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation13"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a production reporting workflow. Missing values were observed in customer segment fields. Key attributes were selected for monthly trend reporting.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation13">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a production reporting workflow</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation14">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Missing values were observed in customer segment fields</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation15">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Key attributes were selected for monthly trend reporting</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exec_cli_workflow_exp_1">
+  <rdf:type rdf:resource="#KnowledgeExtractionExperimentationWorkflow"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation16"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Experimental evaluation showed missing values and quality checks.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation16">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Experimental evaluation showed missing values and quality checks</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exec_cli_workflow_md_app_6">
+  <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation17"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Application workflow with data quality and relevance observations.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation17">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Application workflow with data quality and relevance observations</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#test application workflow">
+  <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation21"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation18"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation20"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation19"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation22"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation1"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation3"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation2"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation4"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation5"/>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation5"/>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation2"/>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation1"/>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation3"/>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation4"/>
+  <has_model_selection_observations rdf:resource="#modellingchoiceobservation6"/>
+  <has_model_selection_observations rdf:resource="#modellingchoiceobservation9"/>
+  <has_model_selection_observations rdf:resource="#modellingchoiceobservation7"/>
+  <has_model_selection_observations rdf:resource="#modellingchoiceobservation10"/>
+  <has_model_selection_observations rdf:resource="#modellingchoiceobservation8"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation18">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - 1</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation19">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - 2</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation20">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
   <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - 3</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#exploratoryobservation4">
+<owl:NamedIndividual rdf:about="#exploratoryobservation21">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
   <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - 4</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#exploratoryobservation5">
+<owl:NamedIndividual rdf:about="#exploratoryobservation22">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
   <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - 5</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</finding_sequence>
@@ -432,57 +603,57 @@
 
 <owl:NamedIndividual rdf:about="#test experiment workflow">
   <rdf:type rdf:resource="#KnowledgeExtractionExperimentationWorkflow"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation6"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation7"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation8"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation9"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation10"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation26"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation25"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation24"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation23"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation27"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation9"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation6"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation7"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation10"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation9"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation8"/>
-  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation12"/>
   <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation11"/>
   <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation14"/>
   <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation13"/>
   <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation15"/>
-  <has_model_selection_observations rdf:resource="#modellingchoiceobservation20"/>
-  <has_model_selection_observations rdf:resource="#modellingchoiceobservation19"/>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation12"/>
   <has_model_selection_observations rdf:resource="#modellingchoiceobservation18"/>
   <has_model_selection_observations rdf:resource="#modellingchoiceobservation16"/>
+  <has_model_selection_observations rdf:resource="#modellingchoiceobservation19"/>
   <has_model_selection_observations rdf:resource="#modellingchoiceobservation17"/>
+  <has_model_selection_observations rdf:resource="#modellingchoiceobservation20"/>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#exploratoryobservation6">
+<owl:NamedIndividual rdf:about="#exploratoryobservation23">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
   <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - 1</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#exploratoryobservation7">
+<owl:NamedIndividual rdf:about="#exploratoryobservation24">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
   <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - 2</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#exploratoryobservation8">
+<owl:NamedIndividual rdf:about="#exploratoryobservation25">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
   <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - 3</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relevance Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#exploratoryobservation9">
+<owl:NamedIndividual rdf:about="#exploratoryobservation26">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
   <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - 4</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#exploratoryobservation10">
+<owl:NamedIndividual rdf:about="#exploratoryobservation27">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
   <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exploratory Observation - 5</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</finding_sequence>

@@ -1,8 +1,7 @@
 from typing import Dict, Any
-from cloud_readers.cloud_data_reader import CloudDataReader
+from kmds.cloud_readers.cloud_data_reader import CloudDataReader
 from pandas import DataFrame
 import logging
-from minio import Minio
 import pandas as pd
 from io import StringIO
 
@@ -32,7 +31,7 @@ class MinioReader(CloudDataReader):
         if self._cfg is None:
             logging.error("Initialize the reader with a connection configuration and try again")
         for req_key in REQUIRED_INFO:
-            if not req_key in self._cfg:
+            if req_key not in self._cfg:
                 logging.error("{required_key} is not in supplied\
                              connection configuration, please add\
                              this and try connectiong again".format(required_key=req_key))
@@ -43,13 +42,16 @@ class MinioReader(CloudDataReader):
         df : DataFrame = None
 
         try:
+            from minio import Minio
             client = Minio(endpoint=HOST_URL, access_key=ACCESS_KEY, secret_key=SECRET_KEY, secure=True)
             obj = client.get_object(bucket_name, object_name)
             data = obj.data
             s = str(data,'utf-8')
             data = StringIO(s)
             df = pd.read_csv(data)
-        except :
+        except ImportError:
+            logging.error("Optional dependency 'minio' is required to use MinioReader")
+        except Exception:
             msg = "Check connection parameters and if the object to be read exists in the remote bucket. There was a problem getting the remote object"
             logging.error(msg)
         

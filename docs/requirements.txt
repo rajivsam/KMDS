@@ -7,5 +7,4 @@ pytest
 PyYAML
 kmds     
 prefect
-minio
 woodwork   

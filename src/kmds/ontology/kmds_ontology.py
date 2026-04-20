@@ -249,14 +249,6 @@ with onto:
         """
         pass
 
-    class description(DataProperty):
-        """ description of the workflow
-
-        Args:
-            DataProperty (_type_): OWLReady2 specific way of describing built in type properties
-        """
-        range = [str]
-
 
     class business_performance_measure(ObjectProperty):
         """ Capture the business performance measure of the workflow

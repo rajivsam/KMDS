@@ -1,8 +1,6 @@
 from typing import Dict, Any
-from cloud_writers.cloud_data_writer import CloudDataWriter
-from pandas import DataFrame
+from kmds.cloud_writers.cloud_data_writer import CloudDataWriter
 import logging
-from minio import Minio
 
 
 REQUIRED_INFO = ["HOST_URL", "ACCESS_KEY", "SECRET_KEY"]
@@ -29,7 +27,7 @@ class MinioWriter(CloudDataWriter):
         if self._cfg is None:
             logging.error("Initialize the reader with a connection configuration and try again")
         for req_key in REQUIRED_INFO:
-            if not req_key in self._cfg:
+            if req_key not in self._cfg:
                 logging.error("{required_key} is not in supplied\
                              connection configuration, please add\
                              this and try connectiong again".format(required_key=req_key))
@@ -37,9 +35,9 @@ class MinioWriter(CloudDataWriter):
         HOST_URL = self._cfg["HOST_URL"]
         ACCESS_KEY = self._cfg["ACCESS_KEY"]
         SECRET_KEY = self._cfg["SECRET_KEY"]
-        df : DataFrame = None
 
         try:
+            from minio import Minio
             client = Minio(endpoint=HOST_URL, access_key=ACCESS_KEY, secret_key=SECRET_KEY, secure=True)
             # The destination bucket and filename on the MinIO server
             # Make the bucket if it doesn't exist.
@@ -53,7 +51,9 @@ class MinioWriter(CloudDataWriter):
                 client.fput_object(bucket_name, destination_file, source_file)
                 logging.info( source_file, "successfully uploaded as object", destination_file, "to bucket", bucket_name)
 
-        except :
+        except ImportError:
+            logging.error("Optional dependency 'minio' is required to use MinioWriter")
+        except Exception:
             logging.error("There was a problem connecting to your remote bucket. Check connection parameters and try again!")
         
         return 

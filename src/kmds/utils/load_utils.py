@@ -18,6 +18,13 @@ def get_workflow(onto: Ontology) -> Workflow:
     """
     the_workflow_instance = None
 
+    def _obs_count(wf: Workflow) -> int:
+        exp_n = len(getattr(wf, "has_exploratory_observations", []))
+        dr_n = len(getattr(wf, "has_data_representation_observations", []))
+        mc_n = len(getattr(wf, "has_modeling_choice_observations", []))
+        ms_n = len(getattr(wf, "has_model_selection_observations", []))
+        return exp_n + dr_n + mc_n + ms_n
+
     with onto:
         workflow_instances = Workflow.instances()
         if workflow_instances is None:
@@ -26,9 +33,9 @@ def get_workflow(onto: Ontology) -> Workflow:
         else:
             if len(workflow_instances) > 1:
                 logging.info(
-                    "There was more than one workflow, using the first one")
+                    "There was more than one workflow, selecting the one with the most observations")
 
-            the_workflow_instance = workflow_instances[0]
+            the_workflow_instance = max(workflow_instances, key=_obs_count)
 
     return the_workflow_instance
 
@@ -47,7 +54,7 @@ def load_kb(kb_location: str) -> Ontology:
     try:
         onto = get_ontology(kb_location).load()
         set_ontology(onto)
-    except Exception as e:
+    except Exception:
         logging.error(
             "Error opening KB, check if KB exists and permissions are right")
     if onto is None:
