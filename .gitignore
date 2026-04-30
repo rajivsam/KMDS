@@ -58,6 +58,10 @@ docker_files/*.env
 
 # code & config
 _service-provider/*
+
+# LLM instructions and prompts
+llm_instructions/
+examples_of_use/prompts/
 _solr/schema.xml
 _src/*
 local/*
