@@ -268,8 +268,8 @@
 
 <owl:NamedIndividual rdf:about="#exec_summary_workflow_app_1">
   <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation1"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation2"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation1"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
   <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a production reporting workflow. Missing values were observed in customer segment fields. Key attributes were selected for monthly trend reporting.</description>
 </owl:NamedIndividual>
@@ -297,8 +297,8 @@
 
 <owl:NamedIndividual rdf:about="#exec_summary_workflow_app_2">
   <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation5"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation6"/>
   <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a production reporting workflow. Missing values were observed in customer segment fields. Key attributes were selected for monthly trend reporting.</description>
 </owl:NamedIndividual>
@@ -327,8 +327,8 @@
 <owl:NamedIndividual rdf:about="#exec_summary_workflow_app_3">
   <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation7"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation8"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation9"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation8"/>
   <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a production reporting workflow. Missing values were observed in customer segment fields. Key attributes were selected for monthly trend reporting.</description>
 </owl:NamedIndividual>
 
@@ -355,9 +355,9 @@
 
 <owl:NamedIndividual rdf:about="#exec_summary_workflow_app_4">
   <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation12"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation10"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation11"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation12"/>
   <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a production reporting workflow. Missing values were observed in customer segment fields. Key attributes were selected for monthly trend reporting.</description>
 </owl:NamedIndividual>
 
@@ -384,8 +384,8 @@
 
 <owl:NamedIndividual rdf:about="#exec_summary_workflow_app_5">
   <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation14"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation15"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation14"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation13"/>
   <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a production reporting workflow. Missing values were observed in customer segment fields. Key attributes were selected for monthly trend reporting.</description>
 </owl:NamedIndividual>
@@ -439,26 +439,26 @@
 
 <owl:NamedIndividual rdf:about="#test application workflow">
   <rdf:type rdf:resource="#KnowledgeApplicationWorkflow"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation21"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation18"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation20"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation21"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation19"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation22"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation1"/>
+  <has_data_representation_observations rdf:resource="#datarepresentationobservation5"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation3"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation2"/>
   <has_data_representation_observations rdf:resource="#datarepresentationobservation4"/>
-  <has_data_representation_observations rdf:resource="#datarepresentationobservation5"/>
+  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation3"/>
   <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation5"/>
   <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation2"/>
   <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation1"/>
-  <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation3"/>
   <has_modeling_choice_observations rdf:resource="#modellingchoiceobservation4"/>
-  <has_model_selection_observations rdf:resource="#modellingchoiceobservation6"/>
-  <has_model_selection_observations rdf:resource="#modellingchoiceobservation9"/>
   <has_model_selection_observations rdf:resource="#modellingchoiceobservation7"/>
-  <has_model_selection_observations rdf:resource="#modellingchoiceobservation10"/>
   <has_model_selection_observations rdf:resource="#modellingchoiceobservation8"/>
+  <has_model_selection_observations rdf:resource="#modellingchoiceobservation9"/>
+  <has_model_selection_observations rdf:resource="#modellingchoiceobservation10"/>
+  <has_model_selection_observations rdf:resource="#modellingchoiceobservation6"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation18">

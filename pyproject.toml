@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kmds"
-version = "0.3.3"
+version = "0.4.2"
 description = "This is a package that helps data scientists and data analysts to capture notes while they work through data science tasks. The captured tasks can then be searched and analyzed."
 readme = "README.md"
 requires-python = ">=3.12"
@@ -60,9 +60,10 @@ filterwarnings = [
 
 [tool.setuptools]
 package-dir = { "" = "src" }
+include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.setuptools.package-data]
-"kmds.examples" = ["*.csv", "*.parquet", "*.xml", "*.txt"]
+"kmds" = ["**/*.csv", "**/*.parquet", "**/*.xml", "**/*.txt"]
