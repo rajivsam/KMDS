@@ -16,7 +16,6 @@
   <a href="https://kmds.readthedocs.io/en/latest/?badge=latest"><img src="https://readthedocs.org/projects/kmds/badge/?version=latest" alt="Documentation Status"></a>
 </p>
 
-
 ## 🌟 What is KMDS?
 
 KMDS is an ontology-backed ecosystem for systematic knowledge management in data science and analytics workflows. It documents the incremental process of experimentation, data exploration, and model selection—capturing decisions, rationale, and repository schemas so that valuable insights are never lost over time.
@@ -45,6 +44,7 @@ Experimental work generates a fragmented stream of insights, local documentation
 * **Natural Language Ingestion:** Describe insights in plain English for automatic logging to your ontology graph.
 * **Semantic Vector Search:** Build high-performance local vector indices for querying analytical findings.
 * **LLM Search Orchestration:** Use Ollama-powered, intelligent routing for complex knowledge queries.
+* __Enterprise Ready__: KMDS is meant to be used within a git repository. It inherits the security context of the repository it is used with. Please see [this document](example_documentation/kmds_enterprise_use.md)
 
 ---
 

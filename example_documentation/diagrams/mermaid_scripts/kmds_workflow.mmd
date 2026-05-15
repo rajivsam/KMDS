@@ -1,0 +1,33 @@
+flowchart TD
+    %% Define Styles and Shapes
+    classDef enterprise stroke:#333,stroke-width:2px,fill:#f9f9f9;
+    classDef kmdsTool stroke:#0066cc,stroke-width:2px,fill:#e6f3ff;
+    classDef step stroke:#444,stroke-width:1px,fill:#fff;
+
+    Start([Start Workflow]) --> Clone[1. Clone remote repo & switch to branch]
+    
+    %% Enterprise Git Security Boundary
+    subgraph GitRepo ["🔒 Git Repository Context (Inherits Enterprise Security & Protection)"]
+        Clone --> Launch[2. Launch Python tool within repo]
+        
+        %% Installation Check
+        Launch --> Check{KMDS installed?}
+        Check -- No --> Install[Install KMDS in Python env]
+        Install --> Generate
+        Check -- Yes --> Generate[3. Run 'kmds' or 'kmds-data-helper']
+        
+        %% Documentation Generation
+        Generate --> Doc[Generate repository documentation]
+        Doc --> UI[4. Review work using 'kmds-ui']
+        
+        %% Saving and Commit
+        UI --> Save[Save Knowledge Base to repo /kmds directory]
+        Save --> Commit[5. Check in & commit changes to repo]
+    end
+
+    Commit --> End([End Workflow])
+
+    %% Apply Classes
+    class GitRepo enterprise;
+    class Generate,UI,Save kmdsTool;
+    class Clone,Launch,Install,Doc,Commit step;
