@@ -18,6 +18,8 @@
 
 ## 🌟 What is KMDS?
 
+KMDS is an agent‑driven, local‑first knowledge management toolkit for data science teams. By leveraging LLMs to generate RDF/XML knowledge graphs, it captures the reasoning behind projects, ensures compliance, and integrates seamlessly with enterprise standards — all without data leaving the developer’s laptop.
+
 KMDS is an ontology-backed ecosystem for systematic knowledge management in data science and analytics workflows. It documents the incremental process of experimentation, data exploration, and model selection—capturing decisions, rationale, and repository schemas so that valuable insights are never lost over time.
 
 ### The Problem It Solves
