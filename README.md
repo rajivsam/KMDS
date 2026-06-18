@@ -50,6 +50,42 @@ Experimental work generates a fragmented stream of insights, local documentation
 
 ---
 
+## 🧭 KMDS Semantic Blueprint
+
+KMDS is built around a semantic blueprint that turns disconnected experiments, notebooks, scripts, and metadata into a queryable institutional knowledge graph. It addresses the “memory hole” in analytics workflows by preserving why decisions were made as well as what was produced.
+
+### Why it matters
+
+* The problem: fragmented ML context across notebooks, code, YAML, and reports.
+* The outcome: a local, auditable RDF/XML graph for project history, data sources, and model metadata.
+* The asset: structured analytical knowledge — not just models or LLM outputs.
+
+### Blueprint highlights
+
+* **Agent-human collaboration**
+  - Humans retain accountability, domain expertise, and final decision-making.
+  - The KMDS protocol defines repeatable interfaces, data contracts, and governance guardrails.
+  - LLM agents retrieve context, enforce rules, and generate boilerplate reliably.
+
+* **Four core stages**
+  1. Semantic foundation — parse raw data and metadata into clean datasets and agent-native docs.
+  2. Feature advisor — configuration-driven feature engineering with leakage-safe pipelines.
+  3. Design-time compiler — model workflow governance, artifact serialization, and audit-ready outputs.
+  4. Automated repository auditing — multi-persona analysis generates structured diagnostics and JSON summaries.
+
+* **Synthesis engine**
+  - Converts project history into an auditable `project_knowledge_graph.xml`.
+  - Captures metadata tags, feature configs, model artifacts, audit reports, and traceable workflow decisions.
+
+* **Interactive workbench**
+  - Prefix-agnostic XML parsing for fragile namespace declarations.
+  - Proportional narrative layout for long text fields.
+  - Preserved file context ensures updated graphs download with matching file signatures.
+
+For complete design details, see `example_documentation/KMDS_Semantic_Blueprint.pdf`.
+
+---
+
 ## 📂 KMDS Data Helper (`kmds-data-helper`)
 
 The `kmds-data-helper` package introduces a multi-persona analysis framework for existing data science repositories. Using local LLMs (via Ollama), it scans documentation, schemas, and notebooks to output complete KMDS knowledge graphs.
