@@ -42,6 +42,40 @@ KMDS captures that knowledge as it is generated and makes it queryable in plain 
 
 ## Architecture
 
+```
+         +---------------------------+
+         |  Project artifacts &       |
+         |  documentation (docs,     |
+         |  notebooks, reports)      |
+         +-------------+-------------+
+                       |
+                       v
+         +---------------------------+
+         |   kmds (this repository)  |
+         |  - summary ingest         |
+         |  - natural-language log   |
+         |  - semantic index/search  |
+         |  - LLM-assisted query     |
+         +------+------+-------------+
+                |      |
+      +---------+      +-----------+
+      |                          |
+      v                          v
++-------------+            +--------------+
+| kmds-search |            | kmds-ask     |
++-------------+            +--------------+
+      |                          |
+      +------------+-------------+
+                   v
+         +---------------------------+
+         |   External companions      |
+         |   kmds-data-helper         |
+         |   kmds-ui                  |
+         |   kmds-featurization       |
+         |   kmds-modeling            |
+         +---------------------------+
+```
+
 This repository implements the core `kmds` package, which provides:
 
 - CLI entry points for project summary logging, executive summaries, semantic search, search orchestration, and natural-language observation ingestion
