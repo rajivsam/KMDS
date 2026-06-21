@@ -154,6 +154,7 @@ A KMDS engagement has three clear areas of responsibility:
 - Ingests all documentation into a structured knowledge graph
 - Preserves lineage across featurization and modeling phases
 - Makes accumulated knowledge queryable and auditable at any point
+- Leverages external companion packages to provide advice and a framework for each phase of the data science development task
 
 ### The `documents/` Directory
 
