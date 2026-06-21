@@ -16,168 +16,208 @@
   <a href="https://kmds.readthedocs.io/en/latest/?badge=latest"><img src="https://readthedocs.org/projects/kmds/badge/?version=latest" alt="Documentation Status"></a>
 </p>
 
-## 🌟 What is KMDS?
+## KMDS — Knowledge Management for Data Science
 
-KMDS is an agent‑driven, local‑first knowledge management toolkit for data science teams. By leveraging LLMs to generate RDF/XML knowledge graphs, it captures the reasoning behind projects, ensures compliance, and integrates seamlessly with enterprise standards — all without data leaving the developer’s laptop.
+> KMDS is a framework for building well-documented analytical and machine learning models for operational data, with LLM-assisted search and summary workflows.
 
-KMDS is an ontology-backed ecosystem for systematic knowledge management in data science and analytics workflows. It documents the incremental process of experimentation, data exploration, and model selection—capturing decisions, rationale, and repository schemas so that valuable insights are never lost over time.
-
-### The Problem It Solves
-
-Experimental work generates a fragmented stream of insights, local documentation, and Jupyter notebooks. This context is typically lost when a research trail goes cold. The KMDS ecosystem fixes this by providing a unified, structured approach to log, map, search, and visually audit your data engineering artifacts.
-
-### Who Can Use KMDS?
-
-
-| User                   | How they interact with KMDS                                                     |
-| :----------------------- | :-------------------------------------------------------------------------------- |
-| **Data scientist**     | Python API, local LLM integrations, notebooks, and CLI framework                |
-| **Software developer** | Automated repo mapping utilities and pipeline automated logging hooks           |
-| **Business analyst**   | Interactive UI Workbench Dashboard and plain-English natural language ingestion |
-
-🎥 **Watch a quick overview of KMDS:** [YouTube Video](https://youtube.com/)
+Operational decisions — monthly forecasts, risk assessments, demand plans — need to be trustworthy, explainable, and repeatable. KMDS enforces the discipline that makes that possible, and makes the knowledge generated during development searchable and persistent long after the project ends.
 
 ---
 
-## ✨ Key Features
+## Who This Is For
 
-* **Interactive UI Workbench (`kmds-ui`):** View, edit, and safely serialize knowledge graphs with special handling for long text notes and file context preservation.
-* **Automated Repository Scanning (`kmds-data-helper`):** Parse local codebases using a multi-persona engine (Data Scientist, Tech Lead, Architect) to synthesize documentation and code into structured knowledge graphs.
-* **Natural Language Ingestion:** Describe insights in plain English for automatic logging to your ontology graph.
-* **Semantic Vector Search:** Build high-performance local vector indices for querying analytical findings.
-* **LLM Search Orchestration:** Use Ollama-powered, intelligent routing for complex knowledge queries.
-* __Enterprise Ready__: KMDS is meant to be used within a git repository. It inherits the security context of the repository it is used with. Please see [this document](example_documentation/kmds_enterprise_use.md)
+KMDS is a productivity tool for **mid-level and above data scientists** working in small teams (2–10 people) on operational analytics problems.
+
+It assumes you write design documents, document your modeling decisions, and comment your notebooks. If you do, KMDS makes that work searchable, auditable, and transferable. If you don't, start there first — garbage in, garbage out applies here as much as anywhere.
 
 ---
 
-## 🧭 KMDS Semantic Blueprint
+## The Problem It Solves
 
-KMDS is built around a semantic blueprint that turns disconnected experiments, notebooks, scripts, and metadata into a queryable institutional knowledge graph. It addresses the “memory hole” in analytics workflows by preserving why decisions were made as well as what was produced.
+Small data science teams building operational models face a consistent failure mode: the knowledge generated during development — why a feature was engineered a certain way, why one model was chosen over another, what the data quality issues were and how they were resolved — lives in Slack threads, people's heads, and uncommented notebooks. When team members rotate, when a model needs to be audited, or when a second interface is built on the same domain, that knowledge has to be reconstructed from scratch.
 
-### Why it matters
-
-* The problem: fragmented ML context across notebooks, code, YAML, and reports.
-* The outcome: a local, auditable RDF/XML graph for project history, data sources, and model metadata.
-* The asset: structured analytical knowledge — not just models or LLM outputs.
-
-### Blueprint highlights
-
-* **Agent-human collaboration**
-  - Humans retain accountability, domain expertise, and final decision-making.
-  - The KMDS protocol defines repeatable interfaces, data contracts, and governance guardrails.
-  - LLM agents retrieve context, enforce rules, and generate boilerplate reliably.
-
-* **Four core stages**
-  1. Semantic foundation — parse raw data and metadata into clean datasets and agent-native docs.
-  2. Feature advisor — configuration-driven feature engineering with leakage-safe pipelines.
-  3. Design-time compiler — model workflow governance, artifact serialization, and audit-ready outputs.
-  4. Automated repository auditing — multi-persona analysis generates structured diagnostics and JSON summaries.
-
-* **Synthesis engine**
-  - Converts project history into an auditable `project_knowledge_graph.xml`.
-  - Captures metadata tags, feature configs, model artifacts, audit reports, and traceable workflow decisions.
-
-* **Interactive workbench**
-  - Prefix-agnostic XML parsing for fragile namespace declarations.
-  - Proportional narrative layout for long text fields.
-  - Preserved file context ensures updated graphs download with matching file signatures.
-
-For complete design details, see `example_documentation/KMDS_Semantic_Blueprint.pdf`.
+KMDS captures that knowledge as it is generated and makes it queryable in plain English.
 
 ---
 
-## 📂 KMDS Data Helper (`kmds-data-helper`)
+## Architecture
 
-The `kmds-data-helper` package introduces a multi-persona analysis framework for existing data science repositories. Using local LLMs (via Ollama), it scans documentation, schemas, and notebooks to output complete KMDS knowledge graphs.
+This repository implements the core `kmds` package, which provides:
 
-### Key Features
+- CLI entry points for project summary logging, executive summaries, semantic search, search orchestration, and natural-language observation ingestion
+- Ontology-backed XML/OWL knowledge graph workflows
+- Local semantic indexing using sentence-transformers
+- Optional LLM routing via Google GenAI or a custom LLM backend
 
-* **Toggleable Role Personas:** Switch between Data Scientist, Tech Lead, and Architect behaviors via a `kmds_config.yaml` file.
-* **Automated Artifact Synthesis:** Scans directories to auto-generate structured diagnostic files (`full_service_report.json`, `kmds_summary.json`).
-* **Direct Graph Production:** Compiles generated report structures directly into a standardized `project_knowledge_graph.xml`.
+Broader KMDS ecosystem packages such as `kmds-data-helper`, `kmds-ui`, `kmds-featurization`, and `kmds-modeling` are companion projects in the wider ecosystem, not part of this repository.
+
+### Components
+
+| Component | Role |
+|---|---|
+| `kmds` | Core KMDS package in this repository, providing CLI entry points and ontology-backed knowledge graph workflows |
+| `kmds-data-helper` | External companion package for ingesting documents and notebooks into KMDS |
+| `kmds-featurization` | External companion package for structured feature engineering workflows |
+| `kmds-modeling` | External companion package for model development and decision capture |
+| `kmds-search` | Semantic search capability available through this repo's CLI and search modules |
+
+All knowledge graph operations in this repository are built around the core `kmds` package. External ecosystem packages are noted for context, but they are not included here.
 
 ---
 
-## 🖥️ KMDS Workbench UI
+## Key Repo Functionality
 
-The [kmds-ui](https://pypi.org/) extension package provides a specialized web dashboard custom-engineered to view, audit, and modify knowledge graph files generated by the KMDS ecosystem. It prevents namespace prefix corruption or structural layout degradation common in general-purpose ontology utilities (like Protégé).
+This repository defines the following CLI entry points in `pyproject.toml`:
 
-### Key Technical Advantages
+- `kmds-summary-log`
+- `kmds-exec-summary`
+- `kmds-search`
+- `kmds-ask`
+- `kmds-observe`
 
-* **Prefix-Agnostic Processing:** Splits and parses XML fragments dynamically at runtime to handle KMDS files lacking explicit namespace declarations without crashing.
-* **Proportional Narrative Isolation:** Uses a 75% proportional grid with dynamic word-wrapping to cleanly display long text fields without text truncation.
-* **Preserved File Context:** Automatically tracks the original file name during ingestion, ensuring the updated graph downloads with matching name signatures.
+The core package also includes ontology loading, semantic index building, and natural-language observation mapping.
 
 ---
 
-## 🚀 Getting Started
+## Setup
 
-### 1. Installation
+Install the package locally from this repository:
 
-Install the entire modular framework directly from PyPI:
-
-```bash hljs vditor-linenumber
-# Install core logging, UI, and data helper
-pip install kmds kmds-ui kmds-data-helper
+```bash
+pip install -e .
 ```
 
-### 2. Using the Interactive UI
+Or install from PyPI if available:
 
-Launch your workbench application from the terminal:
-
-```bash hljs vditor-linenumber
-kmds-workbench
+```bash
+pip install kmds
 ```
 
-*Open `http://127.0.0` in your browser.*
+To install companion KMDS ecosystem packages from PyPI:
 
-### 3. Automatically Building Graphs from Repositories (`kmds-data-helper`)
-
-Set up a project directory containing `documents/`, `notebooks/`, and `data_dictionary/`.
-
-Run the automatic aggregator tool:
-
-```bash hljs vditor-linenumber
-kmds-kb --workspace . --project-file project_knowledge_graph.xml --mode auto
+```bash
+pip install kmds-data-helper kmds-ui kmds-featurization kmds-modeling
 ```
 
-To parse individual report paths directly, use the adapter interface command:
+This repository does not include UI workbench or repository-scanning companion packages such as `kmds-ui` or `kmds-data-helper`.
 
-```bash hljs vditor-linenumber
-kmds-analyze --input output/full_service_report.json --project-file project_knowledge_graph.xml --create-project --workflow-name kmds_project_workflow --mode auto
+### Optional LLM Support
+
+LLM-assisted search orchestration and executive summary generation require the optional `google-genai` dependency and a valid `GOOGLE_API_KEY` environment variable. The package also supports supplying a custom LLM callable programmatically.
+
+---
+
+## The Blueprint: How a KMDS Project Works
+
+### Responsibilities
+
+A KMDS engagement has three clear areas of responsibility:
+
+**The Client / Domain Owner**
+- Provides access to operational data
+- Reviews and validates domain analysis documents
+- Defines what a trustworthy, auditable result looks like for their business
+
+**The Data Science Team**
+- Authors design documents, data dictionaries, and cleaning reports
+- Documents modeling decisions and rationale in notebooks
+- Maintains the `documents/` directory as a first-class artifact
+
+**The Framework (KMDS)**
+- Ingests all documentation into a structured knowledge graph
+- Preserves lineage across featurization and modeling phases
+- Makes accumulated knowledge queryable and auditable at any point
+
+### The `documents/` Directory
+
+Every KMDS project has a consistent `documents/` structure regardless of domain:
+
+```
+project/
+├── documents/
+│   ├── domain_analysis.md        # Business problem, unit of analysis, success criteria
+│   ├── data_dictionary.md        # Schema, field definitions, known quality issues
+│   ├── cleaning_report.md        # What was found, what was done, what was deferred
+│   ├── feature_engineering.md    # Feature decisions and rationale
+│   └── modeling_report.md        # Model selection, validation approach, final rationale
+├── notebooks/
+└── data/
 ```
 
-### 4. Quick Summary Logging via CLI (`kmds`)
+This consistency is intentional. A new team member, an auditor, or a returning developer can orient themselves in any KMDS project without a walkthrough.
 
-```bash hljs vditor-linenumber
-kmds-summary-log \
-  --summary "Daily reporting workflow for support operations." \
-  --workflow-name "support_reporting" \
-  --workflow-type application \
-  --project-file ./support_reporting.xml \
-  --create-project --no-prompt
-```
+---
 
-### 5. Executing Semantic Knowledge Queries
+## Worked Example: SBA Loan Default Prediction
 
-```bash hljs vditor-linenumber
-kmds-search \
-  --kb ./project_knowledge_graph.xml \
-  --query "What data quality issues were identified?" \
-  --n-results 3
-```
+### The Business Problem
 
-The full documentation covers custom LLM functions, available routing templates, and output formats.
+The U.S. Small Business Administration (SBA) loan dataset presents a classification problem: given a loan application, predict whether it will default. For a lending operation, this decision needs to be explainable to regulators, auditable after the fact, and reproducible when the model is retrained on new data. A black-box model with no documented rationale is not acceptable.
 
-This repository includes two detailed examples:
+### How the Project Was Developed
 
-* **Analytics Example:** Evaluates the effectiveness of a ticket resolution help desk.
-  * [Notebooks](https://file+.vscode-resource.vscode-cdn.net/home/rajiv/programming/kmds_maintainence/KMDS/examples_of_use/analytics)
-  * [Video Summary](https://youtube.com/)
-  * [Infographic](https://file+.vscode-resource.vscode-cdn.net/home/rajiv/programming/kmds_maintainence/KMDS/examples_of_use/analytics/usecase_overview_mindmap.png)
-* **Machine Learning Example:** Uses Principal Component Analysis (PCA) to summarize online store sales activity.
-  * [Notebooks](https://file+.vscode-resource.vscode-cdn.net/home/rajiv/programming/kmds_maintainence/KMDS/examples_of_use/machine_learning)
-  * [Infographic](https://file+.vscode-resource.vscode-cdn.net/home/rajiv/programming/kmds_maintainence/KMDS/examples_of_use/machine_learning/ml_infographic_kmds.png)
+**Phase 1 — Domain Analysis**
+The domain analysis document established the unit of analysis (individual loan), the target variable (default/no default), the relevant time horizon, and the business constraints on false positives vs false negatives. The client validated this document before any data work began.
+
+**Phase 2 — Data Quality and Cleaning**
+The data dictionary catalogued all fields, their types, missing value rates, and known encoding issues. The cleaning report documented every transformation applied and the rationale — not just what was done, but why, and what alternatives were considered and rejected.
+
+**Phase 3 — Featurization**
+Feature engineering decisions were captured through the `kmds-featurization` companion component. Each feature includes its derivation logic and the business reasoning that motivated it.
+
+**Phase 4 — Modeling**
+Model selection, validation approach, and the final rationale for the chosen model are captured in the modeling report and persisted into the knowledge graph via the external `kmds-modeling` companion component.
+
+**The result:** A complete, queryable record of every decision made during development. Six months later, when a regulator asks why the model treats a particular loan characteristic the way it does, the answer is in the knowledge graph — not in someone's memory.
+
+[→ View the full SBA example](https://github.com/rajivsam/kmds_migration/tree/main/sba_migration)
+
+### What You Can Query After the Fact
+
+Once the knowledge graph is built, the core repository CLI provides several ways to query it:
+
+- `kmds-search --project-file <KB_FILE> --query "..."` for local semantic search
+- `kmds-ask --project-file <KB_FILE> --query "..."` for LLM-assisted question routing and synthesis
+
+Example questions:
+
+- "Why was this feature included?"
+- "What data quality issues were found in the loan term field?"
+- "What models were evaluated and why was logistic regression chosen?"
+- "What did the cleaning report say about missing NAICS codes?"
+
+No archaeology through notebooks. No asking the original developer. The knowledge can be recovered from the graph.
+
+---
+
+## Portability Across Domains: The Olist Example
+
+The SBA example is a risk/classification problem in financial services. The [Olist example](https://github.com/rajivsam/kmds_migration/tree/main/olist_migration) applies the identical `documents/` structure and workflow to a retail operational analytics problem — a fundamentally different domain, different data types, different modeling approach.
+
+The `documents/` directory is identical in structure. The process is identical. The knowledge graph captures the same categories of decisions.
+
+This is the point: KMDS is not a solution to one type of problem. It is a discipline for operational data science work that travels across domains because the underlying practice — document your decisions, capture your rationale, make it auditable — is domain-agnostic.
+
+---
+
+## What You Get at the End of a KMDS Project
+
+- A **queryable knowledge graph** of every analytical decision made during development
+- A **consistent document set** that any team member or auditor can navigate without a guide
+- **Lineage** from raw data through features to model, with rationale at each step
+- A **transferable methodology** — the second project in a domain is faster because the first project's knowledge is accessible, not lost
+
+---
+
+## Related Tools
+
+- [tseda](https://github.com/rajivsam/tseda) — automated SSA-based decomposition for regularly sampled time series, with KMDS lineage persistence
+
+---
+
+## License
+
+Apache 2.0
 
 ---
 
