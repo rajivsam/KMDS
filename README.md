@@ -42,39 +42,31 @@ KMDS captures that knowledge as it is generated and makes it queryable in plain 
 
 ## Architecture
 
+```mermaid
+flowchart LR
+    A["Project artifacts<br/>(docs, notebooks, reports)"] --> B["kmds<br/>(this repository)"]
+    B --> C["kmds-search<br/>semantic search"]
+    B --> D["kmds-ask<br/>LLM query orchestration"]
+    B --> E["kmds-observe<br/>NL observation ingestion"]
+    B --> F["kmds-exec-summary<br/>Executive summary"]
+    B --> G["Ontology / XML knowledge graph"]
+
+    subgraph Ecosystem["External companion packages"]
+      H["dd-parser-cleaner"]
+      I["kmds-data-helper"]
+      J["kmds-ui"]
+      K["kmds-featurization"]
+      L["kmds-modeling"]
+    end
+
+    B --> H
+    B --> I
+    B --> J
+    B --> K
+    B --> L
 ```
-         +---------------------------+
-         |  Project artifacts &       |
-         |  documentation (docs,     |
-         |  notebooks, reports)      |
-         +-------------+-------------+
-                       |
-                       v
-         +---------------------------+
-         |   kmds (this repository)  |
-         |  - summary ingest         |
-         |  - natural-language log   |
-         |  - semantic index/search  |
-         |  - LLM-assisted query     |
-         +------+------+-------------+
-                |      |
-      +---------+      +-----------+
-      |                          |
-      v                          v
-+-------------+            +--------------+
-| kmds-search |            | kmds-ask     |
-+-------------+            +--------------+
-      |                          |
-      +------------+-------------+
-                   v
-         +---------------------------+
-         |   External companions      |
-         |   kmds-data-helper         |
-         |   kmds-ui                  |
-         |   kmds-featurization       |
-         |   kmds-modeling            |
-         +---------------------------+
-```
+
+In practice, `dd-parser-cleaner` is the first companion step for cleaning tabular data and enriching it with metadata; its output is then used by downstream companion packages such as `kmds-featurization` and `kmds-modeling`.
 
 This repository implements the core `kmds` package, which provides:
 
@@ -83,13 +75,14 @@ This repository implements the core `kmds` package, which provides:
 - Local semantic indexing using sentence-transformers
 - Optional LLM routing via Google GenAI or a custom LLM backend
 
-Broader KMDS ecosystem packages such as `kmds-data-helper`, `kmds-ui`, `kmds-featurization`, and `kmds-modeling` are companion projects in the wider ecosystem, not part of this repository.
+Broader KMDS ecosystem packages such as `dd-parser-cleaner`, `kmds-data-helper`, `kmds-ui`, `kmds-featurization`, and `kmds-modeling` are companion projects in the wider ecosystem, not part of this repository.
 
 ### Components
 
 | Component | Role |
 |---|---|
 | `kmds` | Core KMDS package in this repository, providing CLI entry points and ontology-backed knowledge graph workflows |
+| `dd-parser-cleaner` | External companion package for cleaning and enriching data for featurization and modeling |
 | `kmds-data-helper` | External companion package for ingesting documents and notebooks into KMDS |
 | `kmds-featurization` | External companion package for structured feature engineering workflows |
 | `kmds-modeling` | External companion package for model development and decision capture |
@@ -130,7 +123,7 @@ pip install kmds
 To install companion KMDS ecosystem packages from PyPI:
 
 ```bash
-pip install kmds-data-helper kmds-ui kmds-featurization kmds-modeling
+pip install dd-parser-cleaner kmds-data-helper kmds-ui kmds-featurization kmds-modeling
 ```
 
 This repository does not include UI workbench or repository-scanning companion packages such as `kmds-ui` or `kmds-data-helper`.
@@ -194,10 +187,10 @@ The U.S. Small Business Administration (SBA) loan dataset presents a classificat
 The domain analysis document established the unit of analysis (individual loan), the target variable (default/no default), the relevant time horizon, and the business constraints on false positives vs false negatives. The client validated this document before any data work began.
 
 **Phase 2 — Data Quality and Cleaning**
-The data dictionary catalogued all fields, their types, missing value rates, and known encoding issues. The cleaning report documented every transformation applied and the rationale — not just what was done, but why, and what alternatives were considered and rejected.
+The data dictionary catalogued all fields, their types, missing value rates, and known encoding issues. The cleaning report documented every transformation applied and the rationale — not just what was done, but why, and what alternatives were considered and rejected. `dd-parser-cleaner` was used to apply the boilerplate cleaning methodology for tabular data, enrich records with metadata, and prepare the dataset for downstream featurization and modeling.
 
 **Phase 3 — Featurization**
-Feature engineering decisions were captured through the `kmds-featurization` companion component. Each feature includes its derivation logic and the business reasoning that motivated it.
+Feature engineering decisions were captured through the `kmds-featurization` companion component. The workflow explicitly factored in the user’s decision to featurize domain-specific entities such as geographical addresses using custom feature derivations and entity-aware transformations. Each feature includes its derivation logic and the business reasoning that motivated it.
 
 **Phase 4 — Modeling**
 Model selection, validation approach, and the final rationale for the chosen model are captured in the modeling report and persisted into the knowledge graph via the external `kmds-modeling` companion component.

@@ -25,13 +25,14 @@ def test_pyproject_scripts_define_expected_cli_entrypoints():
 def test_readme_contains_companion_install_command():
     readme_text = Path("README.md").read_text(encoding="utf-8")
     assert (
-        "pip install kmds-data-helper kmds-ui kmds-featurization kmds-modeling" in readme_text
+        "pip install dd-parser-cleaner kmds-data-helper kmds-ui kmds-featurization kmds-modeling" in readme_text
     )
 
 
 def test_repository_does_not_ship_external_companion_packages():
     src_root = Path("src")
     external_modules = [
+        "dd_parser_cleaner",
         "kmds_data_helper",
         "kmds_ui",
         "kmds_featurization",
