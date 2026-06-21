@@ -217,13 +217,13 @@ No archaeology through notebooks. No asking the original developer. The knowledg
 
 ---
 
-## Portability Across Domains: The Olist Example
+## Portability Across Problem Types: The Olist Example
 
-The SBA example is a risk/classification problem in financial services. The [Olist example](https://github.com/rajivsam/kmds_migration/tree/main/olist_migration) applies the identical `documents/` structure and workflow to a retail operational analytics problem — a fundamentally different domain, different data types, different modeling approach.
+The SBA example is a risk-oriented classification problem in financial services. The [Olist example](https://github.com/rajivsam/kmds_migration/tree/main/olist_migration) is an operational analytics problem in retail, with a different project structure, metrics, and business questions. One is about predicting defaults; the other is about seller performance, order flow, and customer experience.
 
-The `documents/` directory is identical in structure. The process is identical. The knowledge graph captures the same categories of decisions.
+The `documents/` directory is identical in structure. The process is identical. The knowledge graph captures the same decision categories, even though the underlying problem type and modeling approach are very different.
 
-This is the point: KMDS is not a solution to one type of problem. It is a discipline for operational data science work that travels across domains because the underlying practice — document your decisions, capture your rationale, make it auditable — is domain-agnostic.
+This is the point: KMDS is not a one-problem solution dressed up as a framework. It is a discipline for operational data science work that travels across problem types because the underlying practice — document your decisions, capture your rationale, make it auditable — is genuinely domain-agnostic.
 
 ---
 
