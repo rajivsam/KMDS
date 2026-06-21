@@ -245,7 +245,3 @@ This is the point: KMDS is not a one-problem solution dressed up as a framework.
 ## License
 
 Apache 2.0
-
----
-
-## 🤝 Contributing
