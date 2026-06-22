@@ -45,21 +45,29 @@ KMDS addresses both. It provides evidence-based decision guidance at the moment 
 
 ## Architecture
 
-```
+```mermaid
 flowchart LR
-    A["Project artifacts<br/>(docs, notebooks, reports)"] --> B["kmds<br/>(this repository)"]
-    B --> C["kmds-search<br/>semantic search"]
-    B --> D["kmds-ask<br/>LLM query orchestration"]
-    B --> E["kmds-observe<br/>NL observation ingestion"]
-    B --> F["kmds-exec-summary<br/>Executive summary"]
-    B --> G["Ontology / XML knowledge graph"]
+    A["Project artifacts\n(docs, notebooks, reports)"]
+    B["kmds\n(this repository)"]
+    C["kmds-search\nsemantic search"]
+    D["kmds-ask\nLLM query orchestration"]
+    E["kmds-observe\nNL observation ingestion"]
+    F["kmds-exec-summary\nExecutive summary"]
+    G["Ontology / XML knowledge graph"]
+
+    A --> B
+    B --> C
+    B --> D
+    B --> E
+    B --> F
+    B --> G
 
     subgraph Ecosystem["Companion packages with embedded advisors"]
-      H["dd-parser-cleaner<br/>(Cleaning guidelines)"]
-      I["kmds-data-helper<br/>(Repository synthesis)"]
-      J["kmds-ui<br/>(Workbench)"]
-      K["kmds-featurization<br/>(Feature guidelines)"]
-      L["kmds-modeling<br/>(Modeling guidelines)"]
+      H["dd-parser-cleaner\n(Cleaning guidelines)"]
+      I["kmds-data-helper\n(Repository synthesis)"]
+      J["kmds-ui\n(Workbench)"]
+      K["kmds-featurization\n(Feature guidelines)"]
+      L["kmds-modeling\n(Modeling guidelines)"]
     end
 
     B --> H
