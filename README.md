@@ -3,13 +3,10 @@
     <img width="460" height="300" src="https://raw.githubusercontent.com/rajivsam/KMDS/main/images/kmds_logo_resized.jpg" alt="KMDS Logo">
   </a>
 </p>
-
 <h1 align="center">Knowledge Management for Data Science (KMDS)</h1>
-
 <p align="center">
-  <strong>Capture, organize, and reuse knowledge from your data science experiments.</strong>
+  <strong>Rigorous, repeatable operational analytics backed by evidence-based decision guidance at every phase.</strong>
 </p>
-
 <p align="center">
   <a href="https://zenodo.org/doi/10.5281/zenodo.10695270"><img src="https://zenodo.org/badge/753950832.svg" alt="DOI"></a>
   <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a>
@@ -18,9 +15,9 @@
 
 ## KMDS — Knowledge Management for Data Science
 
-> KMDS is a framework for building well-documented analytical and machine learning models for operational data, with LLM-assisted search and summary workflows.
+> KMDS is a complete methodology framework for building well-documented analytical and machine learning models for operational data. It combines decision guidance at every analytical phase—data cleaning, featurization, and modeling—with LLM-assisted knowledge capture and semantic search.
 
-Operational decisions — monthly forecasts, risk assessments, demand plans — need to be trustworthy, explainable, and repeatable. KMDS enforces the discipline that makes that possible, and makes the knowledge generated during development searchable and persistent long after the project ends.
+Operational decisions — monthly forecasts, risk assessments, demand plans — need to be trustworthy, explainable, and repeatable. KMDS enforces the discipline that makes that possible through evidence-based guidance, structured documentation, and a knowledge graph that captures not just what was done, but *why it was done that way*. The result is reproducible, auditable, and transferable—your second project in a domain is faster because the first project's knowledge isn't lost.
 
 ---
 
@@ -34,15 +31,21 @@ It assumes you write design documents, document your modeling decisions, and com
 
 ## The Problem It Solves
 
-Small data science teams building operational models face a consistent failure mode: the knowledge generated during development — why a feature was engineered a certain way, why one model was chosen over another, what the data quality issues were and how they were resolved — lives in Slack threads, people's heads, and uncommented notebooks. When team members rotate, when a model needs to be audited, or when a second interface is built on the same domain, that knowledge has to be reconstructed from scratch.
+Small data science teams building operational models face two related challenges:
 
-KMDS captures that knowledge as it is generated and makes it queryable in plain English.
+**1. Knowledge Loss**
+The knowledge generated during development — why a feature was engineered a certain way, why one model was chosen over another, what the data quality issues were and how they were resolved — lives in Slack threads, people's heads, and uncommented notebooks. When team members rotate, when a model needs to be audited, or when a second interface is built on the same domain, that knowledge has to be reconstructed from scratch.
+
+**2. Decision Inconsistency**
+Without systematic guidance, the same analytical problems get solved differently each time. One modeler chooses K-Means for clustering because it's familiar; another spends weeks on DBSCAN without understanding the tradeoffs. Guidelines from research and practice go unused because they're dispersed across papers, blog posts, and senior practitioners' memories.
+
+KMDS addresses both. It provides evidence-based decision guidance at the moment you need it—data cleaning, featurization, modeling—and captures that guidance and your decisions in a knowledge graph, making the entire analytical process queryable and repeatable.
 
 ---
 
 ## Architecture
 
-```mermaid
+```
 flowchart LR
     A["Project artifacts<br/>(docs, notebooks, reports)"] --> B["kmds<br/>(this repository)"]
     B --> C["kmds-search<br/>semantic search"]
@@ -51,12 +54,12 @@ flowchart LR
     B --> F["kmds-exec-summary<br/>Executive summary"]
     B --> G["Ontology / XML knowledge graph"]
 
-    subgraph Ecosystem["External companion packages"]
-      H["dd-parser-cleaner"]
-      I["kmds-data-helper"]
-      J["kmds-ui"]
-      K["kmds-featurization"]
-      L["kmds-modeling"]
+    subgraph Ecosystem["Companion packages with embedded advisors"]
+      H["dd-parser-cleaner<br/>(Cleaning guidelines)"]
+      I["kmds-data-helper<br/>(Repository synthesis)"]
+      J["kmds-ui<br/>(Workbench)"]
+      K["kmds-featurization<br/>(Feature guidelines)"]
+      L["kmds-modeling<br/>(Modeling guidelines)"]
     end
 
     B --> H
@@ -66,7 +69,7 @@ flowchart LR
     B --> L
 ```
 
-In practice, `dd-parser-cleaner` is the first companion step for cleaning tabular data and enriching it with metadata; its output is then used by downstream companion packages such as `kmds-featurization` and `kmds-modeling`.
+In practice, `dd-parser-cleaner` is the first companion step for cleaning tabular data with embedded decision guidance; its output is then used by downstream companion packages such as `kmds-featurization` and `kmds-modeling`, each of which includes consolidated research and heuristics.
 
 This repository implements the core `kmds` package, which provides:
 
@@ -75,20 +78,30 @@ This repository implements the core `kmds` package, which provides:
 - Local semantic indexing using sentence-transformers
 - Optional LLM routing via Google GenAI or a custom LLM backend
 
-Broader KMDS ecosystem packages such as `dd-parser-cleaner`, `kmds-data-helper`, `kmds-ui`, `kmds-featurization`, and `kmds-modeling` are companion projects in the wider ecosystem, not part of this repository.
+Broader KMDS ecosystem packages (`dd-parser-cleaner`, `kmds-data-helper`, `kmds-ui`, `kmds-featurization`, `kmds-modeling`) include the decision advisors—consolidated guidelines, research-backed heuristics, and best practices for each analytical phase. These are companion projects that plug into the core KMDS infrastructure.
 
 ### Components
 
-| Component | Role |
-|---|---|
-| `kmds` | Core KMDS package in this repository, providing CLI entry points and ontology-backed knowledge graph workflows |
-| `dd-parser-cleaner` | External companion package for cleaning and enriching data for featurization and modeling |
-| `kmds-data-helper` | External companion package for ingesting documents and notebooks into KMDS |
-| `kmds-featurization` | External companion package for structured feature engineering workflows |
-| `kmds-modeling` | External companion package for model development and decision capture |
-| `kmds-search` | Semantic search capability available through this repo's CLI and search modules |
+Component
+Role
 
-All knowledge graph operations in this repository are built around the core `kmds` package. External ecosystem packages are noted for context, but they are not included here.
+`kmds`
+Core KMDS package in this repository, providing CLI entry points and ontology-backed knowledge graph workflows
+
+`dd-parser-cleaner`
+Data cleaning with embedded guidelines for common data quality problems, validation approaches, and transformation strategies
+
+`kmds-data-helper`
+Automated repository scanning and ingestion of documentation into KMDS
+
+`kmds-featurization`
+Feature engineering with embedded guidelines for feature selection, derivation strategies, and validation
+
+`kmds-modeling`
+Model development with embedded guidelines for algorithm selection, validation approaches, and hyperparameter strategies across model families
+
+`kmds-search`
+Semantic search over the accumulated project knowledge graph
 
 ---
 
@@ -110,19 +123,19 @@ The core package also includes ontology loading, semantic index building, and na
 
 Install the package locally from this repository:
 
-```bash
+```
 pip install -e .
 ```
 
 Or install from PyPI if available:
 
-```bash
+```
 pip install kmds
 ```
 
 To install companion KMDS ecosystem packages from PyPI:
 
-```bash
+```
 pip install dd-parser-cleaner kmds-data-helper kmds-ui kmds-featurization kmds-modeling
 ```
 
@@ -141,20 +154,25 @@ LLM-assisted search orchestration and executive summary generation require the o
 A KMDS engagement has three clear areas of responsibility:
 
 **The Client / Domain Owner**
+
 - Provides access to operational data
 - Reviews and validates domain analysis documents
 - Defines what a trustworthy, auditable result looks like for their business
 
 **The Data Science Team**
+
 - Authors design documents, data dictionaries, and cleaning reports
 - Documents modeling decisions and rationale in notebooks
 - Maintains the `documents/` directory as a first-class artifact
+- Engages with KMDS advisors to make informed decisions at each analytical phase
 
 **The Framework (KMDS)**
+
+- Provides evidence-based decision guidance through embedded advisors in each analytical phase (cleaning, featurization, modeling)
 - Ingests all documentation into a structured knowledge graph
 - Preserves lineage across featurization and modeling phases
 - Makes accumulated knowledge queryable and auditable at any point
-- Leverages external companion packages to provide advice and a framework for each phase of the data science development task
+- Enables the methodology to be repeatable and transferable across projects
 
 ### The `documents/` Directory
 
@@ -165,9 +183,9 @@ project/
 ├── documents/
 │   ├── domain_analysis.md        # Business problem, unit of analysis, success criteria
 │   ├── data_dictionary.md        # Schema, field definitions, known quality issues
-│   ├── cleaning_report.md        # What was found, what was done, what was deferred
-│   ├── feature_engineering.md    # Feature decisions and rationale
-│   └── modeling_report.md        # Model selection, validation approach, final rationale
+│   ├── cleaning_report.md        # What was found, what was done, what was deferred, and the advisor guidance applied
+│   ├── feature_engineering.md    # Feature decisions, rationale, and advisor recommendations considered
+│   └── modeling_report.md        # Model selection, validation approach, final rationale, and advisor guidance applied
 ├── notebooks/
 └── data/
 ```
@@ -188,15 +206,15 @@ The U.S. Small Business Administration (SBA) loan dataset presents a classificat
 The domain analysis document established the unit of analysis (individual loan), the target variable (default/no default), the relevant time horizon, and the business constraints on false positives vs false negatives. The client validated this document before any data work began.
 
 **Phase 2 — Data Quality and Cleaning**
-The data dictionary catalogued all fields, their types, missing value rates, and known encoding issues. The cleaning report documented every transformation applied and the rationale — not just what was done, but why, and what alternatives were considered and rejected. `dd-parser-cleaner` was used to apply the boilerplate cleaning methodology for tabular data, enrich records with metadata, and prepare the dataset for downstream featurization and modeling.
+The data dictionary catalogued all fields, their types, missing value rates, and known encoding issues. The cleaning report documented every transformation applied and the rationale — not just what was done, but why, and what alternatives were considered and rejected. `dd-parser-cleaner` provided guidelines for handling missing values, outlier detection, and encoding strategies specific to loan data. The team applied these guidelines, adapted them where necessary, and documented which guidance was followed and why.
 
 **Phase 3 — Featurization**
-Feature engineering decisions were captured through the `kmds-featurization` companion component. The workflow explicitly factored in the user’s decision to featurize domain-specific entities such as geographical addresses using custom feature derivations and entity-aware transformations. Each feature includes its derivation logic and the business reasoning that motivated it.
+Feature engineering decisions were made using the `kmds-featurization` advisor. For each candidate feature, the advisor surfaced research-backed guidelines for feature selection and derivation specific to classification problems with financial data. The team explicitly evaluated domain-specific entities such as geographical addresses using custom feature derivations informed by the advisor's recommendations. Each feature derivation includes not just *what* was created, but *why* it was created according to what the advisor recommended.
 
 **Phase 4 — Modeling**
-Model selection, validation approach, and the final rationale for the chosen model are captured in the modeling report and persisted into the knowledge graph via the external `kmds-modeling` companion component.
+The `kmds-modeling` advisor was engaged for model selection. For a binary classification problem with this dataset size and characteristics, the advisor surfaced specific algorithms with their tradeoffs: logistic regression for interpretability, gradient boosting for predictive power, etc. The team chose logistic regression, documented which advisor recommendations they followed and which they departed from, and captured the rationale. Validation approach and final model metrics are persisted into the knowledge graph via the `kmds-modeling` component.
 
-**The result:** A complete, queryable record of every decision made during development. Six months later, when a regulator asks why the model treats a particular loan characteristic the way it does, the answer is in the knowledge graph — not in someone's memory.
+**The result:** A complete, queryable record of every decision made during development, including which advisor guidance was applied and why. Six months later, when a regulator asks why the model treats a particular loan characteristic the way it does, the answer is in the knowledge graph — not in someone's memory. A second classification project in lending can reference the first project's decisions and apply the same (or deliberately different) guidance.
 
 [→ View the full SBA example](https://github.com/rajivsam/kmds_migration/tree/main/sba_migration)
 
@@ -209,10 +227,11 @@ Once the knowledge graph is built, the core repository CLI provides several ways
 
 Example questions:
 
-- "Why was this feature included?"
-- "What data quality issues were found in the loan term field?"
-- "What models were evaluated and why was logistic regression chosen?"
-- "What did the cleaning report say about missing NAICS codes?"
+- "Why was this feature included and what advisor recommendations did we apply?"
+- "What data quality issues were found in the loan term field and how did we handle them?"
+- "What models were evaluated and why was logistic regression chosen over gradient boosting?"
+- "What did the cleaning report say about missing NAICS codes and what guidance did we use?"
+- "What advisor recommendations did we deliberately not follow and why?"
 
 No archaeology through notebooks. No asking the original developer. The knowledge can be recovered from the graph.
 
@@ -222,18 +241,19 @@ No archaeology through notebooks. No asking the original developer. The knowledg
 
 The SBA example is a risk-oriented classification problem in financial services. The [Olist example](https://github.com/rajivsam/kmds_migration/tree/main/olist_migration) is an operational analytics problem in retail, with a different project structure, metrics, and business questions. One is about predicting defaults; the other is about seller performance, order flow, and customer experience.
 
-The `documents/` directory is identical in structure. The process is identical. The knowledge graph captures the same decision categories, even though the underlying problem type and modeling approach are very different.
+The `documents/` directory is identical in structure. The process is identical. The advisor guidance applies to the analytical problems (clustering, regression, time series) regardless of domain. The knowledge graph captures the same decision categories and advisor interactions, even though the underlying problem type and modeling approach are very different.
 
-This is the point: KMDS is not a one-problem solution dressed up as a framework. It is a discipline for operational data science work that travels across problem types because the underlying practice — document your decisions, capture your rationale, make it auditable — is genuinely domain-agnostic.
+This is the point: KMDS is not a one-problem solution dressed up as a framework. It is a discipline for operational data science work that travels across problem types because the underlying practice—engage with evidence-based guidance, document your decisions and the guidance you applied, make it auditable—is genuinely domain-agnostic.
 
 ---
 
 ## What You Get at the End of a KMDS Project
 
-- A **queryable knowledge graph** of every analytical decision made during development
+- A **queryable knowledge graph** of every analytical decision made during development, including which advisor guidelines were applied and why
 - A **consistent document set** that any team member or auditor can navigate without a guide
-- **Lineage** from raw data through features to model, with rationale at each step
-- A **transferable methodology** — the second project in a domain is faster because the first project's knowledge is accessible, not lost
+- **Lineage** from raw data through features to model, with rationale and advisor context at each step
+- A **transferable methodology** — the second project in a domain is faster because the first project's knowledge and advisors' recommendations are accessible, not lost
+- **Defensible decisions** — when a stakeholder or regulator asks why you made a choice, you have the advisor guidance you considered and the rationale for your decision
 
 ---
 
