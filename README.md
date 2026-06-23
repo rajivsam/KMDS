@@ -226,6 +226,8 @@ The `kmds-modeling` advisor was engaged for model selection. For a binary classi
 
 [→ View the full SBA example](https://github.com/rajivsam/kmds_migration/tree/main/sba_migration)
 
+- [Watch a video walkthrough of the SBA example implementation](https://www.youtube.com/watch?v=b_zmnyOveEI)
+
 ### What You Can Query After the Fact
 
 Once the knowledge graph is built, the core repository CLI provides several ways to query it:
