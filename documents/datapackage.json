@@ -1,0 +1,34 @@
+{
+  "name": "kmds-documents",
+  "title": "KMDS Documents Package",
+  "description": "A Google/OKF-compatible data package for KMDS documentation, metadata, and publication assets.",
+  "version": "0.1.0",
+  "licenses": [
+    {
+      "name": "Apache-2.0",
+      "title": "Apache License 2.0",
+      "path": "../LICENSE"
+    }
+  ],
+  "keywords": ["KMDS", "knowledge management", "data science", "documentation", "OKF", "Google"],
+  "sources": [
+    {
+      "title": "KMDS GitHub repository",
+      "path": "https://github.com/rajivsam/KMDS"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "Rajiv Sambasivan",
+      "role": "author",
+      "email": "rajiv.sambasivan@r2-ds.com"
+    }
+  ],
+  "resources": [
+    {
+      "path": "README.md",
+      "description": "Overview and usage notes for the KMDS documents package.",
+      "mediatype": "text/markdown"
+    }
+  ]
+}
