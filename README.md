@@ -17,6 +17,8 @@
 
 > KMDS is a complete methodology framework for building well-documented analytical and machine learning models for operational data. It combines decision guidance at every analytical phase—data cleaning, featurization, and modeling—with LLM-assisted knowledge capture and semantic search.
 
+KMDS is grounded in a knowledge graph and now includes LLM-powered assistants. It is an agent-assisted, human-in-the-loop, collaborative knowledge management system. The grounding is based on curated knowledge for each phase of the development iteration.
+
 Operational decisions — monthly forecasts, risk assessments, demand plans — need to be trustworthy, explainable, and repeatable. KMDS enforces the discipline that makes that possible through evidence-based guidance, structured documentation, and a knowledge graph that captures not just what was done, but *why it was done that way*. The result is reproducible, auditable, and transferable—your second project in a domain is faster because the first project's knowledge isn't lost.
 
 ---
