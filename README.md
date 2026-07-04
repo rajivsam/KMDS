@@ -47,6 +47,10 @@ KMDS addresses both. It provides evidence-based decision guidance at the moment 
 
 ## Architecture
 
+![KMDS component view](images/kmds_component_view.png)
+
+KMDS brings together data cleaning, feature engineering, model guidance, semantic search, and LLM-assisted insights into a unified knowledge-driven workflow.
+
 ```mermaid
 flowchart LR
     A["Project artifacts\n(docs, notebooks, reports)"]
