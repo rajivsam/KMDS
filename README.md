@@ -10,8 +10,9 @@
 <p align="center">
   <a href="https://zenodo.org/doi/10.5281/zenodo.10695270"><img src="https://zenodo.org/badge/753950832.svg" alt="DOI"></a>
   <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a>
-  <a href="https://kmds.readthedocs.io/en/latest/?badge=latest"><img src="https://readthedocs.org/projects/kmds/badge/?version=latest" alt="Documentation Status"></a>
 </p>
+
+> KMDS has now taken an agent-based direction; please refer to the project repository for details.
 
 ## KMDS — Knowledge Management for Data Science
 
