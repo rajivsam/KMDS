@@ -12,8 +12,6 @@
   <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a>
 </p>
 
-> KMDS has now taken an agent-based direction; please refer to the project repository for details.
-
 ## KMDS — Knowledge Management for Data Science
 
 > KMDS is a complete methodology framework for building well-documented analytical and machine learning models for operational data. It combines decision guidance at every analytical phase—data cleaning, featurization, and modeling—with LLM-assisted knowledge capture and semantic search.
