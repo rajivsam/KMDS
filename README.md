@@ -1,126 +1,228 @@
+<h1 align="center">KMDS — Knowledge Management for Data Science</h1>
+
 <p align="center">
   <a href="https://kmds.readthedocs.io/en/latest/">
-    <img width="460" height="300" src="https://raw.githubusercontent.com/rajivsam/KMDS/main/images/kmds_logo_resized.jpg" alt="KMDS Logo">
+    <img width="460" height="300" src="images/kmds_logo_resized.jpg" alt="KMDS logo">
   </a>
 </p>
-<h1 align="center">Knowledge Management for Data Science (KMDS)</h1>
+
 <p align="center">
-  <strong>Rigorous, repeatable operational analytics backed by evidence-based decision guidance at every phase.</strong>
-</p>
-<p align="center">
-  <a href="https://zenodo.org/doi/10.5281/zenodo.10695270"><img src="https://zenodo.org/badge/753950832.svg" alt="DOI"></a>
-  <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a>
+  <strong>Capture the reasoning behind data science work, make it searchable, and warm-start the next modeling iteration with the context that matters.</strong>
 </p>
 
-## KMDS — Knowledge Management for Data Science
+## The intent of this project
 
-> KMDS is a complete methodology framework for building well-documented analytical and machine learning models for operational data. It combines decision guidance at every analytical phase—data cleaning, featurization, and modeling—with LLM-assisted knowledge capture and semantic search.
+KMDS exists to solve a concrete and common problem in data science teams: the work is highly iterative, but the reasoning behind it is not preserved.
 
-KMDS is grounded in a knowledge graph and now includes LLM-powered assistants. It is an agent-assisted, human-in-the-loop, collaborative knowledge management system. The grounding is based on curated knowledge for each phase of the development iteration.
+Across a project lifecycle, teams accumulate decisions about data quality, feature engineering, modeling choices, evaluation criteria, and business assumptions. These decisions often live in notebooks, Slack threads, scattered documentation, and individual memory. Over time, that context erodes. The next iteration starts not from a clear baseline, but from reconstructed memory.
 
-Operational decisions — monthly forecasts, risk assessments, demand plans — need to be trustworthy, explainable, and repeatable. KMDS enforces the discipline that makes that possible through evidence-based guidance, structured documentation, and a knowledge graph that captures not just what was done, but *why it was done that way*. The result is reproducible, auditable, and transferable—your second project in a domain is faster because the first project's knowledge isn't lost.
+The result is familiar: duplicated work, inconsistent modeling choices, weak reproducibility, and a loss of continuity between versions of a project.
 
----
+KMDS is not a general-purpose chatbot or a foundation-model workflow wrapper. It is a structured knowledge-management system for analytical work. It is designed to preserve the context behind decisions, not simply the final outputs.
 
-## Who This Is For
+The central idea is simple:
 
-KMDS is a productivity tool for **mid-level and above data scientists** working in small teams (2–10 people) on operational analytics problems.
+> Turn the work of data science into a searchable, structured, auditable body of knowledge that can be revisited, reused, and carried forward into the next modeling cycle — a true warm start.
 
-It assumes you write design documents, document your modeling decisions, and comment your notebooks. If you do, KMDS makes that work searchable, auditable, and transferable. If you don't, start there first — garbage in, garbage out applies here as much as anywhere.
+### A different view of intelligent systems
 
----
+Here is an article that contrasts two distinct ways of thinking about intelligent data solutions: [Beyond the Agent Illusion: Leveraging the Statistical Learning View of Intelligence](https://r2dssanity.substack.com/p/beyond-the-agent-illusion-leveraging?r=3ncgel).
 
-## The Problem It Solves
+The core point is that the AI-agent view and the statistical-learning/data-science view are not the same thing. One starts from an autonomous system acting in an environment; the other starts from a problem formulation, a learning task, a statistical model, and the structure of the data itself.
 
-Small data science teams building operational models face two related challenges:
-
-**1. Knowledge Loss**
-The knowledge generated during development — why a feature was engineered a certain way, why one model was chosen over another, what the data quality issues were and how they were resolved — lives in Slack threads, people's heads, and uncommented notebooks. When team members rotate, when a model needs to be audited, or when a second interface is built on the same domain, that knowledge has to be reconstructed from scratch.
-
-**2. Decision Inconsistency**
-Without systematic guidance, the same analytical problems get solved differently each time. One modeler chooses K-Means for clustering because it's familiar; another spends weeks on DBSCAN without understanding the tradeoffs. Guidelines from research and practice go unused because they're dispersed across papers, blog posts, and senior practitioners' memories.
-
-KMDS addresses both. It provides evidence-based decision guidance at the moment you need it—data cleaning, featurization, modeling—and captures that guidance and your decisions in a knowledge graph, making the entire analytical process queryable and repeatable.
+KMDS is designed for the statistical-learning/data-science view. It is a tool for teams working to define the right task, capture reasoning, preserve model lineage, and continue the analytical process from one iteration to the next without losing the model-building context that made the prior decision path intelligible.
 
 ---
 
-## Architecture
+## What KMDS is
+
+KMDS is a project and library for building a durable knowledge layer around analytical workflows.
+
+It helps teams:
+
+- record observations and decisions during data exploration, feature engineering, and modeling
+- store them in a structured ontology-backed format
+- connect those observations to project artifacts, datasets, reports, and model choices
+- search past work semantically instead of relying on ad hoc file browsing
+- ground future decisions in prior evidence and rationale
+- preserve the modeling context needed to warm-start the next iteration with continuity and consistency
+
+In practice, KMDS is a framework for making data science work more reproducible, explainable, and transferable.
+
+It sits alongside, not instead of, the normal stack of engineering and machine-learning tooling. It is a tool for the modeler, the analyst, and the data scientist who needs to preserve the intellectual history of a project.
+
+The broader KMDS ecosystem is not a loose collection of unrelated tools. It is a family of task-specific advisors that support the common stages of a statistical learning workflow: data cleaning, feature engineering, model selection, and the decision logic that shapes the representation of the problem itself. In that family are tools such as `dd-parser-cleaner`, `kmds-featurization`, and `kmds-modeling`, each designed to encode the guidance, heuristics, and decision criteria used at that stage of the project.
+
+A particularly important future extension is a heterogeneity detector that helps modelers decide whether a tabular or graph representation is a better fit for the problem at hand. That is precisely the kind of decision-support function that belongs in this ecosystem: not merely logging outcomes, but helping the team reason about the right modeling task before the model is trained.
+
+---
+
+## What KMDS is not
+
+KMDS is not meant to be:
+
+- an experiment management tool
+- a workflow management tool
+- a generic AI assistant for arbitrary business tasks
+- a standalone model registry or MLOps platform
+- a replacement for good documentation discipline
+- a system that assumes all knowledge is already perfectly structured
+
+It is a practical tool for teams that already produce design docs, notes, notebooks, and reports, and want to make that knowledge usable instead of lost.
+
+### Why this distinction matters
+
+Experiment and workflow tools are designed to manage execution: runs, tasks, schedules, metrics, and operational coordination. They answer questions like: who ran what, when did it execute, and what was the output?
+
+KMDS is different. It is designed for a deeper and more persistent need in modeling teams: preserving the context of the model-building process itself.
+
+The central problem is not lack of execution tracking. It is the loss of modeling continuity. When a project evolves over time, the team often loses:
+
+- the rationale behind a feature choice
+- the assumptions that shaped the model design
+- the data representation decisions that led to the final formulation
+- the reasons a prior approach was rejected or retained
+- the context needed to warm-start the next iteration without reinventing the previous reasoning
+
+This is the core idea behind KMDS: the next modeling cycle should not begin from blank-slate memory. It should begin from a documented baseline of modeling context, with the prior design decisions still visible and reusable.
+
+That makes KMDS especially relevant for teams that care about reproducibility, consistency, and continuity in the development of data science projects. It solves a gap that experiment trackers and workflow tools do not address: preserving the intellectual state of the model-building process itself.
+
+---
+
+## The problem KMDS addresses
+
+Small data science teams often face two interconnected failures:
+
+### 1. Knowledge loss
+
+The real value of a data science project is not only the final model or report. It is the reasoning behind:
+
+- why a field was transformed this way
+- why a feature was excluded or engineered differently
+- why one approach was tried and rejected
+- what assumptions were made and how they were validated
+- what business or data constraints shaped the solution
+
+That reasoning lives in private notes, Slack threads, notebooks, and memory. KMDS preserves it in a structure that can be searched and reasoned over later.
+
+### 2. Decision inconsistency
+
+Without a common knowledge layer, teams make the same trade-offs differently across projects. The same patterns reappear with different labels, inconsistent logic, and no shared record of why an approach was chosen.
+
+KMDS helps stabilize that by giving teams a repeatable way to capture decisions and retrieve them when needed.
+
+### 3. Modeling continuity, re-baselining, and warm starts across iterations
+
+A major but often underappreciated part of operational data science is that the work is never truly static. The data changes, the business process changes, and the assumptions that were valid last quarter may no longer hold this quarter.
+
+That reality is important, but the boundary of the problem must be respected. KMDS is not a monitoring or drift-detection platform. Tools like Evidently and other MLOps monitoring solutions exist to detect and alert on data drift, concept drift, and production model degradation. That is a different layer of the system.
+
+KMDS sits on the modeling side of the lifecycle. It preserves the analyst's reasoning and the project’s analytical continuity across iterations. Its job is to carry forward the intellectual context of a model development cycle:
+
+- the accepted data representations
+- the transformations and feature choices that worked
+- the rationale behind model selection and tuning decisions
+- the known failure modes, assumptions, and edge cases
+- the validation criteria and the observed evidence behind them
+
+This makes warm starts possible in a principled way: the next modeling iteration does not begin from blank-slate memory. It begins from a documented modeling baseline, with the earlier reasoning still visible and reusable.
+
+The key point is this: KMDS helps data scientists preserve the modeler's context and decision lineage. It does not replace the monitoring layer used to detect drift in production or during runtime operations.
+
+### Data science utility tool chain
+
+KMDS is best understood as the knowledge layer in a broader data science utility toolchain. It provides tools for the tasks used in typical statistical learning workflows, and the companion packages in this ecosystem support the common stages of that work and encode the guidance used during it.
+
+- `dd-parser-cleaner` supports data cleaning and the documentation of data-quality decisions
+- `kmds-featurization` supports feature engineering choices and representation strategies
+- `kmds-modeling` supports model selection, evaluation logic, and comparative reasoning across candidate approaches
+
+These utilities are not just add-ons. They are the practical advisors that operationalize the data science workflow itself: the guidance that tells a modeler how to decide what is a good representation, what is a defensible transformation, and what modeling family is justified for the task at hand.
+
+KMDS connects these tasks into a coherent knowledge layer. It captures the rationale, preserves the lineage, and makes the knowledge searchable so that future iterations can inherit the design logic rather than rediscover it.
+
+A future extension in this direction is a heterogeneity detector that helps modelers decide whether a tabular or graph representation is a better fit for a given use case. This is the character of the broader toolchain: not merely recording metrics, but guiding modelers toward the right statistical form for the problem.
+
+---
+
+## The operating model
+
+KMDS is designed around a workflow that reflects how real analytical work happens.
+
+### A realistic data science workflow
+
+![KMDS workflow sequence](images/km_process_sequence.png)
+
+The workflow typically includes:
+
+1. exploration of raw business or operational data
+2. assessment of data quality and relevance
+3. transformation into problem-specific data representations
+4. experimentation with modeling approaches
+5. documentation of rationale and evidence
+6. reuse of stored observations in later work
+
+This is the foundation of the project: the analytical journey matters, not just the final artifact.
+
+---
+
+## Why a knowledge graph matters
+
+The project is grounded in the idea that data science knowledge should be represented as relationships between ideas, artifacts, decisions, and evidence.
+
+A knowledge graph makes it easier to connect:
+
+- business objectives
+- datasets and data quality issues
+- feature engineering choices
+- modeling experiments
+- assumptions and constraints
+- final recommendations and their rationale
+
+This lets teams ask questions like:
+
+- what did we learn about this customer segment last quarter?
+- which assumptions have we used repeatedly in similar churn models?
+- what representation was evaluated before this final approach?
+- where did a decision or model behavior originate?
+
+![KMDS overview](images/kmds_overview.png)
+
+---
+
+## System architecture
+
+KMDS brings together structured knowledge capture, semantic indexing, and optional search orchestration.
 
 ![KMDS component view](images/kmds_component_view.png)
 
-KMDS brings together data cleaning, feature engineering, model guidance, semantic search, and LLM-assisted insights into a unified knowledge-driven workflow.
+At a high level, the platform combines:
 
-```mermaid
-flowchart LR
-    A["Project artifacts\n(docs, notebooks, reports)"]
-    B["kmds\n(this repository)"]
-    C["kmds-search\nsemantic search"]
-    D["kmds-ask\nLLM query orchestration"]
-    E["kmds-observe\nNL observation ingestion"]
-    F["kmds-exec-summary\nExecutive summary"]
-    G["Ontology / XML knowledge graph"]
+- project artifacts such as documents, reports, and notebooks
+- structured observation capture and ontology-driven metadata
+- semantic search over the accumulated knowledge base
+- optional natural-language routing to project-specific search templates
+- generated summaries and insight-oriented retrieval
 
-    A --> B
-    B --> C
-    B --> D
-    B --> E
-    B --> F
-    B --> G
-
-    subgraph Ecosystem["Companion packages with embedded advisors"]
-      H["dd-parser-cleaner\n(Cleaning guidelines)"]
-      I["kmds-data-helper\n(Repository synthesis)"]
-      J["kmds-ui\n(Workbench)"]
-      K["kmds-featurization\n(Feature guidelines)"]
-      L["kmds-modeling\n(Modeling guidelines)"]
-    end
-
-    B --> H
-    B --> I
-    B --> J
-    B --> K
-    B --> L
-```
-
-In practice, `dd-parser-cleaner` is the first companion step for cleaning tabular data with embedded decision guidance; its output is then used by downstream companion packages such as `kmds-featurization` and `kmds-modeling`, each of which includes consolidated research and heuristics.
-
-This repository implements the core `kmds` package, which provides:
-
-- CLI entry points for project summary logging, executive summaries, semantic search, search orchestration, and natural-language observation ingestion
-- Ontology-backed XML/OWL knowledge graph workflows
-- Local semantic indexing using sentence-transformers
-- Optional LLM routing via Google GenAI or a custom LLM backend
-
-Broader KMDS ecosystem packages (`dd-parser-cleaner`, `kmds-data-helper`, `kmds-ui`, `kmds-featurization`, `kmds-modeling`) include the decision advisors—consolidated guidelines, research-backed heuristics, and best practices for each analytical phase. These are companion projects that plug into the core KMDS infrastructure.
-
-### Components
-
-Component
-Role
-
-`kmds`
-Core KMDS package in this repository, providing CLI entry points and ontology-backed knowledge graph workflows
-
-`dd-parser-cleaner`
-Data cleaning with embedded guidelines for common data quality problems, validation approaches, and transformation strategies
-
-`kmds-data-helper`
-Automated repository scanning and ingestion of documentation into KMDS
-
-`kmds-featurization`
-Feature engineering with embedded guidelines for feature selection, derivation strategies, and validation
-
-`kmds-modeling`
-Model development with embedded guidelines for algorithm selection, validation approaches, and hyperparameter strategies across model families
-
-`kmds-search`
-Semantic search over the accumulated project knowledge graph
+The project intentionally separates core KMDS functionality from optional integrations such as cloud storage connectors, exploratory pipeline examples, and LLM/reporting features.
 
 ---
 
-## Key Repo Functionality
+## Core capabilities
 
-This repository defines the following CLI entry points in `pyproject.toml`:
+The project provides a core library and CLI surface that supports:
+
+- ontology-backed knowledge representation
+- observation ingestion and structured logging
+- search over project knowledge bases
+- semantic indexing using embeddings
+- optional query routing to structured retrieval templates
+- reproducible command-line workflows for project summaries and search
+
+### CLI entry points
+
+Defined in the project metadata:
 
 - `kmds-summary-log`
 - `kmds-exec-summary`
@@ -128,156 +230,58 @@ This repository defines the following CLI entry points in `pyproject.toml`:
 - `kmds-ask`
 - `kmds-observe`
 
-The core package also includes ontology loading, semantic index building, and natural-language observation mapping.
+These entry points support both notebook-driven and CLI-driven usage patterns.
 
 ---
 
-## Setup
+## A more accurate description for the project
 
-Install the package locally from this repository:
+A concise version of the project message could be:
 
-```
+> KMDS is a knowledge-management and retrieval system for data science teams. It captures analytical decisions, assumptions, and observations in a structured ontology-backed workflow, preserves the reasoning behind model choices across iterations, and helps teams continue from a documented baseline instead of reconstructing context from scratch.
+
+This framing is closer to the actual intent of the project than a generic “LLM workspace” or “AI assistant” pitch.
+
+---
+
+## Why this matters
+
+The value of KMDS is not just productivity. It is operational discipline.
+
+It helps teams:
+
+- reduce dependence on individual memory
+- improve auditability of analytical decisions
+- preserve domain context across projects and teams
+- make project knowledge reusable instead of disposable
+- create a searchable record of what was learned, tried, and decided
+
+That is what makes the project useful in professional analytic settings, especially in operational data science and business-facing model development.
+
+---
+
+## Getting started
+
+Install the package locally:
+
+```bash
 pip install -e .
 ```
 
-Or install from PyPI if available:
+Or use the repository as a source tree for local workflows and examples.
 
-```
-pip install kmds
-```
+For more detailed project context, see:
 
-To install companion KMDS ecosystem packages from PyPI:
-
-```
-pip install dd-parser-cleaner kmds-data-helper kmds-ui kmds-featurization kmds-modeling
-```
-
-This repository does not include UI workbench or repository-scanning companion packages such as `kmds-ui` or `kmds-data-helper`.
-
-### Optional LLM Support
-
-LLM-assisted search orchestration and executive summary generation require the optional `google-genai` dependency and a valid `GOOGLE_API_KEY` environment variable. The package also supports supplying a custom LLM callable programmatically.
+- [README.md](README.md)
+- [docs/source/index.rst](docs/source/index.rst)
+- [design_considerations/design_rationale.md](design_considerations/design_rationale.md)
+- [design_considerations/km_app_pipeline.md](design_considerations/km_app_pipeline.md)
+- [design_considerations/knowledge_management_in_DS.md](design_considerations/knowledge_management_in_DS.md)
 
 ---
 
-## The Blueprint: How a KMDS Project Works
+## A final note
 
-### Responsibilities
+The strongest version of KMDS is not “AI for everything.” It is “knowledge infrastructure for analytical work.”
 
-A KMDS engagement has three clear areas of responsibility:
-
-**The Client / Domain Owner**
-
-- Provides access to operational data
-- Reviews and validates domain analysis documents
-- Defines what a trustworthy, auditable result looks like for their business
-
-**The Data Science Team**
-
-- Authors design documents, data dictionaries, and cleaning reports
-- Documents modeling decisions and rationale in notebooks
-- Maintains the `documents/` directory as a first-class artifact
-- Engages with KMDS advisors to make informed decisions at each analytical phase
-
-**The Framework (KMDS)**
-
-- Provides evidence-based decision guidance through embedded advisors in each analytical phase (cleaning, featurization, modeling)
-- Ingests all documentation into a structured knowledge graph
-- Preserves lineage across featurization and modeling phases
-- Makes accumulated knowledge queryable and auditable at any point
-- Enables the methodology to be repeatable and transferable across projects
-
-### The `documents/` Directory
-
-Every KMDS project has a consistent `documents/` structure regardless of domain:
-
-```
-project/
-├── documents/
-│   ├── domain_analysis.md        # Business problem, unit of analysis, success criteria
-│   ├── data_dictionary.md        # Schema, field definitions, known quality issues
-│   ├── cleaning_report.md        # What was found, what was done, what was deferred, and the advisor guidance applied
-│   ├── feature_engineering.md    # Feature decisions, rationale, and advisor recommendations considered
-│   └── modeling_report.md        # Model selection, validation approach, final rationale, and advisor guidance applied
-├── notebooks/
-└── data/
-```
-
-This consistency is intentional. A new team member, an auditor, or a returning developer can orient themselves in any KMDS project without a walkthrough.
-
----
-
-## Worked Example: SBA Loan Default Prediction
-
-### The Business Problem
-
-The U.S. Small Business Administration (SBA) loan dataset presents a classification problem: given a loan application, predict whether it will default. For a lending operation, this decision needs to be explainable to regulators, auditable after the fact, and reproducible when the model is retrained on new data. A black-box model with no documented rationale is not acceptable.
-
-### How the Project Was Developed
-
-**Phase 1 — Domain Analysis**
-The domain analysis document established the unit of analysis (individual loan), the target variable (default/no default), the relevant time horizon, and the business constraints on false positives vs false negatives. The client validated this document before any data work began.
-
-**Phase 2 — Data Quality and Cleaning**
-The data dictionary catalogued all fields, their types, missing value rates, and known encoding issues. The cleaning report documented every transformation applied and the rationale — not just what was done, but why, and what alternatives were considered and rejected. `dd-parser-cleaner` provided guidelines for handling missing values, outlier detection, and encoding strategies specific to loan data. The team applied these guidelines, adapted them where necessary, and documented which guidance was followed and why.
-
-**Phase 3 — Featurization**
-Feature engineering decisions were made using the `kmds-featurization` advisor. For each candidate feature, the advisor surfaced research-backed guidelines for feature selection and derivation specific to classification problems with financial data. The team explicitly evaluated domain-specific entities such as geographical addresses using custom feature derivations informed by the advisor's recommendations. Each feature derivation includes not just *what* was created, but *why* it was created according to what the advisor recommended.
-
-**Phase 4 — Modeling**
-The `kmds-modeling` advisor was engaged for model selection. For a binary classification problem with this dataset size and characteristics, the advisor surfaced specific algorithms with their tradeoffs: logistic regression for interpretability, gradient boosting for predictive power, etc. The team chose logistic regression, documented which advisor recommendations they followed and which they departed from, and captured the rationale. Validation approach and final model metrics are persisted into the knowledge graph via the `kmds-modeling` component.
-
-**The result:** A complete, queryable record of every decision made during development, including which advisor guidance was applied and why. Six months later, when a regulator asks why the model treats a particular loan characteristic the way it does, the answer is in the knowledge graph — not in someone's memory. A second classification project in lending can reference the first project's decisions and apply the same (or deliberately different) guidance.
-
-[→ View the full SBA example](https://github.com/rajivsam/kmds_migration/tree/main/sba_migration)
-
-- [Watch a video walkthrough of the SBA example implementation](https://www.youtube.com/watch?v=b_zmnyOveEI)
-
-### What You Can Query After the Fact
-
-Once the knowledge graph is built, the core repository CLI provides several ways to query it:
-
-- `kmds-search --project-file <KB_FILE> --query "..."` for local semantic search
-- `kmds-ask --project-file <KB_FILE> --query "..."` for LLM-assisted question routing and synthesis
-
-Example questions:
-
-- "Why was this feature included and what advisor recommendations did we apply?"
-- "What data quality issues were found in the loan term field and how did we handle them?"
-- "What models were evaluated and why was logistic regression chosen over gradient boosting?"
-- "What did the cleaning report say about missing NAICS codes and what guidance did we use?"
-- "What advisor recommendations did we deliberately not follow and why?"
-
-No archaeology through notebooks. No asking the original developer. The knowledge can be recovered from the graph.
-
----
-
-## Portability Across Problem Types: The Olist Example
-
-The SBA example is a risk-oriented classification problem in financial services. The [Olist example](https://github.com/rajivsam/kmds_migration/tree/main/olist_migration) is an operational analytics problem in retail, with a different project structure, metrics, and business questions. One is about predicting defaults; the other is about seller performance, order flow, and customer experience.
-
-The `documents/` directory is identical in structure. The process is identical. The advisor guidance applies to the analytical problems (clustering, regression, time series) regardless of domain. The knowledge graph captures the same decision categories and advisor interactions, even though the underlying problem type and modeling approach are very different.
-
-This is the point: KMDS is not a one-problem solution dressed up as a framework. It is a discipline for operational data science work that travels across problem types because the underlying practice—engage with evidence-based guidance, document your decisions and the guidance you applied, make it auditable—is genuinely domain-agnostic.
-
----
-
-## What You Get at the End of a KMDS Project
-
-- A **queryable knowledge graph** of every analytical decision made during development, including which advisor guidelines were applied and why
-- A **consistent document set** that any team member or auditor can navigate without a guide
-- **Lineage** from raw data through features to model, with rationale and advisor context at each step
-- A **transferable methodology** — the second project in a domain is faster because the first project's knowledge and advisors' recommendations are accessible, not lost
-- **Defensible decisions** — when a stakeholder or regulator asks why you made a choice, you have the advisor guidance you considered and the rationale for your decision
-
----
-
-## Related Tools
-
-- [tseda](https://github.com/rajivsam/tseda) — automated SSA-based decomposition for regularly sampled time series, with KMDS lineage persistence
-
----
-
-## License
-
-Apache 2.0
+That is the core idea this repository is trying to support: a disciplined way to record, retrieve, and reuse the reasoning that makes data science work trustworthy and reusable.
