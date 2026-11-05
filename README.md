@@ -10,6 +10,10 @@
   <strong>Capture the reasoning behind data science work, make it searchable, and warm-start the next modeling iteration with the context that matters.</strong>
 </p>
 
+<p align="center">
+  <strong>A knowledge layer for data scientists to capture, connect, and retrieve the reasoning behind their analytical work.</strong>
+</p>
+
 KMDS is open-source software, freely available for use, customization, and enterprise deployment. It is not a subscription product and does not require licensing fees. It is built to preserve analytical rationale, decision provenance, and model-building context in rigorous data-science workflows.
 
 To see how KMDS achieves reproducibility and structure across analytical projects, see this article: [KMDS-powered ML solutions: insights article](https://github.com/rajivsam/kmds_migration/blob/main/docs/kmds_insights_article.md).
