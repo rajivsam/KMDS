@@ -43,9 +43,12 @@ It helps teams:
 - record observations and decisions during data exploration, feature engineering, and modeling
 - store them in a structured ontology-backed format
 - connect those observations to project artifacts, datasets, reports, and model choices
-- search past work semantically instead of relying on ad hoc file browsing
+- search past work semantically through natural-language queries instead of relying on ad hoc file browsing
+- review and edit observations in a UI so project history remains visible, correctable, and understandable over time
 - ground future decisions in prior evidence and rationale
 - preserve the modeling context needed to warm-start the next iteration with continuity and consistency
+
+This is how knowledge sharing happens in practice: technical and non-technical stakeholders can review project history, understand the context behind current decisions, and inspect the evolution of the problem formulation without reconstructing it from scattered notes or individual memory.
 
 In practice, KMDS is a framework for making data science work more reproducible, explainable, and transferable.
 
@@ -104,7 +107,7 @@ The real value of a data science project is not only the final model or report. 
 - what assumptions were made and how they were validated
 - what business or data constraints shaped the solution
 
-That reasoning lives in private notes, Slack threads, notebooks, and memory. KMDS preserves it in a structure that can be searched and reasoned over later.
+That reasoning lives in private notes, Slack threads, notebooks, and memory. KMDS preserves it in a structure that can be searched and reasoned over later, with natural-language search and a UI for viewing and editing observations so the project history remains interpretable to both technical and non-technical stakeholders.
 
 ### 2. Decision inconsistency
 
@@ -132,13 +135,15 @@ The key point is this: KMDS helps data scientists preserve the modeler's context
 
 ### Data science utility tool chain
 
-KMDS is best understood as the knowledge layer in a broader data science utility toolchain. It provides tools for the tasks used in typical statistical learning workflows, and the companion packages in this ecosystem support the common stages of that work and encode the guidance used during it.
+KMDS is best understood as the knowledge layer in a broader data science utility toolchain. It provides tools for the tasks used in typical statistical learning workflows, and the companion packages in this ecosystem support the common stages of that work and encode the guidance used during it. This toolchain is intentionally expert-driven: a human domain expert remains in the loop to validate assumptions, review extracted metadata, and steer the workflow as the system converts raw data into structured knowledge.
 
-- `dd-parser-cleaner` supports data cleaning and the documentation of data-quality decisions
-- `kmds-featurization` supports feature engineering choices and representation strategies
-- `kmds-modeling` supports model selection, evaluation logic, and comparative reasoning across candidate approaches
+- [`kmds-dataset-util`](https://github.com/rajivsam/kmds-dataset-util) supports evaluation of raw data assets, generation of a data dictionary, and conversion into KMDS-consumable data assets with type metadata
+- [`dd-parser-cleaner`](https://github.com/rajivsam/dd-parser-cleaner) supports data cleaning and the documentation of data-quality decisions
+  - Special mention: its `dataset-bootstrap` CLI bootstraps dataset metadata from a questionnaire, creating the structured metadata foundation for a learning task before the config is generated
+- [`featurization`](https://github.com/rajivsam/featurization) supports feature engineering choices and representation strategies
+- [`kmds-modeling`](https://github.com/rajivsam/kmds-modeling) supports model selection, evaluation logic, and comparative reasoning across candidate approaches
 
-These utilities are not just add-ons. They are the practical advisors that operationalize the data science workflow itself: the guidance that tells a modeler how to decide what is a good representation, what is a defensible transformation, and what modeling family is justified for the task at hand.
+These utilities are not just add-ons. They are the practical advisors that operationalize the data science workflow itself: the guidance that tells a modeler how to decide what is a good representation, what is a defensible transformation, and what modeling family is justified for the task at hand. The system does not replace expert judgment; it captures, structures, and makes it reusable.
 
 KMDS connects these tasks into a coherent knowledge layer. It captures the rationale, preserves the lineage, and makes the knowledge searchable so that future iterations can inherit the design logic rather than rediscover it.
 
@@ -215,10 +220,13 @@ The project provides a core library and CLI surface that supports:
 
 - ontology-backed knowledge representation
 - observation ingestion and structured logging
-- search over project knowledge bases
+- natural-language search over project knowledge bases
+- review and editing of observations through a UI
 - semantic indexing using embeddings
 - optional query routing to structured retrieval templates
 - reproducible command-line workflows for project summaries and search
+
+These capabilities are the practical mechanism for knowledge sharing: stakeholders can inspect the narrative of a project, review the evidence behind decisions, and understand what is happening without needing to reconstruct the context from notebooks, documents, or scattered conversations.
 
 ### CLI entry points
 
@@ -265,6 +273,7 @@ That is what makes the project useful in professional analytic settings, especia
 Install the package locally:
 
 ```bash
+pip install dd-parser-cleaner kmds-data-helper kmds-ui kmds-featurization kmds-modeling
 pip install -e .
 ```
 
@@ -277,6 +286,8 @@ For more detailed project context, see:
 - [design_considerations/design_rationale.md](design_considerations/design_rationale.md)
 - [design_considerations/km_app_pipeline.md](design_considerations/km_app_pipeline.md)
 - [design_considerations/knowledge_management_in_DS.md](design_considerations/knowledge_management_in_DS.md)
+- [KMDS migration illustrations](https://github.com/rajivsam/kmds_migration) for three separate visualizations of KMDS, including the SBA loan performance use case
+- [kmds-dataset-util](https://github.com/rajivsam/kmds-dataset-util) as a utility for evaluating raw datasets and converting them into KMDS-consumable data assets
 
 ---
 
