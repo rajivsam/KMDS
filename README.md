@@ -58,6 +58,19 @@ It helps teams:
 
 This is how knowledge sharing happens in practice: technical and non-technical stakeholders can review project history, understand the context behind current decisions, and inspect the evolution of the problem formulation without reconstructing it from scattered notes or individual memory.
 
+## Key references that shaped KMDS
+
+The conceptual foundation of this package was shaped by a small set of influential references in machine learning and data preparation. These works helped define the project’s emphasis on preserving modeling context, reasoning provenance, and structured data understanding rather than treating data science as a sequence of disconnected model runs.
+
+- Hastie, T., Tibshirani, R., & Friedman, J. (2009). The Elements of Statistical Learning: Data Mining, Inference, and Prediction (2nd ed.). Springer. <https://web.stanford.edu/~hastie/ElemStatLearn/>
+  - This is the canonical reference for the statistical learning perspective that shapes KMDS. It provides the clearest framing of the core statistical-learning tasks and methods that underpin applied data science: supervised learning, unsupervised learning, model assessment, regularization, and the trade-offs between prediction, inference, and representation. For readers interested in digging deeper into this perspective, this is the best place to begin.
+- Domingos, P. (2012). "A Few Useful Things to Know About Machine Learning." Communications of the ACM, 55(10), 78–87. <https://cacm.acm.org/research/a-few-useful-things-to-know-about-machine-learning/>
+  - This paper influenced the project’s view that machine learning is not just about final predictive performance, but also about understanding the task, assumptions, feature representation, and decision process. It helped motivate KMDS as a way to preserve the reasoning behind analytical work rather than only the final artifacts.
+- Pyle, D. (1999). Data Preparation for Data Mining. Morgan Kaufmann. <https://books.google.co.in/books?hl=en&lr=&id=hhdVr9F-JfAC&oi=fnd&pg=PA1&dq=dorian+pyle+data+preparation+for+data+mining&ots=6iiS6OKzcw&sig=FWBjll_MKa9rbA3AJDHsqhaP2cg&redir_esc=y#v=onepage&q=dorian%20pyle%20data%20preparation%20for%20data%20mining&f=false>
+  - This book shaped KMDS’s focus on data quality, feature preparation, and the importance of documenting the transformations and assumptions that underpin analysis. It informed the design of KMDS as a knowledge layer that captures data understanding and decision lineage across the lifecycle of a project.
+
+For readers interested in the statistical learning perspective, the canonical starting point is Hastie, Tibshirani, and Friedman’s The Elements of Statistical Learning. It frames the core tasks and methods of the field in a way that remains authoritative and practically relevant. The other references complement this by reinforcing the importance of decision process, practical modeling judgment, and disciplined data preparation. Together they reflect the same underlying concern that KMDS addresses: preserving the reasoning behind the task, the data, and the model-building process itself.
+
 In practice, KMDS is a framework for making data science work more reproducible, explainable, and transferable.
 
 It sits alongside, not instead of, the normal stack of engineering and machine-learning tooling. It is a tool for the modeler, the analyst, and the data scientist who needs to preserve the intellectual history of a project.
@@ -150,6 +163,8 @@ KMDS is best understood as the knowledge layer in a broader data science utility
   - Special mention: its `dataset-bootstrap` CLI bootstraps dataset metadata from a questionnaire, creating the structured metadata foundation for a learning task before the config is generated
 - [`featurization`](https://github.com/rajivsam/featurization) supports feature engineering choices and representation strategies
 - [`kmds-modeling`](https://github.com/rajivsam/kmds-modeling) supports model selection, evaluation logic, and comparative reasoning across candidate approaches
+- [`kmds-data-helper`](https://github.com/rajivsam/kmds-data-helper) scans the components of a KMDS project workspace, makes that structure searchable, and builds a KMDS knowledge graph from the basic repository layout. This is a foundational step in the system: it turns a collection of project artifacts into a navigable, queryable graph rather than leaving the workspace as disconnected files and directories.
+- [`kmds-ui`](https://github.com/rajivsam/kmds-ui) provides a user interface for viewing, editing, and searching knowledge graphs. It sits on top of the graph created by the data-helper component, allowing people to inspect the repository-derived knowledge model, refine it, and navigate the resulting graph through a direct UI rather than a terminal-only workflow.
 
 These utilities are not just add-ons. They are the practical advisors that operationalize the data science workflow itself: the guidance that tells a modeler how to decide what is a good representation, what is a defensible transformation, and what modeling family is justified for the task at hand. The system does not replace expert judgment; it captures, structures, and makes it reusable.
 
