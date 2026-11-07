@@ -94,6 +94,8 @@ KMDS is not meant to be:
 
 It is a practical tool for teams that already produce design docs, notes, notebooks, and reports, and want to make that knowledge usable instead of lost.
 
+This is not an MLOps tool; it is a modeling tool for the analyst and modeler. For a useful framing of that distinction, see [Modeler / ML Scientist / Data Scientist](https://r2dssanity.substack.com/p/modeler-ml-scientist-data-scientist).
+
 ### Why this distinction matters
 
 Experiment and workflow tools are designed to manage execution: runs, tasks, schedules, metrics, and operational coordination. They answer questions like: who ran what, when did it execute, and what was the output?
