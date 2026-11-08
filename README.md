@@ -325,3 +325,6 @@ For more detailed project context, see:
 The strongest version of KMDS is not “AI for everything.” It is “knowledge infrastructure for analytical work.”
 
 That is the core idea this repository is trying to support: a disciplined way to record, retrieve, and reuse the reasoning that makes data science work trustworthy and reusable.
+
+> [!NOTE]
+> KMDS is an open framework for delivering statistical modeling engagements. It is structured from a git-based template so clients own the full project and can run it without dependence on any external vendor. It is free to use, and I’m not selling a license. If you deliver data science projects, I’d welcome feedback on the project template and the decision-capture model. Advisory engagements are described at [r2-ds.com](https://www.r2-ds.com/).
