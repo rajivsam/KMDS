@@ -16,6 +16,10 @@
 
 KMDS is open-source software, freely available for use, customization, and enterprise deployment. It is not a subscription product and does not require licensing fees. It is built to preserve analytical rationale, decision provenance, and model-building context in rigorous data-science workflows.
 
+## License
+
+This project is licensed under the Apache License, Version 2.0. This is a permissive open-source license that allows you to use, modify, and distribute the software freely, including in commercial settings, as long as you preserve copyright and license notices. See [LICENSE](LICENSE) for the full text.
+
 To see how KMDS achieves reproducibility and structure across analytical projects, see this article: [KMDS-powered ML solutions: insights article](https://github.com/rajivsam/kmds_migration/blob/main/docs/kmds_insights_article.md).
 
 ## The intent of this project
